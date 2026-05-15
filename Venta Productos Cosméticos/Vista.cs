@@ -1,8 +1,8 @@
 namespace Venta_Productos_Cosméticos
 {
-    public partial class Form1 : Form
+    public partial class Vista : Form
     {
-        public Form1()
+        public Vista()
         {
             InitializeComponent();
         }
