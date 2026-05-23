@@ -3,12 +3,12 @@
     partial class Vista
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,84 +23,25 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vista));
-            menuStrip1 = new MenuStrip();
-            ventasToolStripMenuItem = new ToolStripMenuItem();
-            inventarioToolStripMenuItem = new ToolStripMenuItem();
-            reportesToolStripMenuItem = new ToolStripMenuItem();
-            usuarioToolStripMenuItem = new ToolStripMenuItem();
-            administraciónToolStripMenuItem = new ToolStripMenuItem();
-            centroDeAyudaToolStripMenuItem = new ToolStripMenuItem();
-            cerrarSesiónToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            menuStrip1.SuspendLayout();
+            btnIniciarSesion = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.RosyBrown;
-            menuStrip1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ventasToolStripMenuItem, inventarioToolStripMenuItem, reportesToolStripMenuItem, usuarioToolStripMenuItem, administraciónToolStripMenuItem, centroDeAyudaToolStripMenuItem, cerrarSesiónToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 33);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // ventasToolStripMenuItem
-            // 
-            ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            ventasToolStripMenuItem.Size = new Size(83, 29);
-            ventasToolStripMenuItem.Text = "Ventas";
-            // 
-            // inventarioToolStripMenuItem
-            // 
-            inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            inventarioToolStripMenuItem.Size = new Size(116, 29);
-            inventarioToolStripMenuItem.Text = "Inventario";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            reportesToolStripMenuItem.Size = new Size(104, 29);
-            reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            usuarioToolStripMenuItem.Size = new Size(93, 29);
-            usuarioToolStripMenuItem.Text = "Usuario";
-            // 
-            // administraciónToolStripMenuItem
-            // 
-            administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            administraciónToolStripMenuItem.Size = new Size(159, 29);
-            administraciónToolStripMenuItem.Text = "Administración";
-            // 
-            // centroDeAyudaToolStripMenuItem
-            // 
-            centroDeAyudaToolStripMenuItem.Name = "centroDeAyudaToolStripMenuItem";
-            centroDeAyudaToolStripMenuItem.Size = new Size(81, 29);
-            centroDeAyudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            cerrarSesiónToolStripMenuItem.Size = new Size(143, 29);
-            cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(345, 112);
+            label1.Location = new Point(318, 67);
             label1.Name = "label1";
             label1.Size = new Size(158, 32);
             label1.TabIndex = 1;
@@ -108,44 +49,57 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Gainsboro;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(173, 147);
+            pictureBox1.Location = new Point(193, 119);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(479, 195);
+            pictureBox1.Size = new Size(411, 195);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // Vista
+            // btnIniciarSesion
+            // 
+            btnIniciarSesion.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIniciarSesion.Location = new Point(306, 336);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(184, 45);
+            btnIniciarSesion.TabIndex = 3;
+            btnIniciarSesion.Text = "Iniciar Sesión";
+            btnIniciarSesion.UseVisualStyleBackColor = true;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnIniciarSesion);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(-1, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(816, 489);
+            panel1.TabIndex = 5;
+            // 
+            // FormBienvenida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
+            BackColor = Color.RosyBrown;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
-            Controls.Add(label1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "Vista";
-            Text = "Sistema de Venta de Productos Cosméticos";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Controls.Add(panel1);
+            IsMdiContainer = true;
+            Name = "FormBienvenida";
+            Text = "FormBienvenida";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem ventasToolStripMenuItem;
-        private ToolStripMenuItem inventarioToolStripMenuItem;
-        private ToolStripMenuItem reportesToolStripMenuItem;
-        private ToolStripMenuItem usuarioToolStripMenuItem;
-        private ToolStripMenuItem administraciónToolStripMenuItem;
-        private ToolStripMenuItem centroDeAyudaToolStripMenuItem;
-        private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private Label label1;
         private PictureBox pictureBox1;
+        private Button btnIniciarSesion;
+        private Panel panel1;
     }
 }

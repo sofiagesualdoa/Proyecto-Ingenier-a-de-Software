@@ -4,5 +4,11 @@
     <Compile Update="Vista.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Sistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
