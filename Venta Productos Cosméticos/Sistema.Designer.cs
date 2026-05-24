@@ -30,31 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sistema));
             menuStrip1 = new MenuStrip();
-            administraciónToolStripMenuItem = new ToolStripMenuItem();
             usuarioToolStripMenuItem = new ToolStripMenuItem();
-            ventasToolStripMenuItem = new ToolStripMenuItem();
-            nuevaVentaToolStripMenuItem = new ToolStripMenuItem();
-            historialVentasToolStripMenuItem = new ToolStripMenuItem();
-            inventarioToolStripMenuItem = new ToolStripMenuItem();
-            reportesToolStripMenuItem = new ToolStripMenuItem();
-            productosMásVendidosToolStripMenuItem = new ToolStripMenuItem();
-            productosConBajoStockToolStripMenuItem = new ToolStripMenuItem();
-            centroDeAyudaToolStripMenuItem = new ToolStripMenuItem();
-            cerrarSesiónToolStripMenuItem = new ToolStripMenuItem();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
+            cambiarClaveToolStripMenuItem = new ToolStripMenuItem();
+            cambiarIdiomaToolStripMenuItem = new ToolStripMenuItem();
+            administraciónToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
             perfilesToolStripMenuItem = new ToolStripMenuItem();
             bitácoraEventosToolStripMenuItem = new ToolStripMenuItem();
             backUpToolStripMenuItem = new ToolStripMenuItem();
             restoreToolStripMenuItem = new ToolStripMenuItem();
-            cambiarClaveToolStripMenuItem = new ToolStripMenuItem();
-            cambiarIdiomaToolStripMenuItem = new ToolStripMenuItem();
+            ventasToolStripMenuItem = new ToolStripMenuItem();
+            nuevaVentaToolStripMenuItem = new ToolStripMenuItem();
+            historialVentasToolStripMenuItem = new ToolStripMenuItem();
+            inventarioToolStripMenuItem = new ToolStripMenuItem();
             productosToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
+            productosMásVendidosToolStripMenuItem = new ToolStripMenuItem();
             productosMenosVendidosToolStripMenuItem = new ToolStripMenuItem();
+            productosConBajoStockToolStripMenuItem = new ToolStripMenuItem();
+            centroDeAyudaToolStripMenuItem = new ToolStripMenuItem();
             manualDeUsuarioToolStripMenuItem = new ToolStripMenuItem();
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem = new ToolStripMenuItem();
+            cerrarSesiónToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            proveedoresToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -70,13 +71,6 @@
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // administraciónToolStripMenuItem
-            // 
-            administraciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuariosToolStripMenuItem, perfilesToolStripMenuItem, bitácoraEventosToolStripMenuItem, backUpToolStripMenuItem, restoreToolStripMenuItem });
-            administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            administraciónToolStripMenuItem.Size = new Size(159, 29);
-            administraciónToolStripMenuItem.Text = "Administración";
-            // 
             // usuarioToolStripMenuItem
             // 
             usuarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cambiarClaveToolStripMenuItem, cambiarIdiomaToolStripMenuItem });
@@ -84,84 +78,24 @@
             usuarioToolStripMenuItem.Size = new Size(93, 29);
             usuarioToolStripMenuItem.Text = "Usuario";
             // 
-            // ventasToolStripMenuItem
+            // cambiarClaveToolStripMenuItem
             // 
-            ventasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaVentaToolStripMenuItem, historialVentasToolStripMenuItem });
-            ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            ventasToolStripMenuItem.Size = new Size(83, 29);
-            ventasToolStripMenuItem.Text = "Ventas";
+            cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
+            cambiarClaveToolStripMenuItem.Size = new Size(225, 30);
+            cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
             // 
-            // nuevaVentaToolStripMenuItem
+            // cambiarIdiomaToolStripMenuItem
             // 
-            nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            nuevaVentaToolStripMenuItem.Size = new Size(223, 30);
-            nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
+            cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
+            cambiarIdiomaToolStripMenuItem.Size = new Size(225, 30);
+            cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
             // 
-            // historialVentasToolStripMenuItem
+            // administraciónToolStripMenuItem
             // 
-            historialVentasToolStripMenuItem.Name = "historialVentasToolStripMenuItem";
-            historialVentasToolStripMenuItem.Size = new Size(223, 30);
-            historialVentasToolStripMenuItem.Text = "Historial Ventas";
-            // 
-            // inventarioToolStripMenuItem
-            // 
-            inventarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productosToolStripMenuItem, clientesToolStripMenuItem });
-            inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            inventarioToolStripMenuItem.Size = new Size(97, 29);
-            inventarioToolStripMenuItem.Text = "Maestro";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productosMásVendidosToolStripMenuItem, productosMenosVendidosToolStripMenuItem, productosConBajoStockToolStripMenuItem });
-            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            reportesToolStripMenuItem.Size = new Size(104, 29);
-            reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // productosMásVendidosToolStripMenuItem
-            // 
-            productosMásVendidosToolStripMenuItem.Name = "productosMásVendidosToolStripMenuItem";
-            productosMásVendidosToolStripMenuItem.Size = new Size(329, 30);
-            productosMásVendidosToolStripMenuItem.Text = "Productos Más Vendidos";
-            // 
-            // productosConBajoStockToolStripMenuItem
-            // 
-            productosConBajoStockToolStripMenuItem.Name = "productosConBajoStockToolStripMenuItem";
-            productosConBajoStockToolStripMenuItem.Size = new Size(329, 30);
-            productosConBajoStockToolStripMenuItem.Text = "Productos con Bajo Stock";
-            // 
-            // centroDeAyudaToolStripMenuItem
-            // 
-            centroDeAyudaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualDeUsuarioToolStripMenuItem, guíaDeInstalaciónArchivoLeémeToolStripMenuItem });
-            centroDeAyudaToolStripMenuItem.Name = "centroDeAyudaToolStripMenuItem";
-            centroDeAyudaToolStripMenuItem.Size = new Size(81, 29);
-            centroDeAyudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            cerrarSesiónToolStripMenuItem.Size = new Size(143, 29);
-            cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(325, 110);
-            label1.Name = "label1";
-            label1.Size = new Size(158, 32);
-            label1.TabIndex = 1;
-            label1.Text = "¡Bienvenido!";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.LightGray;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(163, 145);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(479, 222);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            administraciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuariosToolStripMenuItem, perfilesToolStripMenuItem, bitácoraEventosToolStripMenuItem, backUpToolStripMenuItem, restoreToolStripMenuItem });
+            administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
+            administraciónToolStripMenuItem.Size = new Size(159, 29);
+            administraciónToolStripMenuItem.Text = "Administración";
             // 
             // usuariosToolStripMenuItem
             // 
@@ -193,35 +127,75 @@
             restoreToolStripMenuItem.Size = new Size(231, 30);
             restoreToolStripMenuItem.Text = "Restore";
             // 
-            // cambiarClaveToolStripMenuItem
+            // ventasToolStripMenuItem
             // 
-            cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
-            cambiarClaveToolStripMenuItem.Size = new Size(225, 30);
-            cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
+            ventasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaVentaToolStripMenuItem, historialVentasToolStripMenuItem });
+            ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            ventasToolStripMenuItem.Size = new Size(83, 29);
+            ventasToolStripMenuItem.Text = "Ventas";
             // 
-            // cambiarIdiomaToolStripMenuItem
+            // nuevaVentaToolStripMenuItem
             // 
-            cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            cambiarIdiomaToolStripMenuItem.Size = new Size(225, 30);
-            cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
+            nuevaVentaToolStripMenuItem.Size = new Size(223, 30);
+            nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
+            // 
+            // historialVentasToolStripMenuItem
+            // 
+            historialVentasToolStripMenuItem.Name = "historialVentasToolStripMenuItem";
+            historialVentasToolStripMenuItem.Size = new Size(223, 30);
+            historialVentasToolStripMenuItem.Text = "Historial Ventas";
+            // 
+            // inventarioToolStripMenuItem
+            // 
+            inventarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productosToolStripMenuItem, clientesToolStripMenuItem, proveedoresToolStripMenuItem });
+            inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            inventarioToolStripMenuItem.Size = new Size(97, 29);
+            inventarioToolStripMenuItem.Text = "Maestro";
             // 
             // productosToolStripMenuItem
             // 
             productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(180, 30);
+            productosToolStripMenuItem.Size = new Size(196, 30);
             productosToolStripMenuItem.Text = "Productos";
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 30);
+            clientesToolStripMenuItem.Size = new Size(196, 30);
             clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productosMásVendidosToolStripMenuItem, productosMenosVendidosToolStripMenuItem, productosConBajoStockToolStripMenuItem });
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(104, 29);
+            reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // productosMásVendidosToolStripMenuItem
+            // 
+            productosMásVendidosToolStripMenuItem.Name = "productosMásVendidosToolStripMenuItem";
+            productosMásVendidosToolStripMenuItem.Size = new Size(329, 30);
+            productosMásVendidosToolStripMenuItem.Text = "Productos Más Vendidos";
             // 
             // productosMenosVendidosToolStripMenuItem
             // 
             productosMenosVendidosToolStripMenuItem.Name = "productosMenosVendidosToolStripMenuItem";
             productosMenosVendidosToolStripMenuItem.Size = new Size(329, 30);
             productosMenosVendidosToolStripMenuItem.Text = "Productos Menos Vendidos";
+            // 
+            // productosConBajoStockToolStripMenuItem
+            // 
+            productosConBajoStockToolStripMenuItem.Name = "productosConBajoStockToolStripMenuItem";
+            productosConBajoStockToolStripMenuItem.Size = new Size(329, 30);
+            productosConBajoStockToolStripMenuItem.Text = "Productos con Bajo Stock";
+            // 
+            // centroDeAyudaToolStripMenuItem
+            // 
+            centroDeAyudaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualDeUsuarioToolStripMenuItem, guíaDeInstalaciónArchivoLeémeToolStripMenuItem });
+            centroDeAyudaToolStripMenuItem.Name = "centroDeAyudaToolStripMenuItem";
+            centroDeAyudaToolStripMenuItem.Size = new Size(81, 29);
+            centroDeAyudaToolStripMenuItem.Text = "Ayuda";
             // 
             // manualDeUsuarioToolStripMenuItem
             // 
@@ -234,6 +208,39 @@
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Name = "guíaDeInstalaciónArchivoLeémeToolStripMenuItem";
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Size = new Size(402, 30);
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Text = "Guía de Instalación (Archivo Leéme)";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            cerrarSesiónToolStripMenuItem.Size = new Size(143, 29);
+            cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.Location = new Point(325, 110);
+            label1.Name = "label1";
+            label1.Size = new Size(158, 32);
+            label1.TabIndex = 1;
+            label1.Text = "¡Bienvenido!";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.LightGray;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(163, 145);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(479, 222);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            proveedoresToolStripMenuItem.Size = new Size(196, 30);
+            proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // Sistema
             // 
@@ -283,5 +290,6 @@
         private ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private ToolStripMenuItem manualDeUsuarioToolStripMenuItem;
         private ToolStripMenuItem guíaDeInstalaciónArchivoLeémeToolStripMenuItem;
+        private ToolStripMenuItem proveedoresToolStripMenuItem;
     }
 }
