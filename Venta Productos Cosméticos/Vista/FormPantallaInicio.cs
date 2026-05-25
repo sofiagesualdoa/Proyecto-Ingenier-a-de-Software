@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Venta_Productos_Cosméticos
 {
-    public partial class Vista : Form
+    public partial class FormPantallaInicio : Form
     {
-        public Vista()
+        public FormPantallaInicio()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace Venta_Productos_Cosméticos
             FormInicioSesion frmLogin = new FormInicioSesion();
             frmLogin.MdiParent = this;
             frmLogin.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

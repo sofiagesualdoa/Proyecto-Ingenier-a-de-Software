@@ -1,6 +1,6 @@
 ﻿namespace Venta_Productos_Cosméticos
 {
-    partial class Vista
+    partial class FormPantallaInicio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vista));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPantallaInicio));
             label1 = new Label();
             pictureBox1 = new PictureBox();
             btnIniciarSesion = new Button();
@@ -78,8 +78,9 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(816, 489);
             panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
             // 
-            // FormBienvenida
+            // Vista
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -87,7 +88,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             IsMdiContainer = true;
-            Name = "FormBienvenida";
+            Name = "Vista";
             Text = "FormBienvenida";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

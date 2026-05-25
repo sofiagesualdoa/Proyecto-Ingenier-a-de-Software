@@ -1,6 +1,6 @@
 ﻿namespace Venta_Productos_Cosméticos
 {
-    partial class Sistema
+    partial class FormSistema
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sistema));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSistema));
             menuStrip1 = new MenuStrip();
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             cambiarClaveToolStripMenuItem = new ToolStripMenuItem();
@@ -45,6 +45,7 @@
             inventarioToolStripMenuItem = new ToolStripMenuItem();
             productosToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
+            proveedoresToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
             productosMásVendidosToolStripMenuItem = new ToolStripMenuItem();
             productosMenosVendidosToolStripMenuItem = new ToolStripMenuItem();
@@ -55,7 +56,6 @@
             cerrarSesiónToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            proveedoresToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -83,6 +83,7 @@
             cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
             cambiarClaveToolStripMenuItem.Size = new Size(225, 30);
             cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
+            cambiarClaveToolStripMenuItem.Click += cambiarClaveToolStripMenuItem_Click;
             // 
             // cambiarIdiomaToolStripMenuItem
             // 
@@ -165,6 +166,12 @@
             clientesToolStripMenuItem.Size = new Size(196, 30);
             clientesToolStripMenuItem.Text = "Clientes";
             // 
+            // proveedoresToolStripMenuItem
+            // 
+            proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            proveedoresToolStripMenuItem.Size = new Size(196, 30);
+            proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
             // reportesToolStripMenuItem
             // 
             reportesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productosMásVendidosToolStripMenuItem, productosMenosVendidosToolStripMenuItem, productosConBajoStockToolStripMenuItem });
@@ -219,42 +226,35 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.Location = new Point(325, 110);
+            label1.Location = new Point(328, 88);
             label1.Name = "label1";
             label1.Size = new Size(158, 32);
-            label1.TabIndex = 1;
+            label1.TabIndex = 3;
             label1.Text = "¡Bienvenido!";
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.LightGray;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(163, 145);
+            pictureBox1.Location = new Point(161, 140);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(479, 222);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
+            pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // proveedoresToolStripMenuItem
-            // 
-            proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            proveedoresToolStripMenuItem.Size = new Size(196, 30);
-            proveedoresToolStripMenuItem.Text = "Proveedores";
-            // 
-            // Sistema
+            // FormSistema
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
             Controls.Add(label1);
+            Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Sistema";
+            Name = "FormSistema";
             Text = "Sistema de Venta de Productos Cosméticos";
-            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -272,8 +272,6 @@
         private ToolStripMenuItem administraciónToolStripMenuItem;
         private ToolStripMenuItem centroDeAyudaToolStripMenuItem;
         private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
-        private Label label1;
-        private PictureBox pictureBox1;
         private ToolStripMenuItem nuevaVentaToolStripMenuItem;
         private ToolStripMenuItem historialVentasToolStripMenuItem;
         private ToolStripMenuItem productosMásVendidosToolStripMenuItem;
@@ -291,5 +289,7 @@
         private ToolStripMenuItem manualDeUsuarioToolStripMenuItem;
         private ToolStripMenuItem guíaDeInstalaciónArchivoLeémeToolStripMenuItem;
         private ToolStripMenuItem proveedoresToolStripMenuItem;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }
