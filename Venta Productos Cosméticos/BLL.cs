@@ -16,21 +16,33 @@ namespace Venta_Productos_Cosméticos
         {
             public void ModificarClave(string claveActual, string claveNueva)
             {
-                BE.Usuario usuarioActivo = Servicios.SessionManager.GetInstance().ObtenerUsuario();
-                Servicios.Encriptador encriptador = new Servicios.Encriptador();
-                string hashClaveActual = encriptador.Encriptar(claveActual);
-
-                if (!usuarioActivo.ValidarPassword(hashClaveActual))
+                try
                 {
-                    throw new Exception("La contraseña actual ingresada es incorrecta.");
-                }
 
-                string hashClaveNueva = encriptador.Encriptar(claveNueva);
-                DAL.DALUsuario dal = new DAL.DALUsuario();
-                dal.GuardarNuevaClave(usuarioActivo.nombreUsuario, hashClaveNueva);
-                usuarioActivo.ActualizarPasswordMemoria(hashClaveNueva);
-                Servicios.BitacoraEventos bitacora = new Servicios.BitacoraEventos();
-                bitacora.RegistrarEvento($"El usuario {usuarioActivo.nombreUsuario} modificó su contraseña de acceso de forma exitosa. Fecha y Hora: {DateTime.Now}");
+                    BE.Usuario usuarioActivo = Servicios.SessionManager.GetInstance().ObtenerUsuario();
+                    Servicios.Encriptador encriptador = new Servicios.Encriptador();
+                    string hashClaveActual = encriptador.Encriptar(claveActual);
+
+
+                    /*
+                    todo: lógica de cambio de clave
+                    if (!usuarioActivo.ValidarPassword(hashClaveActual))
+                    {
+                        throw new Exception("La contraseña actual ingresada es incorrecta.");
+                    }
+
+                    string hashClaveNueva = encriptador.Encriptar(claveNueva);
+                    DAL.DALUsuario dal = new DAL.DALUsuario();
+                    dal.GuardarNuevaClave(usuarioActivo.nombreUsuario, hashClaveNueva);
+                    usuarioActivo.ActualizarPasswordMemoria(hashClaveNueva);
+                    
+                    Servicios.BitacoraEventos bitacora = new Servicios.BitacoraEventos();
+                    bitacora.RegistrarEvento($"El usuario {usuarioActivo.nombreUsuario} modificó su contraseña de acceso de forma exitosa. Fecha y Hora: {DateTime.Now}");
+                    */
+                }
+                catch (Exception ex)
+                {
+                }
             }
 
             public bool IniciarSesion(string nombreUsuario, string passwordIngresado)
@@ -62,6 +74,19 @@ namespace Venta_Productos_Cosméticos
                 return true;
             }
 
+            public bool CerrarSesion()
+            {
+                Usuario usuarioActivo = SessionManager.GetInstance().ObtenerUsuario();
+                if (usuarioActivo != null)
+                {
+                    SessionManager.GetInstance().CerrarSesion();
+                    BitacoraEventos bitacora = new BitacoraEventos();
+                    bitacora.RegistrarEvento($"El usuario '{usuarioActivo.nombreUsuario}' cerró sesión correctamente.");
+                    return true;
+                }
+                return false;
+            }
+
             public void CrearUsuario(Usuario usuario)
             {
                 if (string.IsNullOrWhiteSpace(usuario.Nombre) ||
@@ -89,7 +114,6 @@ namespace Venta_Productos_Cosméticos
                 usuario.SetPassword(
                     encriptador.Encriptar("1234"));
 
-                //usuario.Bloqueado = false;
                 usuario.Bloqueado = true;
 
                 dal.GuardarUsuario(usuario);
@@ -114,7 +138,7 @@ namespace Venta_Productos_Cosméticos
             {
                 DALUsuario dal = new DALUsuario();
 
-                Usuario usuario = dal.ObtenerUsuarioB(dni);
+                Usuario usuario = dal.BuscarUsuarioPorDniOMail(dni, "x");
 
                 if (usuario == null)
                 {
@@ -138,7 +162,7 @@ namespace Venta_Productos_Cosméticos
                 DALUsuario dal = new DALUsuario();
 
                 Usuario usuarioExistente =
-                    dal.ObtenerUsuarioB(usuarioModificado.DNI);
+                    dal.BuscarUsuarioPorDniOMail(usuarioModificado.DNI, "x");
 
                 if (usuarioExistente == null)
                 {
@@ -152,6 +176,29 @@ namespace Venta_Productos_Cosméticos
 
                 bitacora.RegistrarEvento(
                     $"Se modificó el usuario {usuarioModificado.nombreUsuario}");
+            }
+
+            public bool ModificarEstado(int DNIUsuarioSeleccionado)
+            {
+                /*
+                Usuario adminLogueado = SessionManager.GetInstance().ObtenerUsuario();
+                if (adminLogueado.DNI == DNIUsuarioSeleccionado)
+                {
+                    throw new Exception("Operación inválida. No es posible desactivar la cuenta con la que se encuentra logueado actualmente.");
+                }
+                */
+                DALUsuario dal = new DALUsuario();
+                bool exito = dal.ModificarEstado(DNIUsuarioSeleccionado);
+
+                if (exito)
+                {
+                    BitacoraEventos bitacora = new BitacoraEventos();
+                    Usuario usuarioAfectado = dal.BuscarUsuarioPorDniOMail(DNIUsuarioSeleccionado, "x");
+                    string accion = usuarioAfectado.Activo ? "Activación" : "Desactivación";
+                    bitacora.RegistrarEvento($"Se ejecutó la {accion} del ID de usuario (DNI): {DNIUsuarioSeleccionado}.");
+                    return true;
+                }
+                return false;
             }
         }
     }

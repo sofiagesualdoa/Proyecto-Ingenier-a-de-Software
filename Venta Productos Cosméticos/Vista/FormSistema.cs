@@ -1,4 +1,5 @@
 using Venta_Productos_Cosméticos.Vista;
+using static Venta_Productos_Cosméticos.BLL;
 
 namespace Venta_Productos_Cosméticos
 {
@@ -28,6 +29,22 @@ namespace Venta_Productos_Cosméticos
             frmUsuario.MdiParent = this.MdiParent;
             frmUsuario.Show();
             this.Close();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea cerrar su sesión activa?",
+            "Confirmación de Cierre de Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                BLLUsuario bll = new BLLUsuario();
+                bll.CerrarSesion();
+                FormInicioSesion frmLogin = new FormInicioSesion();
+                frmLogin.Show();
+                frmLogin.WindowState = FormWindowState.Normal;
+                this.Close();
+            }
         }
     }
 }

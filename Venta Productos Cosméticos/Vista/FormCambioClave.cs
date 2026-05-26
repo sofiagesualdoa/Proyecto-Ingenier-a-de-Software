@@ -24,27 +24,25 @@ namespace Venta_Productos_Cosméticos
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtClaveActual.Text) ||
-                string.IsNullOrEmpty(txtClaveNueva.Text) ||
-                string.IsNullOrEmpty(txtConfirmacion.Text))
-            {
-                MessageBox.Show("Todos los campos son obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (txtClaveNueva.Text != txtConfirmacion.Text)
-            {
-                MessageBox.Show("La nueva contraseña y su confirmación no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             try
             {
-                BLL.BLLUsuario bll = new BLL.BLLUsuario();
 
+                if (string.IsNullOrEmpty(txtClaveActual.Text) ||
+                    string.IsNullOrEmpty(txtClaveNueva.Text) ||
+                    string.IsNullOrEmpty(txtConfirmacion.Text))
+                {
+                    throw new Exception("Todos los campos son obligatorios.");
+                }
+                if (txtClaveNueva.Text != txtConfirmacion.Text)
+                {
+                    throw new Exception("La nueva contraseña y su confirmación no coinciden.");
+                }
+                BLL.BLLUsuario bll = new BLL.BLLUsuario();
                 bll.ModificarClave(txtClaveActual.Text, txtClaveNueva.Text);
                 MessageBox.Show("Contraseña modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); 
+                FormSistema frmMenu = new FormSistema();
+                frmMenu.Show();
+                this.Close();
             }
             catch (Exception ex)
             {

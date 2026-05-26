@@ -29,6 +29,9 @@ namespace Venta_Productos_Cosméticos.Vista
             comboBox1.Items.Add("Supervisor");
 
             comboBox1.SelectedIndex = 0;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;  
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,7 +44,7 @@ namespace Venta_Productos_Cosméticos.Vista
             modo = "Añadir";
 
             groupBox1.Text = "Modo Añadir";
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -126,8 +129,7 @@ namespace Venta_Productos_Cosméticos.Vista
 
                     bll.CrearUsuario(usuario);
 
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = bll.ObtenerUsuarios();
+                    MostrarGrilla(bll.ObtenerUsuarios());
 
                     MessageBox.Show(
                         "Usuario creado correctamente.",
@@ -170,8 +172,7 @@ namespace Venta_Productos_Cosméticos.Vista
 
                     bll.ModificarUsuario(usuario);
 
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = bll.ObtenerUsuarios();
+                    MostrarGrilla(bll.ObtenerUsuarios());
 
                     MessageBox.Show(
                         "Usuario modificado correctamente.",
@@ -205,8 +206,7 @@ namespace Venta_Productos_Cosméticos.Vista
 
                     bll.DesbloquearUsuario(dni);
 
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = bll.ObtenerUsuarios();
+                    MostrarGrilla(bll.ObtenerUsuarios());
 
                     MessageBox.Show(
                         "Usuario desbloqueado correctamente.",
@@ -228,11 +228,66 @@ namespace Venta_Productos_Cosméticos.Vista
         private void button6_Click(object sender, EventArgs e)
         {
 
+            modo = "Cancelar";
+
+            groupBox1.Text = "Modo Cancelar";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            FormSistema frmMenu = new FormSistema();
+            frmMenu.Show();
+            this.Close();
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            modo = "Activar / Desactivar";
+
+            groupBox1.Text = "Modo Activar / Desactivar";
+
+            if (dataGridView1.CurrentRow != null)
+            {
+                int DNISeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DNI"].Value);
+                try
+                {
+                    BLLUsuario bll = new BLLUsuario();
+                    if (bll.ModificarEstado(DNISeleccionado))
+                    {
+                        MostrarGrilla(bll.ObtenerUsuarios());
+                        MessageBox.Show("El estado del usuario se actualizó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario de la lista.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void MostrarGrilla(Object lista)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = lista;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            BLLUsuario bll = new BLLUsuario();
+            List<Usuario> usuarios = bll.ObtenerUsuarios();
+            if (radioButton3.Checked)
+            {
+                MostrarGrilla(usuarios);
+            }
+            else if (radioButton4.Checked)
+            {
+                MostrarGrilla(usuarios.Where(u => u.Activo).ToList());
+            }
         }
     }
 }

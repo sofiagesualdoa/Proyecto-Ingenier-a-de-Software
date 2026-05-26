@@ -14,13 +14,8 @@ namespace Venta_Productos_Cosméticos
             private static List<Usuario> usuarios = new List<Usuario>();
             public Usuario ObtenerUsuario(string nombreUsuario)
             {
-                // lógica ADO.NET para conectarte a SQL Server y obtener el usuario por su nombre de usuario.
-                return new Usuario
-                {
-                    nombreUsuario = nombreUsuario,
-                    Activo = true,
-                    Bloqueado = false
-                };
+                // todo: lógica ADO.NET para conectarte a SQL Server y obtener el usuario por su nombre de usuario.
+                return usuarios.Find(x => x.nombreUsuario == nombreUsuario);
             }
 
             public List<Usuario> ObtenerUsuarios()
@@ -35,6 +30,7 @@ namespace Venta_Productos_Cosméticos
 
             public Usuario BuscarUsuarioPorDniOMail(int dni, string email)
             {
+                // todo: lógica ADO.NET para conectarte a SQL Server y obtener el usuario por DNI o Mail.
                 return usuarios.FirstOrDefault(u => u.DNI == dni || u.Email == email);
             }
 
@@ -46,11 +42,6 @@ namespace Venta_Productos_Cosméticos
                 {
                     usuario.Bloqueado = false;
                 }
-            }
-
-            public Usuario ObtenerUsuarioB(int dni)
-            {
-                return usuarios.FirstOrDefault(u => u.DNI == dni);
             }
 
             public void ModificarUsuario(Usuario usuarioModificado)
@@ -68,18 +59,33 @@ namespace Venta_Productos_Cosméticos
                 }
             }
 
+            public bool ModificarEstado(int DNIUsuario)
+            {
+                Usuario u = BuscarUsuarioPorDniOMail(DNIUsuario, "x");
+                if (u != null)
+                {
+                    u.Activo = !u.Activo;
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Usuario no encontrado"); 
+                }
+                // todo: lógica de ADO.NET para hacer un UPDATE Usuarios SET activo = @nuevoEstado WHERE id_usuario = @id
+            }
+
             public void GuardarNuevaClave(string nombreUsuario, string hashClaveNueva)
             {
-                // lógica ADO.NET para hacer un UPDATE Usuarios SET contraseña = @hash WHERE nombreUsuario = @user
+                // todo: lógica ADO.NET para hacer un UPDATE Usuarios SET contraseña = @hash WHERE nombreUsuario = @user
             }
             public void SumarIntentoFallido(string nombreUsuario)
             {
-                // lógica ADO.NET para hacer un UPDATE Usuarios SET intentosFallidos = intentosFallidos + 1 WHERE nombreUsuario = @user
+                // todo: lógica ADO.NET para hacer un UPDATE Usuarios SET intentosFallidos = intentosFallidos + 1 WHERE nombreUsuario = @user
             }
 
             public void CargarPermisos(Usuario usuario)
             {
-                // lógica ADO.NET para hacer un SELECT p.nombre FROM Permisos p JOIN UsuarioPermisos up ON p.id = up.idPermiso JOIN Usuarios u ON up.idUsuario = u.id WHERE u.nombreUsuario = @user
+                // todo: lógica ADO.NET para hacer un SELECT p.nombre FROM Permisos p JOIN UsuarioPermisos up ON p.id = up.idPermiso JOIN Usuarios u ON up.idUsuario = u.id WHERE u.nombreUsuario = @user
             }
         }
     }

@@ -41,3 +41,4 @@ C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingeni
 C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.pdb
 C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.genruntimeconfig.cache
 C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\ref\Venta Productos Cosméticos.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.Vista.FormUsuario.resources

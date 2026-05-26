@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {}
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
         "projectName": "Venta Productos Cosméticos",
-        "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
-        "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -120,6 +120,7 @@
             Controls.Add(pictureBox1);
             Name = "FormInicioSesion";
             Text = "FormInicioSesion";
+            TopMost = true;
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

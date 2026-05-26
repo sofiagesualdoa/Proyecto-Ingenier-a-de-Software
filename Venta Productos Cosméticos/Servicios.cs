@@ -51,7 +51,8 @@ namespace Venta_Productos_Cosméticos
         {
             public void RegistrarEvento(string mensaje)
             {
-                Console.WriteLine($"[Bitácora] {DateTime.Now}: {mensaje}");
+                // todo: lógica para registrar el evento en la base de datos
+                // Console.WriteLine($"[Bitácora] {DateTime.Now}: {mensaje}");
             }
         }
     }
