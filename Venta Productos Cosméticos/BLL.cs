@@ -61,6 +61,98 @@ namespace Venta_Productos_Cosméticos
 
                 return true;
             }
+
+            public void CrearUsuario(Usuario usuario)
+            {
+                if (string.IsNullOrWhiteSpace(usuario.Nombre) ||
+                    string.IsNullOrWhiteSpace(usuario.Apellido) ||
+                    string.IsNullOrWhiteSpace(usuario.Email) ||
+                    string.IsNullOrWhiteSpace(usuario.nombreUsuario) ||
+                    string.IsNullOrWhiteSpace(usuario.Rol))
+                {
+                    throw new Exception("Debe completar todos los campos.");
+                }
+
+                DALUsuario dal = new DALUsuario();
+
+                Usuario existente = dal.BuscarUsuarioPorDniOMail(
+                    usuario.DNI,
+                    usuario.Email);
+
+                if (existente != null)
+                {
+                    throw new Exception("Ya existe un usuario con ese DNI o email.");
+                }
+
+                Encriptador encriptador = new Encriptador();
+
+                usuario.SetPassword(
+                    encriptador.Encriptar("1234"));
+
+                //usuario.Bloqueado = false;
+                usuario.Bloqueado = true;
+
+                dal.GuardarUsuario(usuario);
+
+                BitacoraEventos bitacora = new BitacoraEventos();
+
+                bitacora.RegistrarEvento(
+                    $"Se creó el usuario {usuario.nombreUsuario}");
+            }
+
+
+            public List<Usuario> ObtenerUsuarios()
+            {
+                DALUsuario dal = new DALUsuario();
+
+                return dal.ObtenerUsuarios();
+            }
+
+
+
+            public void DesbloquearUsuario(int dni)
+            {
+                DALUsuario dal = new DALUsuario();
+
+                Usuario usuario = dal.ObtenerUsuarioB(dni);
+
+                if (usuario == null)
+                {
+                    throw new Exception("El usuario no existe.");
+                }
+
+                if (!usuario.Bloqueado)
+                {
+                    throw new Exception(
+                        "El usuario ya se encuentra desbloqueado.");
+                }
+
+                dal.DesbloquearUsuario(dni);
+
+                BitacoraEventos bitacora = new BitacoraEventos();
+
+                bitacora.RegistrarEvento($"Se desbloqueó el usuario {usuario.nombreUsuario}");
+            }
+            public void ModificarUsuario(Usuario usuarioModificado)
+            {
+                DALUsuario dal = new DALUsuario();
+
+                Usuario usuarioExistente =
+                    dal.ObtenerUsuarioB(usuarioModificado.DNI);
+
+                if (usuarioExistente == null)
+                {
+                    throw new Exception("El usuario no existe.");
+                }
+
+                dal.ModificarUsuario(usuarioModificado);
+
+                BitacoraEventos bitacora =
+                    new BitacoraEventos();
+
+                bitacora.RegistrarEvento(
+                    $"Se modificó el usuario {usuarioModificado.nombreUsuario}");
+            }
         }
     }
 }

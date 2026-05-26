@@ -10,8 +10,13 @@ namespace Venta_Productos_Cosméticos
     {
         public class Usuario
         {
+            public int DNI {  get; set; }
+            public string Nombre { get; set; }
+            public string Apellido { get; set; }
+            public string Email { get; set; }
             private string contraseña; 
             public string nombreUsuario { get; set; } 
+            public string Rol {  get; set; }
 
             public bool Activo { get; set; }
             public bool Bloqueado { get; set; }
@@ -23,6 +28,11 @@ namespace Venta_Productos_Cosméticos
             public void ActualizarPasswordMemoria(string hashNuevaClave)
             {
                 this.contraseña = hashNuevaClave;
+            }
+
+            public void SetPassword(string hash)
+            {
+                this.contraseña = hash;
             }
         }
     }

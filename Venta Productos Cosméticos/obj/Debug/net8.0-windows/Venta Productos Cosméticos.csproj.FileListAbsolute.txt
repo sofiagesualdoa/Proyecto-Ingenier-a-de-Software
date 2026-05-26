@@ -19,3 +19,25 @@ C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Soft
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormCambioClave.resources
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormPantallaInicio.resources
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormSistema.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\Venta Productos Cosméticos.exe
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\Venta Productos Cosméticos.deps.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\Venta Productos Cosméticos.runtimeconfig.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\Venta Productos Cosméticos.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\Venta Productos Cosméticos.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.Properties.Resources.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormCambioClave.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormInicioSesion.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormPantallaInicio.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormSistema.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.Vista.FormUsuario.resources
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.csproj.GenerateResource.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.AssemblyInfoInputs.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.AssemblyInfo.cs
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.csproj.CoreCompileInputs.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.sourcelink.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\refint\Venta Productos Cosméticos.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.genruntimeconfig.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\ref\Venta Productos Cosméticos.dll
