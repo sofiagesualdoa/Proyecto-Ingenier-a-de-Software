@@ -18,6 +18,7 @@ namespace Venta_Productos_Cosméticos
             public string nombreUsuario { get; set; } 
             public string Rol {  get; set; }
 
+            public int IntentosInicio { get; set; }
             public bool Activo { get; set; }
             public bool Bloqueado { get; set; }
             public bool ValidarPassword(string hashClaveIngresada)

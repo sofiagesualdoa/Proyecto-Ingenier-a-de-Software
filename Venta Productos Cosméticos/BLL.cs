@@ -22,20 +22,15 @@ namespace Venta_Productos_Cosméticos
                     BE.Usuario usuarioActivo = Servicios.SessionManager.GetInstance().ObtenerUsuario();
                     Servicios.Encriptador encriptador = new Servicios.Encriptador();
                     string hashClaveActual = encriptador.Encriptar(claveActual);
-
-
-                    /*
-                    todo: lógica de cambio de clave
                     if (!usuarioActivo.ValidarPassword(hashClaveActual))
                     {
                         throw new Exception("La contraseña actual ingresada es incorrecta.");
                     }
-
                     string hashClaveNueva = encriptador.Encriptar(claveNueva);
                     DAL.DALUsuario dal = new DAL.DALUsuario();
                     dal.GuardarNuevaClave(usuarioActivo.nombreUsuario, hashClaveNueva);
                     usuarioActivo.ActualizarPasswordMemoria(hashClaveNueva);
-                    
+                    /*
                     Servicios.BitacoraEventos bitacora = new Servicios.BitacoraEventos();
                     bitacora.RegistrarEvento($"El usuario {usuarioActivo.nombreUsuario} modificó su contraseña de acceso de forma exitosa. Fecha y Hora: {DateTime.Now}");
                     */
@@ -49,27 +44,65 @@ namespace Venta_Productos_Cosméticos
             {
                 Encriptador encriptador = new Encriptador();
                 string hashIngresado = encriptador.Encriptar(passwordIngresado);
+
                 DALUsuario dal = new DALUsuario();
                 Usuario usuario = dal.ObtenerUsuario(nombreUsuario);
+
+                // 1. Validación de existencia
                 if (usuario == null)
                 {
                     throw new Exception("El nombre de usuario ingresado no existe.");
                 }
+
+                // 2. Validación de Estado de Bloqueo
                 if (usuario.Bloqueado)
                 {
-                    throw new Exception("La cuenta se encuentra bloqueada temporalmente por seguridad.");
+                    throw new Exception("La cuenta se encuentra bloqueada por seguridad. Contacte a un administrador.");
                 }
+
+                // 3. Validación de Estado Activo (Baja Lógica)
                 if (!usuario.Activo)
                 {
                     throw new Exception("El usuario se encuentra dado de baja en el sistema.");
                 }
+
+                // 4. Validación de la Contraseña (Criptografía)
                 if (!usuario.ValidarPassword(hashIngresado))
                 {
+                    // Incrementamos el intento en la base de datos
                     dal.SumarIntentoFallido(nombreUsuario);
+
+                    // bloquear usuario cuando intentos llega a 3
+
+                    // ¡OJO ACÁ! Control defensivo automático de los 3 intentos
+                    // Le sumamos 1 al contador que trajimos para evaluar el estado real en este microsegundo
+                    if ((usuario.IntentosInicio + 1) >= 3)
+                    {
+                        // Bloqueamos físicamente al usuario en la base de datos
+                        dal.DesbloquearUsuario(usuario.DNI);
+
+                        // Registramos el evento crítico de seguridad en la bitácora (BackEnd)
+                        //BitacoraEventos.RegistrarEvento($"Cuenta bloqueada automáticamente por fuerza bruta: {nombreUsuario}", "Alta", nombreUsuario);
+
+                        throw new Exception("La cuenta ha sido bloqueada de forma automática por superar los 3 intentos fallidos.");
+                    }
+
                     throw new Exception("La contraseña ingresada es incorrecta.");
                 }
+
+                // 5. LOGIN EXITOSO - Reseteamos los intentos fallidos a 0 en SQL Server y memoria
+                if (usuario.IntentosInicio > 0)
+                {
+                    // Usamos el método que resetea IntentosInicio a 0 y mantiene Bloqueado = 0
+                    dal.DesbloquearUsuario(usuario.DNI);
+                }
+
+                // 6. Carga de Permisos y Gestión de la Sesión Singleton
                 dal.CargarPermisos(usuario);
                 SessionManager.GetInstance().IniciarSesion(usuario);
+
+                // 7. Auditoría de ingreso (BackEnd - Criticidad Baja)
+                //BitacoraEventos.RegistrarEvento($"Inicio de sesión exitoso en la terminal para el usuario: {nombreUsuario}", "Baja", nombreUsuario);
 
                 return true;
             }

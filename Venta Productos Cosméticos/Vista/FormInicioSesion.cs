@@ -26,28 +26,22 @@ namespace Venta_Productos_Cosméticos
                 return;
             }
 
-            //try
-            //{
-            //    BLLUsuario bll = new BLLUsuario();
-            //    bool loginExitoso = bll.IniciarSesion(txtUsuario.Text, txtContraseña.Text);
+            try
+            {
+                BLLUsuario bll = new BLLUsuario();
+                bool loginExitoso = bll.IniciarSesion(txtUsuario.Text, txtContraseña.Text);
 
-            //    if (loginExitoso)
-            //    {
-
-            //        FormSistema frmMenu = new FormSistema();
-            //        frmMenu.Show();
-            //        this.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
-
-            FormSistema frmMenu = new FormSistema();
-            frmMenu.Show();
-            this.Close();
+                if (loginExitoso)
+                {
+                    FormSistema frmMenu = new FormSistema();
+                    frmMenu.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
