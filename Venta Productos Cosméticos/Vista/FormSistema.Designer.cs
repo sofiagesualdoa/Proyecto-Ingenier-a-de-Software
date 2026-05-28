@@ -117,6 +117,7 @@
             bitácoraEventosToolStripMenuItem.Name = "bitácoraEventosToolStripMenuItem";
             bitácoraEventosToolStripMenuItem.Size = new Size(231, 30);
             bitácoraEventosToolStripMenuItem.Text = "Bitácora Eventos";
+            bitácoraEventosToolStripMenuItem.Click += bitácoraEventosToolStripMenuItem_Click;
             // 
             // backUpToolStripMenuItem
             // 

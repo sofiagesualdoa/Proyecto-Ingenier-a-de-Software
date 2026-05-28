@@ -57,11 +57,77 @@ namespace Venta_Productos_Cosméticos
 
             public List<Usuario> ObtenerUsuarios()
             {
-                return usuarios;
+                usuarios.Clear();
+                string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, Rol 
+                     FROM Usuario;";
+
+                using (SqlConnection conexion = new SqlConnection(cadena))
+                {
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        try
+                        {
+                            conexion.Open();
+                            using (SqlDataReader reader = comando.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    Usuario usr = new Usuario();
+                                    usr.DNI = Convert.ToInt32(reader["DNI"]);
+                                    usr.Nombre = reader["Nombre"].ToString();
+                                    usr.Apellido = reader["Apellido"].ToString();
+                                    usr.nombreUsuario = reader["NombreUsuario"].ToString();
+                                    usr.Bloqueado = Convert.ToBoolean(reader["Bloqueado"]);
+                                    usr.Activo = Convert.ToBoolean(reader["Activo"]);
+                                    usr.Email = reader["Email"].ToString();
+                                    usr.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
+                                    usr.Rol = reader["Rol"].ToString(); 
+                                    usr.SetPassword(reader["Contraseña"].ToString());
+
+                                    usuarios.Add(usr);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Error al recuperar la lista completa de usuarios: " + ex.Message);
+                        }
+                    }
+                }
+                return usuarios; 
             }
 
             public void GuardarUsuario(Usuario usuario)
             {
+                string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, Rol) 
+                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @Rol);";
+
+                using (SqlConnection conexion = new SqlConnection(cadena))
+                {
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.Add("@DNI", SqlDbType.Int).Value = usuario.DNI;
+                        comando.Parameters.Add("@Nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                        comando.Parameters.Add("@Apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+                        comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = usuario.nombreUsuario;
+                        comando.Parameters.Add("@Bloqueado", SqlDbType.Bit).Value = usuario.Bloqueado;
+                        comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuario.Activo;
+                        comando.Parameters.Add("@IntentosInicio", SqlDbType.Int).Value = usuario.IntentosInicio;
+                        comando.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = usuario.Email;
+                        comando.Parameters.Add("@Rol", SqlDbType.VarChar, 50).Value = usuario.Rol;
+                        comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 65).Value = usuario.GetPassword();
+
+                        try
+                        {
+                            conexion.Open();
+                            comando.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Error físico al intentar insertar el nuevo usuario en la base de datos: " + ex.Message);
+                        }
+                    }
+                }
                 usuarios.Add(usuario);
             }
 
@@ -138,6 +204,39 @@ namespace Venta_Productos_Cosméticos
                 {
                     usuarioMemoria.Bloqueado = false;
                     usuarioMemoria.IntentosInicio = 0; 
+                }
+            }
+
+            public void BloquearUsuario(int dni)
+            {
+                string query = @"UPDATE Usuario 
+                     SET Bloqueado = 1 
+                     WHERE DNI = @DNI;";
+
+                using (SqlConnection conexion = new SqlConnection(cadena))
+                {
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.Add("@DNI", SqlDbType.Int).Value = dni;
+                        try
+                        {
+                            conexion.Open();
+                            int filasAfectadas = comando.ExecuteNonQuery();
+                            if (filasAfectadas == 0)
+                            {
+                                throw new Exception("No se encontró ningún usuario con el DNI especificado.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Error físico al intentar bloquear el usuario en SQL Server: " + ex.Message);
+                        }
+                    }
+                }
+                Usuario usuarioMemoria = usuarios.FirstOrDefault(u => u.DNI == dni);
+                if (usuarioMemoria != null)
+                {
+                    usuarioMemoria.Bloqueado = true; 
                 }
             }
 
@@ -239,7 +338,7 @@ namespace Venta_Productos_Cosméticos
                     using (SqlCommand comando = new SqlCommand(query, conexion))
                     {
                         comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
-                        comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 50).Value = hashClaveNueva;
+                        comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 65).Value = hashClaveNueva;
                         try
                         {
                             conexion.Open();
@@ -300,6 +399,85 @@ namespace Venta_Productos_Cosméticos
             public void CargarPermisos(Usuario usuario)
             {
                 // todo: lógica ADO.NET para hacer un SELECT p.nombre FROM Permisos p JOIN UsuarioPermisos up ON p.id = up.idPermiso JOIN Usuarios u ON up.idUsuario = u.id WHERE u.nombreUsuario = @user
+            }
+        }
+
+        public class DALEvento
+        {
+            string cadena = "Data Source=.;Integrated Security=True;Encrypt=True;Trust Server Certificate=True;Initial Catalog=EverGlow;";
+                        
+            public void RegistrarEvento(BE.Evento registro)
+            {
+                string query = @"INSERT INTO Evento (Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI) 
+                                 VALUES (@Login, @Criticidad, @Fecha, @Hora, @NombreEvento, @Modulo, @DNI);";
+
+                using (SqlConnection conexion = new SqlConnection(cadena))
+                {
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.Add("@Login", SqlDbType.VarChar, 50).Value = (object)registro.Login ?? DBNull.Value;
+                        comando.Parameters.Add("@Criticidad", SqlDbType.Int).Value = registro.Criticidad;
+                        comando.Parameters.Add("@Fecha", SqlDbType.Date).Value = registro.Fecha;
+                        comando.Parameters.Add("@Hora", SqlDbType.Time).Value = registro.Hora;
+                        comando.Parameters.Add("@NombreEvento", SqlDbType.VarChar, 50).Value = registro.NombreEvento;
+                        comando.Parameters.Add("@Modulo", SqlDbType.VarChar, 50).Value = registro.Modulo;
+                        comando.Parameters.Add("@DNI", SqlDbType.Int).Value = registro.DNI;
+
+                        try
+                        {
+                            conexion.Open();
+                            comando.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Error físico al escribir en la bitácora: " + ex.Message);
+                        }
+                    }
+                }
+            }
+
+            public List<BE.Evento> ObtenerEventos(DateTime fechaDesde)
+            {
+                List<BE.Evento> lista = new List<BE.Evento>();
+                string query = @"SELECT IdEvento, Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI 
+                                 FROM Evento 
+                                 WHERE Fecha >= @FechaDesde 
+                                 ORDER BY Fecha DESC, Hora DESC;";
+
+                using (SqlConnection conexion = new SqlConnection(cadena))
+                {
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.Add("@FechaDesde", SqlDbType.Date).Value = fechaDesde;
+
+                        try
+                        {
+                            conexion.Open();
+                            using (SqlDataReader reader = comando.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    BE.Evento evt = new BE.Evento();
+                                    evt.IdEvento = Convert.ToInt32(reader["IdEvento"]);
+                                    evt.Login = reader["Login"].ToString();
+                                    evt.Criticidad = Convert.ToInt32(reader["Criticidad"]);
+                                    evt.Fecha = Convert.ToDateTime(reader["Fecha"]);
+                                    evt.Hora = (TimeSpan)reader["Hora"];
+                                    evt.NombreEvento = reader["NombreEvento"].ToString();
+                                    evt.Modulo = reader["Modulo"].ToString();
+                                    evt.DNI = Convert.ToInt32(reader["DNI"]);
+
+                                    lista.Add(evt);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Error en la DAL al recuperar eventos: " + ex.Message);
+                        }
+                    }
+                }
+                return lista;
             }
         }
     }

@@ -21,20 +21,37 @@ namespace Venta_Productos_Cosméticos
             public int IntentosInicio { get; set; }
             public bool Activo { get; set; }
             public bool Bloqueado { get; set; }
-            public bool ValidarPassword(string hashClaveIngresada)
-            {
-                return this.contraseña == hashClaveIngresada;
-            }
-
-            public void ActualizarPasswordMemoria(string hashNuevaClave)
-            {
-                this.contraseña = hashNuevaClave;
-            }
-
             public void SetPassword(string hash)
             {
-                this.contraseña = hash;
+                contraseña = hash.ToUpper().Trim();
             }
+
+            public string GetPassword()
+            {
+                return contraseña;
+            }
+
+            public bool ValidarPassword(string hashIngresado)
+            {
+                return this.contraseña.ToUpper().Trim() == hashIngresado.ToUpper().Trim();
+            }
+
+            public void ActualizarPasswordMemoria(string nuevoHash)
+            {
+                this.contraseña = nuevoHash.ToUpper().Trim();
+            }
+        }
+
+        public class Evento
+        {
+            public int IdEvento { get; set; }
+            public string Login { get; set; }      
+            public int Criticidad { get; set; }    
+            public DateTime Fecha { get; set; }
+            public TimeSpan Hora { get; set; }      
+            public string NombreEvento { get; set; }     
+            public string Modulo { get; set; }      
+            public int DNI { get; set; }           
         }
     }
 }

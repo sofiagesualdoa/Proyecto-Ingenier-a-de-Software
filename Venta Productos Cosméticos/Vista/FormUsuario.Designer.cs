@@ -55,6 +55,7 @@
             textBox1 = new TextBox();
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -68,12 +69,11 @@
             label1.Size = new Size(113, 32);
             label1.TabIndex = 5;
             label1.Text = "Usuarios";
-            label1.Click += label1_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.RosyBrown;
-            button1.Location = new Point(902, 6);
+            button1.Location = new Point(972, 6);
             button1.Name = "button1";
             button1.Size = new Size(113, 57);
             button1.TabIndex = 6;
@@ -84,7 +84,7 @@
             // button2
             // 
             button2.BackColor = Color.RosyBrown;
-            button2.Location = new Point(902, 69);
+            button2.Location = new Point(972, 69);
             button2.Name = "button2";
             button2.Size = new Size(113, 57);
             button2.TabIndex = 7;
@@ -95,7 +95,7 @@
             // button3
             // 
             button3.BackColor = Color.RosyBrown;
-            button3.Location = new Point(902, 132);
+            button3.Location = new Point(972, 132);
             button3.Name = "button3";
             button3.Size = new Size(113, 57);
             button3.TabIndex = 8;
@@ -106,7 +106,7 @@
             // button4
             // 
             button4.BackColor = Color.RosyBrown;
-            button4.Location = new Point(902, 198);
+            button4.Location = new Point(972, 198);
             button4.Name = "button4";
             button4.Size = new Size(113, 57);
             button4.TabIndex = 9;
@@ -117,7 +117,7 @@
             // button5
             // 
             button5.BackColor = Color.RosyBrown;
-            button5.Location = new Point(902, 261);
+            button5.Location = new Point(972, 261);
             button5.Name = "button5";
             button5.Size = new Size(113, 57);
             button5.TabIndex = 10;
@@ -128,7 +128,7 @@
             // button6
             // 
             button6.BackColor = Color.RosyBrown;
-            button6.Location = new Point(902, 324);
+            button6.Location = new Point(972, 324);
             button6.Name = "button6";
             button6.Size = new Size(113, 57);
             button6.TabIndex = 11;
@@ -139,7 +139,7 @@
             // button7
             // 
             button7.BackColor = Color.RosyBrown;
-            button7.Location = new Point(902, 387);
+            button7.Location = new Point(972, 387);
             button7.Name = "button7";
             button7.Size = new Size(113, 57);
             button7.TabIndex = 12;
@@ -152,11 +152,13 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 55);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(884, 150);
+            dataGridView1.Size = new Size(954, 150);
             dataGridView1.TabIndex = 13;
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button8);
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton1);
             groupBox1.Controls.Add(label8);
@@ -310,32 +312,44 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(607, 214);
+            radioButton3.Location = new Point(826, 211);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(56, 19);
             radioButton3.TabIndex = 15;
             radioButton3.TabStop = true;
             radioButton3.Text = "Todos";
             radioButton3.UseVisualStyleBackColor = true;
-            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
+            radioButton3.Click += radioButton3_Click;
             // 
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(683, 214);
+            radioButton4.Location = new Point(902, 211);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(64, 19);
             radioButton4.TabIndex = 16;
             radioButton4.TabStop = true;
             radioButton4.Text = "Activos";
             radioButton4.UseVisualStyleBackColor = true;
+            radioButton4.Click += radioButton4_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.RosyBrown;
+            button8.Location = new Point(413, 134);
+            button8.Name = "button8";
+            button8.Size = new Size(96, 57);
+            button8.TabIndex = 17;
+            button8.Text = "Consultar";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // FormUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(1027, 450);
+            ClientSize = new Size(1097, 450);
             Controls.Add(radioButton4);
             Controls.Add(radioButton3);
             Controls.Add(groupBox1);
@@ -387,5 +401,6 @@
         private RadioButton radioButton1;
         private RadioButton radioButton3;
         private RadioButton radioButton4;
+        private Button button8;
     }
 }

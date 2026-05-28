@@ -22,102 +22,159 @@ namespace Venta_Productos_Cosméticos.Vista
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
-            groupBox1.Text = "Modo Consulta";
-
             comboBox1.Items.Add("Administrador");
             comboBox1.Items.Add("Vendedor");
             comboBox1.Items.Add("Supervisor");
-
             comboBox1.SelectedIndex = 0;
+
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.MultiSelect = false;  
+            dataGridView1.MultiSelect = false;
+            RegresarAModoConsulta();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void RegresarAModoConsulta()
         {
+            modo = "Consulta";
+            groupBox1.Text = "Modo Consulta";
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button8.Enabled = true; //ver si esta bien o no segun la consigna
 
+            LimpiarCampos();
+            HabilitarTextBox();
+
+            BLLUsuario bll = new BLLUsuario();
+            List<Usuario> usuarios = bll.ObtenerUsuarios();
+            MostrarGrilla(usuarios.Where(u => u.Activo).ToList());
+            radioButton4.Checked = true;
+        }
+
+        private void HabilitarTextBox()
+        {
+            textBox1.ReadOnly = false;
+            textBox2.ReadOnly = false;
+            textBox3.ReadOnly = false;
+            textBox4.ReadOnly = false;
+            textBox5.ReadOnly = false;
+            comboBox1.Enabled = true;
+            radioButton1.Enabled = true;
+            radioButton2.Enabled = true;
+        }
+
+        private void LimpiarCampos()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+        }
+
+        private void ActivarModoEdicion()
+        {
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button8.Enabled = false; //ver si esta bien o no segun la consigna
+        }
+
+        private void DeshabilitarTextBox()
+        {
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
+            textBox4.ReadOnly = true;
+            textBox5.ReadOnly = true;
+            comboBox1.Enabled = false;
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             modo = "Añadir";
-
             groupBox1.Text = "Modo Añadir";
-
+            LimpiarCampos();
+            ActivarModoEdicion();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor, seleccione un usuario de la grilla superior para desbloquear.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             modo = "Desbloquear";
-
             groupBox1.Text = "Modo Desbloquear";
-
+            BE.Usuario seleccionado = (BE.Usuario)dataGridView1.CurrentRow.DataBoundItem;
+            textBox1.Text = seleccionado.DNI.ToString();
+            textBox2.Text = seleccionado.Nombre;
+            textBox3.Text = seleccionado.nombreUsuario;
+            textBox4.Text = seleccionado.Apellido;
+            textBox5.Text = seleccionado.Email;
+            comboBox1.Text = seleccionado.Rol;
+            ActivarModoEdicion();
+            DeshabilitarTextBox();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            modo = "Modificar";
-
-            groupBox1.Text = "Modo Modificar";
-
-            if (dataGridView1.CurrentRow != null)
+            if (dataGridView1.CurrentRow == null)
             {
-                textBox1.Text =
-                    dataGridView1.CurrentRow.Cells["DNI"]
-                    .Value.ToString();
+                MessageBox.Show("Por favor, seleccione un usuario de la grilla antes de presionar Modificar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            modo = "Modificar";
+            groupBox1.Text = "Modo Modificar";
+            try
+            {
+                BE.Usuario usuarioSeleccionado = (BE.Usuario)dataGridView1.CurrentRow.DataBoundItem;
 
-                textBox2.Text =
-                    dataGridView1.CurrentRow.Cells["Nombre"]
-                    .Value.ToString();
-
-                textBox3.Text =
-                    dataGridView1.CurrentRow.Cells["nombreUsuario"]
-                    .Value.ToString();
-
-                textBox4.Text =
-                    dataGridView1.CurrentRow.Cells["Apellido"]
-                    .Value.ToString();
-
-                textBox5.Text =
-                    dataGridView1.CurrentRow.Cells["Email"]
-                    .Value.ToString();
-
-                comboBox1.Text =
-                    dataGridView1.CurrentRow.Cells["Rol"]
-                    .Value.ToString();
-
-                bool activo = Convert.ToBoolean(
-                    dataGridView1.CurrentRow.Cells["Activo"].Value);
-
-                if (activo)
+                if (usuarioSeleccionado != null)
                 {
-                    radioButton1.Checked = true;
+                    textBox1.Text = usuarioSeleccionado.DNI.ToString();
+                    textBox2.Text = usuarioSeleccionado.Nombre;
+                    textBox3.Text = usuarioSeleccionado.nombreUsuario;
+                    textBox4.Text = usuarioSeleccionado.Apellido;
+                    textBox5.Text = usuarioSeleccionado.Email;
+                    comboBox1.Text = usuarioSeleccionado.Rol;
+
+                    if (usuarioSeleccionado.Activo) radioButton1.Checked = true;
+                    else radioButton2.Checked = true;
+                    ActivarModoEdicion();
+                    HabilitarTextBox();
+                    textBox1.ReadOnly = true;
                 }
-                else
-                {
-                    radioButton2.Checked = true;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mapear datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            BLLUsuario bll = new BLLUsuario();
             if (modo == "Añadir")
             {
                 try
                 {
-                    BLLUsuario bll = new BLLUsuario();
-
                     Usuario usuario = new Usuario();
-
                     usuario.Nombre = textBox2.Text;
                     usuario.Apellido = textBox4.Text;
                     usuario.Email = textBox5.Text;
                     usuario.DNI = int.Parse(textBox1.Text);
                     usuario.nombreUsuario = textBox3.Text;
                     usuario.Rol = comboBox1.Text;
-
                     if (radioButton1.Checked)
                     {
                         usuario.Activo = true;
@@ -126,11 +183,8 @@ namespace Venta_Productos_Cosméticos.Vista
                     {
                         usuario.Activo = false;
                     }
-
                     bll.CrearUsuario(usuario);
-
                     MostrarGrilla(bll.ObtenerUsuarios());
-
                     MessageBox.Show(
                         "Usuario creado correctamente.",
                         "Éxito",
@@ -150,17 +204,13 @@ namespace Venta_Productos_Cosméticos.Vista
             {
                 try
                 {
-                    BLLUsuario bll = new BLLUsuario();
-
                     Usuario usuario = new Usuario();
-
                     usuario.Nombre = textBox2.Text;
                     usuario.Apellido = textBox4.Text;
                     usuario.Email = textBox5.Text;
                     usuario.DNI = int.Parse(textBox1.Text);
                     usuario.nombreUsuario = textBox3.Text;
                     usuario.Rol = comboBox1.Text;
-
                     if (radioButton1.Checked)
                     {
                         usuario.Activo = true;
@@ -169,9 +219,7 @@ namespace Venta_Productos_Cosméticos.Vista
                     {
                         usuario.Activo = false;
                     }
-
                     bll.ModificarUsuario(usuario);
-
                     MostrarGrilla(bll.ObtenerUsuarios());
 
                     MessageBox.Show(
@@ -191,7 +239,6 @@ namespace Venta_Productos_Cosméticos.Vista
             }
             else if (modo == "Desbloquear")
             {
-
                 try
                 {
                     if (dataGridView1.CurrentRow == null)
@@ -199,13 +246,8 @@ namespace Venta_Productos_Cosméticos.Vista
                         MessageBox.Show("Seleccione un usuario.");
                         return;
                     }
-
                     int dni = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DNI"].Value);
-
-                    BLLUsuario bll = new BLLUsuario();
-
                     bll.DesbloquearUsuario(dni);
-
                     MostrarGrilla(bll.ObtenerUsuarios());
 
                     MessageBox.Show(
@@ -223,14 +265,36 @@ namespace Venta_Productos_Cosméticos.Vista
                         MessageBoxIcon.Error);
                 }
             }
+            else if (modo == "Activar / Desactivar")
+            {
+                if (dataGridView1.CurrentRow != null)
+                {
+                    int DNISeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DNI"].Value);
+                    try
+                    {
+                        if (bll.ModificarEstado(DNISeleccionado))
+                        {
+                            MostrarGrilla(bll.ObtenerUsuarios());
+                            MessageBox.Show("El estado del usuario se actualizó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un usuario de la lista.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            RegresarAModoConsulta();
+            HabilitarTextBox();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
-            modo = "Cancelar";
-
-            groupBox1.Text = "Modo Cancelar";
+            RegresarAModoConsulta();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -242,32 +306,17 @@ namespace Venta_Productos_Cosméticos.Vista
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             modo = "Activar / Desactivar";
-
             groupBox1.Text = "Modo Activar / Desactivar";
-
-            if (dataGridView1.CurrentRow != null)
-            {
-                int DNISeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DNI"].Value);
-                try
-                {
-                    BLLUsuario bll = new BLLUsuario();
-                    if (bll.ModificarEstado(DNISeleccionado))
-                    {
-                        MostrarGrilla(bll.ObtenerUsuarios());
-                        MessageBox.Show("El estado del usuario se actualizó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un usuario de la lista.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            BE.Usuario seleccionado = (BE.Usuario)dataGridView1.CurrentRow.DataBoundItem;
+            textBox1.Text = seleccionado.DNI.ToString();
+            textBox2.Text = seleccionado.Nombre;
+            textBox3.Text = seleccionado.nombreUsuario;
+            textBox4.Text = seleccionado.Apellido;
+            textBox5.Text = seleccionado.Email;
+            comboBox1.Text = seleccionado.Rol;
+            ActivarModoEdicion();
+            DeshabilitarTextBox();
         }
 
         private void MostrarGrilla(Object lista)
@@ -276,18 +325,60 @@ namespace Venta_Productos_Cosméticos.Vista
             dataGridView1.DataSource = lista;
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private void radioButton3_Click(object sender, EventArgs e)
+        {
+            BLLUsuario bll = new BLLUsuario();
+            MostrarGrilla(bll.ObtenerUsuarios());
+        }
+
+        private void radioButton4_Click(object sender, EventArgs e)
         {
             BLLUsuario bll = new BLLUsuario();
             List<Usuario> usuarios = bll.ObtenerUsuarios();
-            if (radioButton3.Checked)
+            MostrarGrilla(usuarios.Where(u => u.Activo).ToList());
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].DataBoundItem is Usuario usuario)
             {
-                MostrarGrilla(usuarios);
+                if (!usuario.Activo)
+                {
+                    e.CellStyle.BackColor = Color.FromArgb(255, 192, 192);
+                    e.CellStyle.SelectionBackColor = Color.Red;
+                }
             }
-            else if (radioButton4.Checked)
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ActivarModoEdicion();
+            BLLUsuario bll = new BLLUsuario();
+            List<Usuario> listaFiltrada = bll.ObtenerUsuarios();
+            if (!string.IsNullOrWhiteSpace(textBox1.Text))
+                listaFiltrada = listaFiltrada.Where(u => u.DNI.ToString().Contains(textBox1.Text)).ToList();
+
+            if (!string.IsNullOrWhiteSpace(textBox2.Text))
+                listaFiltrada = listaFiltrada.Where(u => u.Nombre.ToLower().Contains(textBox2.Text.ToLower())).ToList();
+
+            if (!string.IsNullOrWhiteSpace(textBox4.Text))
+                listaFiltrada = listaFiltrada.Where(u => u.Apellido.ToLower().Contains(textBox4.Text.ToLower())).ToList();
+
+            if (!string.IsNullOrWhiteSpace(textBox5.Text))
+                listaFiltrada = listaFiltrada.Where(u => u.Email.ToLower().Contains(textBox5.Text.ToLower())).ToList();
+
+            if (!string.IsNullOrWhiteSpace(textBox3.Text))
+                listaFiltrada = listaFiltrada.Where(u => u.nombreUsuario.ToLower().Contains(textBox3.Text.ToLower())).ToList();
+
+            if (comboBox1.SelectedIndex != -1)
             {
-                MostrarGrilla(usuarios.Where(u => u.Activo).ToList());
+                string rolSeleccionado = comboBox1.Text;
+                listaFiltrada = listaFiltrada.Where(u => u.Rol == rolSeleccionado).ToList();
             }
+
+            MostrarGrilla(listaFiltrada);
+            radioButton3.Checked = false; 
+            radioButton4.Checked = false;
         }
     }
 }

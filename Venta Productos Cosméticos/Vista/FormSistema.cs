@@ -46,5 +46,13 @@ namespace Venta_Productos_Cosméticos
                 this.Close();
             }
         }
+
+        private void bitácoraEventosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBitacora frmBitacora = new FormBitacora();
+            frmBitacora.MdiParent = this.MdiParent;
+            frmBitacora.Show();
+            this.Close();
+        }
     }
 }

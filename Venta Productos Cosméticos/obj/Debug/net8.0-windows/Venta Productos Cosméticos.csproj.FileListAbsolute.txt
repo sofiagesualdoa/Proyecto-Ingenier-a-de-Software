@@ -85,3 +85,6 @@ C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Soft
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.csproj.AssemblyReference.cache
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Pr.3D7A3C9A.Up2Date
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormBitacora.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto-Ingenier-a-de-Software\Venta Productos Cosméticos\bin\Debug\net8.0-windows\itextsharp.dll
