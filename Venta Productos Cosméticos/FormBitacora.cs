@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using static Venta_Productos_Cosméticos.BLL;
+using Servicios;
+using BLL;
+using DALs;
 
 namespace Venta_Productos_Cosméticos
 {
@@ -55,11 +57,11 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                BLLUsuario bllUsuario = new BLLUsuario();
+                BLLUsuario bll = new BLLUsuario();
                 cmbLogin.Items.Clear();
                 cmbLogin.Items.Add("Todos");
 
-                foreach (var usr in bllUsuario.ObtenerUsuarios())
+                foreach (var usr in bll.ObtenerUsuarios())
                 {
                     if (!cmbLogin.Items.Contains(usr.nombreUsuario))
                     {
@@ -85,8 +87,8 @@ namespace Venta_Productos_Cosméticos
             cmbCriticidad.SelectedIndex = 0;
             dtpFechaInicio.Value = DateTime.Today.AddDays(-3);
             dtpFechaFin.Value = DateTime.Today;
-            Servicios.BitacoraEventos bllBitacora = new Servicios.BitacoraEventos();
-            MostrarGrilla(bllBitacora.ConsultarEventosPorDefecto());
+            BLLEvento bitacora = new BLLEvento();
+            MostrarGrilla(bitacora.ConsultarEventosPorDefecto());
             if (dataGridView1.Rows.Count > 0)
             {
                 dataGridView1.Rows[0].Selected = true;
@@ -104,13 +106,12 @@ namespace Venta_Productos_Cosméticos
         {
             if (dataGridView1.CurrentRow != null)
             {
-                BE.Evento registroSeleccionado = (BE.Evento)dataGridView1.CurrentRow.DataBoundItem;
+                ServicioEvento registroSeleccionado = (ServicioEvento)dataGridView1.CurrentRow.DataBoundItem;
 
                 if (registroSeleccionado != null)
                 {
-                    BLLUsuario bllUsuario = new BLLUsuario();
-                    DAL.DALUsuario dalUser = new DAL.DALUsuario();
-                    BE.Usuario operario = dalUser.BuscarUsuarioPorDniOMail(registroSeleccionado.DNI, "x");
+                    DALUsuario dalUser = new DALUsuario();
+                    ServicioUsuario operario = dalUser.BuscarUsuarioPorDniOMail(registroSeleccionado.DNI, "x");
                     if (operario != null)
                     {
                         txtNombre.Text = operario.Nombre;
@@ -129,9 +130,8 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                Servicios.BitacoraEventos bitacora = new Servicios.BitacoraEventos();
-                DAL.DALEvento dal = new DAL.DALEvento();
-                List<BE.Evento> eventosFiltrados = dal.ObtenerEventos(dtpFechaInicio.Value.Date);
+                DALEvento dal = new DALEvento();
+                List<ServicioEvento> eventosFiltrados = dal.ObtenerEventos(dtpFechaInicio.Value.Date);
                 eventosFiltrados = eventosFiltrados.Where(evt => evt.Fecha.Date <= dtpFechaFin.Value.Date).ToList();
                 if (cmbLogin.Text != "Todos" && cmbLogin.SelectedIndex != -1)
                     eventosFiltrados = eventosFiltrados.Where(evt => evt.Login == cmbLogin.Text).ToList();
@@ -218,11 +218,10 @@ namespace Venta_Productos_Cosméticos
 
                         foreach (DataGridViewRow fila in dataGridView1.Rows)
                         {
-                            BE.Evento registro = (BE.Evento)fila.DataBoundItem;
+                            ServicioEvento registro = (ServicioEvento)fila.DataBoundItem;
 
                             if (registro != null)
                             {
-                                // Agregamos celda por celda extrayendo las propiedades del objeto BE
                                 tablaPdf.AddCell(new PdfPCell(new Phrase(registro.IdEvento.ToString(), fuenteCuerpoTabla)) { HorizontalAlignment = Element.ALIGN_CENTER, Padding = 4f });
                                 tablaPdf.AddCell(new PdfPCell(new Phrase($"{registro.Fecha:dd/MM/yyyy} {registro.Hora}", fuenteCuerpoTabla)) { HorizontalAlignment = Element.ALIGN_CENTER });
                                 tablaPdf.AddCell(new PdfPCell(new Phrase(registro.Login ?? "SISTEMA", fuenteCuerpoTabla)) { PaddingLeft = 5f });

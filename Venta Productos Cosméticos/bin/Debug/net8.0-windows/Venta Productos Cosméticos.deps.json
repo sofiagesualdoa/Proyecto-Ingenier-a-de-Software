@@ -8,7 +8,10 @@
     ".NETCoreApp,Version=v8.0": {
       "Venta Productos Cosméticos/1.0.0": {
         "dependencies": {
+          "BE": "1.0.0",
+          "BLL": "1.0.0",
           "Microsoft.Data.SqlClient": "7.0.1",
+          "Servicios": "1.0.0",
           "iTextSharp": "5.5.13.5"
         },
         "runtime": {
@@ -349,7 +352,52 @@
           }
         }
       },
-      "System.Security.Cryptography.ProtectedData/8.0.0": {}
+      "System.Security.Cryptography.ProtectedData/8.0.0": {},
+      "BE/1.0.0": {
+        "runtime": {
+          "BE.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BLL/1.0.0": {
+        "dependencies": {
+          "BE": "1.0.0",
+          "DAL": "1.0.0",
+          "Servicios": "1.0.0"
+        },
+        "runtime": {
+          "BLL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DAL/1.0.0": {
+        "dependencies": {
+          "BE": "1.0.0",
+          "Microsoft.Data.SqlClient": "7.0.1",
+          "Servicios": "1.0.0"
+        },
+        "runtime": {
+          "DAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Servicios/1.0.0": {
+        "dependencies": {
+          "BE": "1.0.0"
+        },
+        "runtime": {
+          "Servicios.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -532,6 +580,26 @@
       "sha512": "sha512-+TUFINV2q2ifyXauQXRwy4CiBhqvDEDZeVJU7qfxya4aRYOKzVBpN+4acx25VcPB9ywUN6C0n8drWl110PhZEg==",
       "path": "system.security.cryptography.protecteddata/8.0.0",
       "hashPath": "system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+    },
+    "BE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Servicios/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

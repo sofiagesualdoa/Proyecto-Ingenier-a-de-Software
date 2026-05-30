@@ -3,56 +3,47 @@
   "WorkspaceRootPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\servicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:servicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\be.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:be.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\vista\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\vista\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\vista\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\vista\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\vista\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\vista\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\vista\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:vista\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\BLL\\BLLUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,174 +53,135 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BLL.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\BLL.cs",
-              "RelativeDocumentMoniker": "BLL.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\BLL.cs",
-              "RelativeToolTip": "BLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T22:30:27.466Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BE.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\BE.cs",
-              "RelativeDocumentMoniker": "BE.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\BE.cs",
-              "RelativeToolTip": "BE.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwBgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T22:30:36.287Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DAL.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\DAL.cs",
-              "RelativeDocumentMoniker": "DAL.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\DAL.cs",
-              "RelativeToolTip": "DAL.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAvwHUAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T22:30:57.573Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "FormUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormUsuario.cs",
-              "RelativeDocumentMoniker": "Vista\\FormUsuario.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormUsuario.cs",
-              "RelativeToolTip": "Vista\\FormUsuario.cs",
-              "ViewState": "AgIAADMBAAAAAAAAAAAswEEBAAAIAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
+              "RelativeDocumentMoniker": "FormUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
+              "RelativeToolTip": "FormUsuario.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAASwDcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T18:05:12.38Z",
+              "WhenOpened": "2026-05-30T13:17:18.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormBitacora.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
-              "RelativeDocumentMoniker": "FormBitacora.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormBitacora.cs [Dise\u00F1o]",
+              "DocumentIndex": 10,
+              "Title": "BLLUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\BLL\\BLLUsuario.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\BLL\\BLLUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\BLL\\BLLUsuario.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\BLL\\BLLUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T14:35:26.837Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormSistema.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormSistema.cs",
-              "RelativeDocumentMoniker": "Vista\\FormSistema.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormSistema.cs",
-              "RelativeToolTip": "Vista\\FormSistema.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAYwDUAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T14:33:55.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Servicios.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Servicios.cs",
-              "RelativeDocumentMoniker": "Servicios.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Servicios.cs",
-              "RelativeToolTip": "Servicios.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAACwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T15:06:34.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-30T13:14:28.561Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "FormCambioClave.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
+              "RelativeDocumentMoniker": "FormCambioClave.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
+              "RelativeToolTip": "FormCambioClave.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIA6wBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:11:11.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormBitacora.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
+              "RelativeDocumentMoniker": "FormBitacora.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:31.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FormBitacora.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
               "RelativeDocumentMoniker": "FormBitacora.cs",
               "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
               "RelativeToolTip": "FormBitacora.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAAOUAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAawKkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T14:39:31.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-30T13:11:33.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "FormInicioSesion.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormInicioSesion.cs",
-              "RelativeDocumentMoniker": "Vista\\FormInicioSesion.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormInicioSesion.cs",
-              "RelativeToolTip": "Vista\\FormInicioSesion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FormUsuario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
+              "RelativeDocumentMoniker": "FormUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:20:29.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-30T13:10:46.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormCambioClave.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
+              "RelativeDocumentMoniker": "FormCambioClave.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:27.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormSistema.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
+              "RelativeDocumentMoniker": "FormSistema.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:56.596Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "FormCambioClave.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormCambioClave.cs",
-              "RelativeDocumentMoniker": "Vista\\FormCambioClave.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormCambioClave.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Vista\\FormCambioClave.cs [Dise\u00F1o]",
+              "Title": "FormInicioSesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
+              "RelativeDocumentMoniker": "FormInicioSesion.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:31:52.056Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-30T13:10:58.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormInicioSesion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormInicioSesion.cs",
-              "RelativeDocumentMoniker": "Vista\\FormInicioSesion.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormInicioSesion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Vista\\FormInicioSesion.cs [Dise\u00F1o]",
+              "DocumentIndex": 8,
+              "Title": "FormPantallaInicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
+              "RelativeDocumentMoniker": "FormPantallaInicio.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:58:53.579Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-30T13:10:57.881Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "FormSistema.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormSistema.cs",
-              "RelativeDocumentMoniker": "Vista\\FormSistema.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormSistema.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Vista\\FormSistema.cs [Dise\u00F1o]",
+              "Title": "FormPantallaInicio.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
+              "RelativeDocumentMoniker": "FormPantallaInicio.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
+              "RelativeToolTip": "FormPantallaInicio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T20:29:26.771Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FormPantallaInicio.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormPantallaInicio.cs",
-              "RelativeDocumentMoniker": "Vista\\FormPantallaInicio.cs",
-              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\Vista\\FormPantallaInicio.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Vista\\FormPantallaInicio.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T19:12:06.392Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-30T12:54:57.59Z"
             }
           ]
         }

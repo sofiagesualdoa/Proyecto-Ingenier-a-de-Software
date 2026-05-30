@@ -1,0 +1,6 @@
+C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\BE\bin\Debug\BE.dll
+C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\BE\bin\Debug\BE.pdb
+C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\BE\obj\Debug\BE.dll
+C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\BE\obj\Debug\BE.pdb
