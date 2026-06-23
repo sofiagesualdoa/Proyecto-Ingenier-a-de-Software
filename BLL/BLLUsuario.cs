@@ -79,6 +79,10 @@ namespace BLL
             {
                 dal.DesbloquearUsuario(usuario.DNI);
             }
+
+            BLLPerfil bllPerfil = new BLLPerfil();
+            usuario.PerfilUsuario = bllPerfil.CargarPerfilUsuario(usuario.IdPerfil);
+
             ServicioSessionManager.GetInstance().IniciarSesion(usuario);
             bitacora.GrabarBitacora("Login", "Usuario", 1);
             return true;

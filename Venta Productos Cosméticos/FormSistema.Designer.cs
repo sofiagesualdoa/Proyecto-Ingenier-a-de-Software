@@ -33,6 +33,7 @@
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             cambiarClaveToolStripMenuItem = new ToolStripMenuItem();
             cambiarIdiomaToolStripMenuItem = new ToolStripMenuItem();
+            reLoginToolStripMenuItem = new ToolStripMenuItem();
             administraciónToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
             perfilesToolStripMenuItem = new ToolStripMenuItem();
@@ -73,15 +74,17 @@
             // 
             // usuarioToolStripMenuItem
             // 
-            usuarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cambiarClaveToolStripMenuItem, cambiarIdiomaToolStripMenuItem });
+            usuarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cambiarClaveToolStripMenuItem, cambiarIdiomaToolStripMenuItem, reLoginToolStripMenuItem });
             usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             usuarioToolStripMenuItem.Size = new Size(93, 29);
+            usuarioToolStripMenuItem.Tag = "";
             usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // cambiarClaveToolStripMenuItem
             // 
             cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
             cambiarClaveToolStripMenuItem.Size = new Size(225, 30);
+            cambiarClaveToolStripMenuItem.Tag = "Cambiar Clave";
             cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
             cambiarClaveToolStripMenuItem.Click += cambiarClaveToolStripMenuItem_Click;
             // 
@@ -89,7 +92,16 @@
             // 
             cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
             cambiarIdiomaToolStripMenuItem.Size = new Size(225, 30);
+            cambiarIdiomaToolStripMenuItem.Tag = "Cambiar Idioma";
             cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            // 
+            // reLoginToolStripMenuItem
+            // 
+            reLoginToolStripMenuItem.Name = "reLoginToolStripMenuItem";
+            reLoginToolStripMenuItem.Size = new Size(225, 30);
+            reLoginToolStripMenuItem.Tag = "ReLogin";
+            reLoginToolStripMenuItem.Text = "ReLogin";
+            reLoginToolStripMenuItem.Click += reLoginToolStripMenuItem_Click;
             // 
             // administraciónToolStripMenuItem
             // 
@@ -102,6 +114,7 @@
             // 
             usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             usuariosToolStripMenuItem.Size = new Size(231, 30);
+            usuariosToolStripMenuItem.Tag = "Gestionar Usuarios";
             usuariosToolStripMenuItem.Text = "Usuarios";
             usuariosToolStripMenuItem.Click += usuariosToolStripMenuItem_Click;
             // 
@@ -109,12 +122,14 @@
             // 
             perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
             perfilesToolStripMenuItem.Size = new Size(231, 30);
+            perfilesToolStripMenuItem.Tag = "Gestionar Perfiles";
             perfilesToolStripMenuItem.Text = "Perfiles";
             // 
             // bitácoraEventosToolStripMenuItem
             // 
             bitácoraEventosToolStripMenuItem.Name = "bitácoraEventosToolStripMenuItem";
             bitácoraEventosToolStripMenuItem.Size = new Size(231, 30);
+            bitácoraEventosToolStripMenuItem.Tag = "Auditar Bitacora";
             bitácoraEventosToolStripMenuItem.Text = "Bitácora Eventos";
             bitácoraEventosToolStripMenuItem.Click += bitácoraEventosToolStripMenuItem_Click;
             // 
@@ -122,12 +137,14 @@
             // 
             backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
             backUpToolStripMenuItem.Size = new Size(231, 30);
+            backUpToolStripMenuItem.Tag = "Gestionar Backup";
             backUpToolStripMenuItem.Text = "BackUp";
             // 
             // restoreToolStripMenuItem
             // 
             restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
             restoreToolStripMenuItem.Size = new Size(231, 30);
+            restoreToolStripMenuItem.Tag = "Gestionar Restore";
             restoreToolStripMenuItem.Text = "Restore";
             // 
             // ventasToolStripMenuItem
@@ -141,12 +158,14 @@
             // 
             nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
             nuevaVentaToolStripMenuItem.Size = new Size(223, 30);
+            nuevaVentaToolStripMenuItem.Tag = "Registrar Venta";
             nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             // 
             // historialVentasToolStripMenuItem
             // 
             historialVentasToolStripMenuItem.Name = "historialVentasToolStripMenuItem";
             historialVentasToolStripMenuItem.Size = new Size(223, 30);
+            historialVentasToolStripMenuItem.Tag = "Ver Historial Ventas";
             historialVentasToolStripMenuItem.Text = "Historial Ventas";
             // 
             // inventarioToolStripMenuItem
@@ -160,18 +179,21 @@
             // 
             productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             productosToolStripMenuItem.Size = new Size(196, 30);
+            productosToolStripMenuItem.Tag = "Gestionar Productos";
             productosToolStripMenuItem.Text = "Productos";
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.Size = new Size(196, 30);
+            clientesToolStripMenuItem.Tag = "Gestionar Clientes";
             clientesToolStripMenuItem.Text = "Clientes";
             // 
             // proveedoresToolStripMenuItem
             // 
             proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             proveedoresToolStripMenuItem.Size = new Size(196, 30);
+            proveedoresToolStripMenuItem.Tag = "Gestionar Proveedores";
             proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // reportesToolStripMenuItem
@@ -185,18 +207,21 @@
             // 
             productosMásVendidosToolStripMenuItem.Name = "productosMásVendidosToolStripMenuItem";
             productosMásVendidosToolStripMenuItem.Size = new Size(329, 30);
+            productosMásVendidosToolStripMenuItem.Tag = "Reporte Mas Vendidos";
             productosMásVendidosToolStripMenuItem.Text = "Productos Más Vendidos";
             // 
             // productosMenosVendidosToolStripMenuItem
             // 
             productosMenosVendidosToolStripMenuItem.Name = "productosMenosVendidosToolStripMenuItem";
             productosMenosVendidosToolStripMenuItem.Size = new Size(329, 30);
+            productosMenosVendidosToolStripMenuItem.Tag = "Reporte Menos Vendidos";
             productosMenosVendidosToolStripMenuItem.Text = "Productos Menos Vendidos";
             // 
             // productosConBajoStockToolStripMenuItem
             // 
             productosConBajoStockToolStripMenuItem.Name = "productosConBajoStockToolStripMenuItem";
             productosConBajoStockToolStripMenuItem.Size = new Size(329, 30);
+            productosConBajoStockToolStripMenuItem.Tag = "Reporte Bajo Stock";
             productosConBajoStockToolStripMenuItem.Text = "Productos con Bajo Stock";
             // 
             // centroDeAyudaToolStripMenuItem
@@ -210,18 +235,21 @@
             // 
             manualDeUsuarioToolStripMenuItem.Name = "manualDeUsuarioToolStripMenuItem";
             manualDeUsuarioToolStripMenuItem.Size = new Size(402, 30);
+            manualDeUsuarioToolStripMenuItem.Tag = "Ver Manual Usuario";
             manualDeUsuarioToolStripMenuItem.Text = "Manual de Usuario";
             // 
             // guíaDeInstalaciónArchivoLeémeToolStripMenuItem
             // 
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Name = "guíaDeInstalaciónArchivoLeémeToolStripMenuItem";
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Size = new Size(402, 30);
+            guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Tag = "Ver Guia Instalacion";
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Text = "Guía de Instalación (Archivo Leéme)";
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             cerrarSesiónToolStripMenuItem.Size = new Size(143, 29);
+            cerrarSesiónToolStripMenuItem.Tag = "Cerrar Sesion";
             cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             cerrarSesiónToolStripMenuItem.Click += cerrarSesiónToolStripMenuItem_Click;
             // 
@@ -258,6 +286,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FormSistema";
             Text = "Sistema de Venta de Productos Cosméticos";
+            Load += FormSistema_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -294,5 +323,6 @@
         private ToolStripMenuItem proveedoresToolStripMenuItem;
         private Label label1;
         private PictureBox pictureBox1;
+        private ToolStripMenuItem reLoginToolStripMenuItem;
     }
 }

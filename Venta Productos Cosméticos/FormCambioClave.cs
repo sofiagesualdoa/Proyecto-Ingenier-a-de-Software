@@ -42,8 +42,11 @@ namespace Venta_Productos_Cosméticos
                 BLLUsuario bll = new BLLUsuario();
                 bll.ModificarClave(txtClaveActual.Text, txtClaveNueva.Text);
                 MessageBox.Show("Contraseña modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormSistema frmMenu = new FormSistema();
-                frmMenu.Show();
+
+                bll.CerrarSesion();
+
+                FormInicioSesion frmInicioSesion = new FormInicioSesion();
+                frmInicioSesion.Show();
                 this.Close();
             }
             catch (Exception ex)

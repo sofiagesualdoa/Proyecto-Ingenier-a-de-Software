@@ -50,5 +50,68 @@ namespace Venta_Productos_Cosméticos
             frmBitacora.Show();
             this.Close();
         }
+
+        private void reLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormInicioSesion frmLogin = new FormInicioSesion();
+            frmLogin.MdiParent = this.MdiParent;
+            frmLogin.Show();
+            this.Close();
+        }
+
+        private void FormSistema_Load(object sender, EventArgs e)
+        {
+            BLLPerfil bllPerfil = new BLLPerfil();
+
+            ServicioUsuario usuarioLogueado = ServicioSessionManager.GetInstance().ObtenerUsuario();
+
+            if (usuarioLogueado != null)
+            {
+                ConfigurarPermisosControl(this.Controls, bllPerfil, usuarioLogueado);
+            }
+            else
+            {
+                MessageBox.Show("No se detectó una sesión activa. El sistema se cerrará.", "Error de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
+
+        private void ConfigurarPermisosControl(Control.ControlCollection controles, BLLPerfil bllPerfil, ServicioUsuario usuario)
+        {
+            foreach (Control c in controles)
+            {
+                if (c.Tag != null && !string.IsNullOrEmpty(c.Tag.ToString()))
+                {
+                    string permisoRequerido = c.Tag.ToString();
+                    c.Visible = bllPerfil.TienePermiso(usuario, permisoRequerido);
+                }
+
+                if (c.HasChildren)
+                {
+                    ConfigurarPermisosControl(c.Controls, bllPerfil, usuario);
+                }
+
+                if (c is MenuStrip menuStrip)
+                {
+                    ConfigurarPermisosMenu(menuStrip.Items, bllPerfil, usuario);
+                }
+            }
+        }
+
+        private void ConfigurarPermisosMenu(ToolStripItemCollection items, BLLPerfil bllPerfil, ServicioUsuario usuario)
+        {
+            foreach (ToolStripItem item in items)
+            {
+                if (item.Tag != null && !string.IsNullOrEmpty(item.Tag.ToString()))
+                {
+                    item.Visible = bllPerfil.TienePermiso(usuario, item.Tag.ToString());
+                }
+
+                if (item is ToolStripMenuItem menuItem && menuItem.HasDropDownItems)
+                {
+                    ConfigurarPermisosMenu(menuItem.DropDownItems, bllPerfil, usuario);
+                }
+            }
+        }
     }
 }
