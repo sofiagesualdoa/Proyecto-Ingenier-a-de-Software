@@ -15,3 +15,21 @@ C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ing
 C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\DAL\obj\Debug\net8.0-windows\refint\DAL.dll
 C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\DAL\obj\Debug\net8.0-windows\DAL.pdb
 C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\DAL\obj\Debug\net8.0-windows\ref\DAL.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\DAL.deps.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\DAL.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\DAL.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\BE.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\Servicios.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\BE.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\Servicios.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.csproj.AssemblyReference.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.AssemblyInfoInputs.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.AssemblyInfo.cs
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.sourcelink.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.csproj.Up2Date
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\refint\DAL.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\DAL.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\obj\Debug\net8.0-windows\ref\DAL.dll

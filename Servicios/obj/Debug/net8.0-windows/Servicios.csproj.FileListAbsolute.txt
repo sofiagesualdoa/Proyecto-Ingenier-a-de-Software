@@ -13,3 +13,19 @@ C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ing
 C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\Servicios\obj\Debug\net8.0-windows\refint\Servicios.dll
 C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\Servicios\obj\Debug\net8.0-windows\Servicios.pdb
 C:\Users\usuario\Downloads\Proyecto-Ingenier-a-de-Software-proyecto\Proyecto-Ingenier-a-de-Software-proyecto\Servicios\obj\Debug\net8.0-windows\ref\Servicios.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\bin\Debug\net8.0-windows\Servicios.deps.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\bin\Debug\net8.0-windows\Servicios.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\bin\Debug\net8.0-windows\Servicios.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\bin\Debug\net8.0-windows\BE.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\bin\Debug\net8.0-windows\BE.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.csproj.AssemblyReference.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.AssemblyInfoInputs.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.AssemblyInfo.cs
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.sourcelink.json
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.csproj.Up2Date
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\refint\Servicios.dll
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\Servicios.pdb
+C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\Servicios\obj\Debug\net8.0-windows\ref\Servicios.dll
