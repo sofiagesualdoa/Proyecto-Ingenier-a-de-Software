@@ -124,6 +124,7 @@
             perfilesToolStripMenuItem.Size = new Size(231, 30);
             perfilesToolStripMenuItem.Tag = "Gestionar Perfiles";
             perfilesToolStripMenuItem.Text = "Perfiles";
+            perfilesToolStripMenuItem.Click += perfilesToolStripMenuItem_Click;
             // 
             // bitácoraEventosToolStripMenuItem
             // 

@@ -188,5 +188,260 @@ namespace DAL
             }
             return lista;
         }
+
+        public int GuardarPerfil(ServicioPerfil perfil)
+        {
+            int idGenerado = 0;
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "INSERT INTO Perfil (Nombre) VALUES (@Nombre); SELECT SCOPE_IDENTITY();";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Nombre", perfil.Nombre);
+
+                try
+                {
+                    con.Open();
+                    idGenerado = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error físico al guardar el perfil en la base de datos: " + ex.Message);
+                }
+            }
+            return idGenerado;
+        }
+
+        public void GuardarRelacionesPerfil(int idPerfilPadre, List<ServicioPerfil> hijos)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                con.Open();
+                foreach (var hijo in hijos)
+                {
+                    string query = "";
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+
+                    if (hijo is ServicioPermiso)
+                    {
+                        query = "INSERT INTO Perfil_x_Permiso (IdPerfil, IdPermiso) VALUES (@idPadre, @idHijo)";
+                        cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil); 
+                    }
+                    else if (hijo is ServicioFamilia)
+                    {
+                        query = "INSERT INTO Perfil_x_Familia (IdPerfil, IdFamilia) VALUES (@idPadre, @idHijo)";
+                        cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
+                    }
+
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@idPadre", idPerfilPadre);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }        
+
+        public bool PerfilEstaAsignadoAUsuario(int idPerfil)
+        {
+            bool estaAsignado = false;
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "SELECT COUNT(1) FROM Usuario WHERE IdPerfil = @idPerfil";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idPerfil", idPerfil);
+                try
+                {
+                    con.Open();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    estaAsignado = count > 0;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al verificar asignación del perfil: " + ex.Message);
+                }
+            }
+            return estaAsignado;
+        }
+
+        public void EliminarPerfil(int idPerfil)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                con.Open();
+                using (SqlTransaction tran = con.BeginTransaction())
+                {
+                    try
+                    {
+                        string query1 = "DELETE FROM Perfil_x_Permiso WHERE IdPerfil = @id";
+                        SqlCommand cmd1 = new SqlCommand(query1, con, tran);
+                        cmd1.Parameters.AddWithValue("@id", idPerfil);
+                        cmd1.ExecuteNonQuery();
+                        string query2 = "DELETE FROM Perfil_x_Familia WHERE IdPerfil = @id";
+                        SqlCommand cmd2 = new SqlCommand(query2, con, tran);
+                        cmd2.Parameters.AddWithValue("@id", idPerfil);
+                        cmd2.ExecuteNonQuery();
+                        string query3 = "DELETE FROM Perfil WHERE IdPerfil = @id";
+                        SqlCommand cmd3 = new SqlCommand(query3, con, tran);
+                        cmd3.Parameters.AddWithValue("@id", idPerfil);
+                        cmd3.ExecuteNonQuery();
+
+                        tran.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        throw new Exception("Error al eliminar físicamente el perfil: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        public List<int> ObtenerPerfilesQueQuedarianVaciosPorFamilia(int idFamiliaAEliminar)
+        {
+            List<int> perfilesAfectados = new List<int>();
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = @"
+            SELECT pxf.IdPerfil 
+            FROM Perfil_x_Familia pxf
+            WHERE pxf.IdFamilia = @idFamilia
+              AND (
+                  (SELECT COUNT(1) FROM Perfil_x_Permiso WHERE IdPerfil = pxf.IdPerfil) +
+                  (SELECT COUNT(1) FROM Perfil_x_Familia WHERE IdPerfil = pxf.IdPerfil)
+              ) <= 1"; 
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idFamilia", idFamiliaAEliminar);
+                try
+                {
+                    con.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            perfilesAfectados.Add(Convert.ToInt32(reader["IdPerfil"]));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al verificar la integridad de componentes del perfil: " + ex.Message);
+                }
+            }
+            return perfilesAfectados;
+        }
+
+        public void AgregarRelacionPerfilPermiso(int idPerfilPadre, ServicioPerfil hijo)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "";
+                if (hijo is ServicioPermiso)
+                {
+                    query = "INSERT INTO Perfil_x_Permiso (IdPerfil, IdPermiso) VALUES (@idPadre, @idHijo)";
+                }
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idPadre", idPerfilPadre);
+                cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil); 
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error físico al asociar el componente al perfil: " + ex.Message);
+                }
+            }
+        }
+        public void QuitarRelacionPerfilPermiso(int idPerfilPadre, ServicioPerfil hijo)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "";
+                if (hijo is ServicioPermiso)
+                {
+                    query = "DELETE FROM Perfil_x_Permiso WHERE IdPerfil = @idPadre AND IdPermiso = @idHijo";
+                }
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idPadre", idPerfilPadre);
+                cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
+
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error físico al quitar el componente del perfil: " + ex.Message);
+                }
+            }
+        }
+
+        public int ObtenerCantidadHijosPerfil(int idPerfil)
+        {
+            int totalHijos = 0;
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = @"
+            SELECT 
+                (SELECT COUNT(1) FROM Perfil_x_Permiso WHERE IdPerfil = @id) + 
+                (SELECT COUNT(1) FROM Perfil_x_Familia WHERE IdPerfil = @id)";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", idPerfil);
+
+                try
+                {
+                    con.Open();
+                    totalHijos = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al contar los componentes del perfil: " + ex.Message);
+                }
+            }
+            return totalHijos;
+        }
+
+        public void AgregarRelacionPerfilFamilia(int idPerfilPadre, ServicioFamilia hijo)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "INSERT INTO Perfil_x_Familia (IdPerfil, IdFamilia) VALUES (@idPadre, @idHijo)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idPadre", idPerfilPadre);
+                cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error físico al asociar la familia al perfil: " + ex.Message);
+                }
+            }
+        }
+
+        public void QuitarRelacionPerfilFamilia(int idPerfilPadre, ServicioFamilia hijo)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "DELETE FROM Perfil_x_Familia WHERE IdPerfil = @idPadre AND IdFamilia = @idHijo";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idPadre", idPerfilPadre);
+                cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error físico al quitar la familia del perfil: " + ex.Message);
+                }
+            }
+        }
     }
 }

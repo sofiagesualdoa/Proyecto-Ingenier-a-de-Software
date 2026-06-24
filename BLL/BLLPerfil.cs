@@ -33,5 +33,124 @@ namespace BLL
 
             return encontrado != null;
         }
+
+        public void CrearPerfil(string nombrePerfil, List<ServicioPerfil> componentesSeleccionados)
+        {
+            if (string.IsNullOrWhiteSpace(nombrePerfil))
+                throw new Exception("El nombre del perfil no puede estar vacío.");
+
+            if (componentesSeleccionados == null || componentesSeleccionados.Count == 0)
+                throw new Exception("No se puede crear un perfil vacío. Debe seleccionar al menos un permiso o familia.");
+
+            ServicioFamilia nuevoPerfil = new ServicioFamilia(0, nombrePerfil.Trim());
+            int idAsignado = dalPerfil.GuardarPerfil(nuevoPerfil);
+            dalPerfil.GuardarRelacionesPerfil(idAsignado, componentesSeleccionados);
+            BLLEvento bitacora = new BLLEvento();
+            bitacora.GrabarBitacora("Creación de nuevo Perfil", "Perfiles", 1);
+        }
+
+        public void EliminarPerfil(int idPerfil, string nombrePerfil)
+        {
+            if (dalPerfil.PerfilEstaAsignadoAUsuario(idPerfil))
+            {
+                throw new Exception($"El perfil '{nombrePerfil}' no se puede eliminar porque está asignado actualmente a uno o más usuarios.");
+            }
+            dalPerfil.EliminarPerfil(idPerfil);
+            BLLEvento bitacora = new BLLEvento();
+            bitacora.GrabarBitacora("Eliminación de Perfil", "Perfiles", 1);
+        }
+
+        public void AgregarPermisoAPerfil(int idPerfilPadre, string nombrePerfil, ServicioPerfil hijo)
+        {
+            if (hijo == null) throw new Exception("Debe seleccionar un componente válido para agregar.");
+
+            ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
+            if (perfilCompleto != null)
+            {
+                ServicioPerfil encontrado = perfilCompleto.Buscar(hijo.Nombre);
+                if (encontrado != null && encontrado is ServicioPermiso)
+                {
+                    throw new Exception($"El perfil '{nombrePerfil}' ya posee el componente '{hijo.Nombre}' de forma directa o heredada a través de una familia.");
+                }
+            }
+            dalPerfil.AgregarRelacionPerfilPermiso(idPerfilPadre, hijo);
+            BLLEvento bitacora = new BLLEvento();
+            bitacora.GrabarBitacora("Modificación Perfil", "Perfiles", 1);
+        }
+
+        public void QuitarPermisoDePerfil(int idPerfilPadre, string nombrePerfil, ServicioPerfil hijo)
+        {
+            if (hijo == null) throw new Exception("Debe seleccionar un componente válido para quitar.");
+
+            ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
+            if (perfilCompleto == null || perfilCompleto.Hijos == null || !perfilCompleto.Hijos.Any(h => h.IdPerfil == hijo.IdPerfil && h.GetType() == hijo.GetType()))
+            {
+                throw new Exception($"El perfil '{nombrePerfil}' no tiene asignado directamente el componente '{hijo.Nombre}', por lo que no puede ser removido.");
+            }
+
+            ValidarQueNoQuedeVacio(idPerfilPadre, nombrePerfil);
+            dalPerfil.QuitarRelacionPerfilPermiso(idPerfilPadre, hijo);
+            BLLEvento bitacora = new BLLEvento();
+            bitacora.GrabarBitacora($"Modificación Perfil", "Perfiles", 1);
+        }
+
+        public void ValidarQueNoQuedeVacio(int idPerfil, string nombrePerfil)
+        {
+            int cantidadComponentes = dalPerfil.ObtenerCantidadHijosPerfil(idPerfil);
+            if (cantidadComponentes <= 1)
+            {
+                throw new Exception($"Operación denegada. El perfil '{nombrePerfil}' no puede quedarse vacío. Debe conservar al menos un permiso o familia asignado en su raíz.");
+            }
+        }
+
+        public void AgregarFamiliaAPerfil(int idPerfilPadre, string nombrePerfil, ServicioFamilia familiaHijo)
+        {
+            if (familiaHijo == null) throw new Exception("Debe seleccionar una familia válida para agregar.");
+
+            ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
+            if (perfilCompleto != null)
+            {
+                if (perfilCompleto.Hijos != null && perfilCompleto.Hijos.Any(h => h.IdPerfil == familiaHijo.IdPerfil && h is ServicioFamilia))
+                {
+                    throw new Exception($"El perfil '{nombrePerfil}' ya posee la familia '{familiaHijo.Nombre}' asignada directamente.");
+                }
+
+                BLLFamilia bllFamilia = new BLLFamilia();
+                List<ServicioFamilia> todasLasFamilias = bllFamilia.ObtenerFamilias();
+                ServicioFamilia familiaHijoCompleta = todasLasFamilias.FirstOrDefault(f => f.IdPerfil == familiaHijo.IdPerfil);
+
+                if (familiaHijoCompleta != null && familiaHijoCompleta.Hijos != null)
+                {
+                    foreach (var componenteHijo in familiaHijoCompleta.Hijos)
+                    {
+                        ServicioPerfil componenteDuplicado = perfilCompleto.Buscar(componenteHijo.Nombre);
+                        if (componenteDuplicado != null && componenteDuplicado is ServicioPermiso)
+                        {
+                            throw new Exception($"No se puede agregar la familia '{familiaHijo.Nombre}' because contiene el permiso '{componenteHijo.Nombre}', el cual ya existe en el perfil '{nombrePerfil}'.");
+                        }
+                    }
+                }
+            }
+
+            dalPerfil.AgregarRelacionPerfilFamilia(idPerfilPadre, familiaHijo);
+            BLLEvento bitacora = new BLLEvento();
+            bitacora.GrabarBitacora("Modificación Perfil", "Perfiles", 1);
+        }
+
+        public void QuitarFamiliaDePerfil(int idPerfilPadre, string nombrePerfil, ServicioFamilia familiaHijo)
+        {
+            if (familiaHijo == null) throw new Exception("Debe seleccionar una familia válida para quitar.");
+
+            ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
+            if (perfilCompleto == null || perfilCompleto.Hijos == null || !perfilCompleto.Hijos.Any(h => h.IdPerfil == familiaHijo.IdPerfil && h is ServicioFamilia))
+            {
+                throw new Exception($"El perfil '{nombrePerfil}' no tiene asignada directamente la familia '{familiaHijo.Nombre}', por lo que no puede ser removida.");
+            }
+
+            ValidarQueNoQuedeVacio(idPerfilPadre, nombrePerfil);
+            dalPerfil.QuitarRelacionPerfilFamilia(idPerfilPadre, familiaHijo);
+            BLLEvento bitacora = new BLLEvento();
+            bitacora.GrabarBitacora("Modificación Perfil", "Perfiles", 1);
+        }
     }
 }

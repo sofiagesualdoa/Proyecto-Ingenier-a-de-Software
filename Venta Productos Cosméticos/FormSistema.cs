@@ -123,5 +123,13 @@ namespace Venta_Productos_Cosméticos
                 }
             }
         }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPerfil frmPerfil = new FormPerfil();
+            frmPerfil.MdiParent = this.MdiParent;
+            frmPerfil.Show();
+            this.Close();
+        }
     }
 }
