@@ -61,5 +61,9 @@ namespace Venta_Productos_Cosméticos
             frmMenu.Show();
             this.Close();
         }
+
+        private void FormCambioClave_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
     }
 }

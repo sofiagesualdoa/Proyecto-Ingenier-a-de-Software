@@ -19,6 +19,11 @@ namespace BLL
             return dalPerfil.ObtenerPerfilUsuario(idPerfilUsuario);
         }
 
+        public List<ServicioPerfil> ObtenerPerfiles()
+        {
+            return dalPerfil.ObtenerPerfiles();
+        }
+
         public bool TienePermiso(ServicioUsuario usuario, string nombrePermisoABuscar)
         {
             if (usuario == null || usuario.PerfilUsuario == null) return false;

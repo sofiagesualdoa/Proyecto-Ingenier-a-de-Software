@@ -11,6 +11,32 @@ namespace DAL
     public class DALPerfil
     {
         string conexionString = "Data Source=.;Initial Catalog=EverGlow;Integrated Security=True;Trust Server Certificate=True";
+
+        public List<ServicioPerfil> ObtenerPerfiles()
+        {
+            List<ServicioPerfil> perfiles = new List<ServicioPerfil>();
+
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "SELECT IdPerfil, Nombre FROM Perfil ORDER BY Nombre";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        perfiles.Add(new ServicioFamilia(
+                            Convert.ToInt32(reader["IdPerfil"]),
+                            reader["Nombre"].ToString()
+                        ));
+                    }
+                }
+            }
+
+            return perfiles;
+        }
+
         public ServicioPerfil ObtenerPerfilUsuario(int idPerfilUsuario)
         {
             ServicioFamilia perfilRaiz = null;

@@ -107,7 +107,7 @@ namespace BLL
                 string.IsNullOrWhiteSpace(usuario.Apellido) ||
                 string.IsNullOrWhiteSpace(usuario.Email) ||
                 string.IsNullOrWhiteSpace(usuario.nombreUsuario) ||
-                string.IsNullOrWhiteSpace(usuario.Rol))
+                usuario.IdPerfil <= 0)
             {
                 throw new Exception("Debe completar todos los campos.");
             }

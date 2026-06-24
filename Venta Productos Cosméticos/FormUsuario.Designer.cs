@@ -227,7 +227,7 @@
             label7.Name = "label7";
             label7.Size = new Size(24, 15);
             label7.TabIndex = 10;
-            label7.Text = "Rol";
+            label7.Text = "Perfil";
             // 
             // label6
             // 

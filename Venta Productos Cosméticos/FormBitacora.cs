@@ -202,7 +202,7 @@ namespace Venta_Productos_Cosméticos
                         documentoPdf.Add(subtitulo);
 
                         PdfPTable tablaPdf = new PdfPTable(7);
-                        tablaPdf.WidthPercentage = 100; 
+                        tablaPdf.WidthPercentage = 100;
                         float[] anchosColumnas = new float[] { 8f, 15f, 12f, 13f, 24f, 13f, 15f };
                         tablaPdf.SetWidths(anchosColumnas);
 
@@ -210,7 +210,7 @@ namespace Venta_Productos_Cosméticos
                         foreach (string columna in cabeceras)
                         {
                             PdfPCell celdaCabecera = new PdfPCell(new Phrase(columna, fuenteCabeceraTabla));
-                            celdaCabecera.BackgroundColor = new BaseColor(45, 55, 72); 
+                            celdaCabecera.BackgroundColor = new BaseColor(45, 55, 72);
                             celdaCabecera.HorizontalAlignment = Element.ALIGN_CENTER;
                             celdaCabecera.Padding = 6f;
                             tablaPdf.AddCell(celdaCabecera);
@@ -244,6 +244,10 @@ namespace Venta_Productos_Cosméticos
                                     "Error de Exportación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void FormBitacora_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

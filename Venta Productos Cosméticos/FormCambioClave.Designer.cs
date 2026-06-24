@@ -154,6 +154,7 @@
             Controls.Add(pictureBox1);
             Name = "FormCambioClave";
             Text = "FormCambioClave";
+            FormClosed += FormCambioClave_FormClosed;
             Load += FormCambioClave_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

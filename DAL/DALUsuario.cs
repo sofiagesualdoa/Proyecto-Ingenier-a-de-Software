@@ -11,7 +11,7 @@ namespace DALs
         public ServicioUsuario ObtenerUsuario(string nombreUsuario)
         {
             ServicioUsuario usuarioEncontrado = null;
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email 
+            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil 
                                  FROM Usuario 
                                  WHERE NombreUsuario = @NombreUsuario;";
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -35,6 +35,7 @@ namespace DALs
                                 usuarioEncontrado.Activo = Convert.ToBoolean(reader["Activo"]);
                                 usuarioEncontrado.Email = reader["Email"].ToString();
                                 usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
+                                usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
                                 usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
                             }
                         }
@@ -51,8 +52,10 @@ namespace DALs
         public List<ServicioUsuario> ObtenerUsuarios()
         {
             usuarios.Clear();
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, Rol 
-                     FROM Usuario;";
+            string query = @"SELECT u.DNI, u.Nombre, u.Apellido, u.NombreUsuario, u.Bloqueado, u.Activo, u.Contraseña, 
+                                    u.IntentosInicio, u.Email, u.IdPerfil, p.Nombre AS NombrePerfil
+                             FROM Usuario u
+                             LEFT JOIN Perfil p ON u.IdPerfil = p.IdPerfil;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -74,7 +77,11 @@ namespace DALs
                                 usr.Activo = Convert.ToBoolean(reader["Activo"]);
                                 usr.Email = reader["Email"].ToString();
                                 usr.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
-                                usr.Rol = reader["Rol"].ToString();
+                                usr.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
+                                usr.PerfilUsuario = new ServicioFamilia(
+                                    usr.IdPerfil,
+                                    reader["NombrePerfil"].ToString()
+                                );
                                 usr.SetPassword(reader["Contraseña"].ToString());
 
                                 usuarios.Add(usr);
@@ -92,8 +99,8 @@ namespace DALs
 
         public void GuardarUsuario(ServicioUsuario usuario)
         {
-            string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, Rol) 
-                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @Rol);";
+            string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil) 
+                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @IdPerfil);";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -107,7 +114,7 @@ namespace DALs
                     comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuario.Activo;
                     comando.Parameters.Add("@IntentosInicio", SqlDbType.Int).Value = usuario.IntentosInicio;
                     comando.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = usuario.Email;
-                    comando.Parameters.Add("@Rol", SqlDbType.VarChar, 50).Value = usuario.Rol;
+                    comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuario.IdPerfil;
                     comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 65).Value = usuario.GetPassword();
 
                     try
@@ -127,7 +134,7 @@ namespace DALs
         public ServicioUsuario BuscarUsuarioPorDniOMail(int dni, string email)
         {
             ServicioUsuario usuarioEncontrado = null;
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email 
+            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil 
                                  FROM Usuario 
                                  WHERE DNI = @DNI OR Email = @Email;";
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -152,6 +159,7 @@ namespace DALs
                                 usuarioEncontrado.Activo = Convert.ToBoolean(reader["Activo"]);
                                 usuarioEncontrado.Email = reader["Email"].ToString();
                                 usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
+                                usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
                                 usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
                             }
                         }
@@ -240,7 +248,7 @@ namespace DALs
                                      Apellido = @Apellido, 
                                      Email = @Email, 
                                      NombreUsuario = @NombreUsuario, 
-                                     Rol = @Rol, 
+                                     IdPerfil = @IdPerfil, 
                                      Activo = @Activo
                                  WHERE DNI = @DNI;";
 
@@ -253,7 +261,7 @@ namespace DALs
                     comando.Parameters.Add("@Apellido", SqlDbType.VarChar, 50).Value = usuarioModificado.Apellido;
                     comando.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = usuarioModificado.Email;
                     comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = usuarioModificado.nombreUsuario;
-                    comando.Parameters.Add("@Rol", SqlDbType.VarChar, 50).Value = usuarioModificado.Rol;
+                    comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuarioModificado.IdPerfil;
                     comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuarioModificado.Activo;
 
                     try
@@ -279,7 +287,8 @@ namespace DALs
                 usuarioMemoria.Apellido = usuarioModificado.Apellido;
                 usuarioMemoria.Email = usuarioModificado.Email;
                 usuarioMemoria.nombreUsuario = usuarioModificado.nombreUsuario;
-                usuarioMemoria.Rol = usuarioModificado.Rol;
+                usuarioMemoria.IdPerfil = usuarioModificado.IdPerfil;
+                usuarioMemoria.PerfilUsuario = usuarioModificado.PerfilUsuario;
                 usuarioMemoria.Activo = usuarioModificado.Activo;
             }
         }

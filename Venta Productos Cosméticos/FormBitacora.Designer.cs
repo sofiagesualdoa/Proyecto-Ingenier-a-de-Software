@@ -290,6 +290,7 @@
             Controls.Add(label1);
             Name = "FormBitacora";
             Text = "FormBitacora";
+            FormClosed += FormBitacora_FormClosed;
             Load += FormBitacora_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -30,13 +30,12 @@ namespace Venta_Productos_Cosméticos
             try
             {
                 ServicioSessionManager servicioSessionManager = ServicioSessionManager.GetInstance();
-                
+
                 if (servicioSessionManager.ObtenerUsuario() != null)
                 {
                     throw new Exception($"Ya existe una sesión activa: {servicioSessionManager.ObtenerUsuario().nombreUsuario}");
-                    
                 }
-                
+
                 BLLUsuario bll = new BLLUsuario();
                 bool loginExitoso = bll.IniciarSesion(txtUsuario.Text, txtContraseña.Text);
 
@@ -50,10 +49,13 @@ namespace Venta_Productos_Cosméticos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                FormSistema frmMenu = new FormSistema();
-                frmMenu.Show();
-                this.Close();
+                txtContraseña.Clear();
+                txtContraseña.Focus();
             }
+        }
+
+        private void FormInicioSesion_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

@@ -121,7 +121,7 @@
             Name = "FormInicioSesion";
             Text = "FormInicioSesion";
             TopMost = true;
-            WindowState = FormWindowState.Maximized;
+            FormClosed += FormInicioSesion_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

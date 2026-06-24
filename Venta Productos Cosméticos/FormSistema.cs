@@ -80,20 +80,21 @@ namespace Venta_Productos_Cosméticos
         {
             foreach (Control c in controles)
             {
-                if (c.Tag != null && !string.IsNullOrEmpty(c.Tag.ToString()))
+                if (c is MenuStrip menuStrip)
                 {
-                    string permisoRequerido = c.Tag.ToString();
-                    c.Visible = bllPerfil.TienePermiso(usuario, permisoRequerido);
+                    ConfigurarPermisosMenu(menuStrip.Items, bllPerfil, usuario);
+                    continue;
+                }
+
+                string? permisoControl = c.Tag?.ToString();
+                if (!string.IsNullOrWhiteSpace(permisoControl))
+                {
+                    c.Enabled = bllPerfil.TienePermiso(usuario, permisoControl);
                 }
 
                 if (c.HasChildren)
                 {
                     ConfigurarPermisosControl(c.Controls, bllPerfil, usuario);
-                }
-
-                if (c is MenuStrip menuStrip)
-                {
-                    ConfigurarPermisosMenu(menuStrip.Items, bllPerfil, usuario);
                 }
             }
         }
@@ -102,14 +103,23 @@ namespace Venta_Productos_Cosméticos
         {
             foreach (ToolStripItem item in items)
             {
-                if (item.Tag != null && !string.IsNullOrEmpty(item.Tag.ToString()))
-                {
-                    item.Visible = bllPerfil.TienePermiso(usuario, item.Tag.ToString());
-                }
+                if (item is ToolStripSeparator) continue;
+
+                item.Visible = true;
 
                 if (item is ToolStripMenuItem menuItem && menuItem.HasDropDownItems)
                 {
                     ConfigurarPermisosMenu(menuItem.DropDownItems, bllPerfil, usuario);
+                }
+
+                string? permisoMenu = item.Tag?.ToString();
+                if (!string.IsNullOrWhiteSpace(permisoMenu))
+                {
+                    item.Enabled = bllPerfil.TienePermiso(usuario, permisoMenu);
+                }
+                else
+                {
+                    item.Enabled = true;
                 }
             }
         }

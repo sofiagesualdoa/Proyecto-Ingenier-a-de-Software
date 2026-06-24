@@ -1,93 +1,108 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\",
+  "WorkspaceRootPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B2F7758-8B4D-42BD-8F0D-7F66476DFB33}|..\\BLL\\BLL.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\bll\\bllperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\servicioperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B2F7758-8B4D-42BD-8F0D-7F66476DFB33}|..\\BLL\\BLL.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\bll\\bllusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\dal\\dalperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\serviciofamilia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\serviciopermiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\serviciousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\serviciosessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B2F7758-8B4D-42BD-8F0D-7F66476DFB33}|..\\BLL\\BLL.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\bll\\bllevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\dal\\dalevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\servicioevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\dal\\dalusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\servicios\\servicioencriptador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\vicky\\desktop\\facu\\3er a\u00F1o 1 cuatri\\ing de sw\\proyecto\\proyecto-ingenier-a-de-software\\venta productos cosm\u00E9ticos\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\servicios\\serviciousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formcambioclave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formpantallainicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\dal\\dalusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2F7758-8B4D-42BD-8F0D-7F66476DFB33}|..\\BLL\\BLL.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\bll\\bllusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\servicios\\serviciosessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\servicios\\servicioperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -97,290 +112,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormSistema.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
-              "RelativeDocumentMoniker": "FormSistema.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
-              "RelativeToolTip": "FormSistema.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAA2wEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T21:38:47.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FormInicioSesion.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
-              "RelativeDocumentMoniker": "FormInicioSesion.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
-              "RelativeToolTip": "FormInicioSesion.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAUwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T20:36:28.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BLLPerfil.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\BLLPerfil.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs",
-              "RelativeToolTip": "..\\BLL\\BLLPerfil.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T20:20:55.834Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DALPerfil.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\DALPerfil.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs",
-              "RelativeToolTip": "..\\DAL\\DALPerfil.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAAAKEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T20:14:16.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ServicioPermiso.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioPermiso.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioPermiso.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvxwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T20:07:46.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ServicioFamilia.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioFamilia.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioFamilia.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T20:05:09.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ServicioPerfil.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioPerfil.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioPerfil.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAoAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T20:02:57.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ServicioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioUsuario.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioUsuario.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAywCgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:27:47.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ServicioSessionManager.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioSessionManager.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioSessionManager.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAUwCcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:27:37.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ServicioEvento.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioEvento.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioEvento.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:27:24.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ServicioEncriptador.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs",
-              "RelativeDocumentMoniker": "..\\Servicios\\ServicioEncriptador.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs",
-              "RelativeToolTip": "..\\Servicios\\ServicioEncriptador.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:26:35.674Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DALUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\DALUsuario.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs",
-              "RelativeToolTip": "..\\DAL\\DALUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIwBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:26:08.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DALEvento.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\DALEvento.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs",
-              "RelativeToolTip": "..\\DAL\\DALEvento.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwBYAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:25:54.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BLLUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\BLLUsuario.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs",
-              "RelativeToolTip": "..\\BLL\\BLLUsuario.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAiwFMAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:25:37.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BLLEvento.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\BLLEvento.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs",
-              "RelativeToolTip": "..\\BLL\\BLLEvento.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAiwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T18:25:25.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "FormUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
-              "RelativeDocumentMoniker": "FormUsuario.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
-              "RelativeToolTip": "FormUsuario.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAASwDcBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:17:18.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "FormCambioClave.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
               "RelativeDocumentMoniker": "FormCambioClave.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
               "RelativeToolTip": "FormCambioClave.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAqwDEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwEEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:11:11.303Z",
+              "WhenOpened": "2026-06-24T01:43:59.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "FormBitacora.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
-              "RelativeDocumentMoniker": "FormBitacora.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormBitacora.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:10:31.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 1,
               "Title": "FormBitacora.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
               "RelativeDocumentMoniker": "FormBitacora.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
               "RelativeToolTip": "FormBitacora.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAawKkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAuwPkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:11:33.525Z"
+              "WhenOpened": "2026-05-30T13:11:33.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "FormUsuario.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
-              "RelativeDocumentMoniker": "FormUsuario.cs",
-              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:10:46.255Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FormCambioClave.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
-              "RelativeDocumentMoniker": "FormCambioClave.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormCambioClave.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:10:27.384Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormSistema.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
-              "RelativeDocumentMoniker": "FormSistema.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormSistema.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T13:10:56.596Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "FormInicioSesion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
               "RelativeDocumentMoniker": "FormInicioSesion.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs [Dise\u00F1o]",
               "RelativeToolTip": "FormInicioSesion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-30T13:10:58.934Z",
@@ -388,11 +154,112 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormPantallaInicio.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
+              "DocumentIndex": 0,
+              "Title": "FormUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
+              "RelativeDocumentMoniker": "FormUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
+              "RelativeToolTip": "FormUsuario.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAOYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:17:18.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormInicioSesion.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
+              "RelativeDocumentMoniker": "FormInicioSesion.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
+              "RelativeToolTip": "FormInicioSesion.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAmwDkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T20:36:28.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServicioUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioUsuario.cs",
+              "RelativeDocumentMoniker": "..\\Servicios\\ServicioUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioUsuario.cs",
+              "RelativeToolTip": "..\\Servicios\\ServicioUsuario.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T00:23:11.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormCambioClave.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs",
+              "RelativeDocumentMoniker": "FormCambioClave.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormCambioClave.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormCambioClave.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:27.384Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormBitacora.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs",
+              "RelativeDocumentMoniker": "FormBitacora.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormBitacora.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormBitacora.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:31.187Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormPantallaInicio.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
               "RelativeDocumentMoniker": "FormPantallaInicio.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
+              "RelativeToolTip": "FormPantallaInicio.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAnwBYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T12:54:57.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormSistema.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
+              "RelativeDocumentMoniker": "FormSistema.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
+              "RelativeToolTip": "FormSistema.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAvwDcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T21:38:47.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormSistema.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
+              "RelativeDocumentMoniker": "FormSistema.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormSistema.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:56.596Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormPantallaInicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
+              "RelativeDocumentMoniker": "FormPantallaInicio.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs [Dise\u00F1o]",
               "RelativeToolTip": "FormPantallaInicio.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-30T13:10:57.881Z",
@@ -400,15 +267,222 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "FormPantallaInicio.cs",
-              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
-              "RelativeDocumentMoniker": "FormPantallaInicio.cs",
-              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosm\u00E9ticos\\FormPantallaInicio.cs",
-              "RelativeToolTip": "FormPantallaInicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "BLLUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\BLL\\BLLUsuario.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\BLLUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\BLL\\BLLUsuario.cs",
+              "RelativeToolTip": "..\\BLL\\BLLUsuario.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAEwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T12:54:57.59Z"
+              "WhenOpened": "2026-06-24T00:23:09.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DALUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\DAL\\DALUsuario.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\DALUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\DAL\\DALUsuario.cs",
+              "RelativeToolTip": "..\\DAL\\DALUsuario.cs",
+              "ViewState": "AgIAABUBAAAAAAAAAAAawCMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T01:24:43.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServicioSessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioSessionManager.cs",
+              "RelativeDocumentMoniker": "..\\Servicios\\ServicioSessionManager.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioSessionManager.cs",
+              "RelativeToolTip": "..\\Servicios\\ServicioSessionManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T00:40:15.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ServicioPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioPerfil.cs",
+              "RelativeDocumentMoniker": "..\\Servicios\\ServicioPerfil.cs",
+              "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioPerfil.cs",
+              "RelativeToolTip": "..\\Servicios\\ServicioPerfil.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA9wBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T00:38:53.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServicioPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPerfil.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T20:02:57.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ServicioFamilia.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioFamilia.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T20:05:09.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ServicioPermiso.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioPermiso.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvxwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T20:07:46.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DALPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALPerfil.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAKEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T20:14:16.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BLLPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLPerfil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T20:20:55.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ServicioUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioUsuario.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAywCgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:27:47.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ServicioSessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioSessionManager.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:27:37.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ServicioEvento.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEvento.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:27:24.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ServicioEncriptador.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\ServicioEncriptador.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:26:35.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DALUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIwBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:26:08.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DALEvento.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DALEvento.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:25:54.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BLLUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLUsuario.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAiwFMAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:25:37.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "BLLEvento.cs",
+              "DocumentMoniker": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs",
+              "ToolTip": "C:\\Users\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Vicky\\Desktop\\Facu\\3er a\u00F1o 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLLEvento.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T18:25:25.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormUsuario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs",
+              "RelativeDocumentMoniker": "FormUsuario.cs",
+              "ToolTip": "C:\\Users\\usuario\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Downloads\\Proyecto-Ingenier-a-de-Software-proyecto\\Proyecto-Ingenier-a-de-Software-proyecto\\Venta Productos Cosm\u00E9ticos\\FormUsuario.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T13:10:46.255Z"
             }
           ]
         }

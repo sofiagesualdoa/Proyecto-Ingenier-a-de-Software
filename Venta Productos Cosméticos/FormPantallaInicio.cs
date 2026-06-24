@@ -19,10 +19,15 @@ namespace Venta_Productos_Cosméticos
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            this.panel1.Visible = false;
             FormInicioSesion frmLogin = new FormInicioSesion();
-            frmLogin.MdiParent = this;
+            frmLogin.MdiParent = this.MdiParent;
             frmLogin.Show();
+            this.Hide();
+
+            //this.panel1.Visible = false;
+            //FormInicioSesion frmLogin = new FormInicioSesion();
+            //frmLogin.MdiParent = this;
+            //frmLogin.Show();
         }
     }
 }

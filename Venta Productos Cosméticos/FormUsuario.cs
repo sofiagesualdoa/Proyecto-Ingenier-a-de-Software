@@ -22,15 +22,23 @@ namespace Venta_Productos_Cosméticos.Vista
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Add("Administrador");
-            comboBox1.Items.Add("Vendedor");
-            comboBox1.Items.Add("Supervisor");
-            comboBox1.SelectedIndex = 0;
+            CargarComboPerfiles();
 
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
             RegresarAModoConsulta();
+        }
+
+        private void CargarComboPerfiles()
+        {
+            BLLPerfil bllPerfil = new BLLPerfil();
+            List<ServicioPerfil> perfiles = bllPerfil.ObtenerPerfiles();
+
+            comboBox1.DataSource = perfiles;
+            comboBox1.DisplayMember = "Nombre";
+            comboBox1.ValueMember = "IdPerfil";
+            comboBox1.SelectedIndex = perfiles.Count > 0 ? 0 : -1;
         }
 
         private void RegresarAModoConsulta()
@@ -73,6 +81,7 @@ namespace Venta_Productos_Cosméticos.Vista
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
+            if (comboBox1.Items.Count > 0) comboBox1.SelectedIndex = 0;
         }
 
         private void ActivarModoEdicion()
@@ -128,7 +137,17 @@ namespace Venta_Productos_Cosméticos.Vista
             textBox3.Text = seleccionado.nombreUsuario;
             textBox4.Text = seleccionado.Apellido;
             textBox5.Text = seleccionado.Email;
-            comboBox1.Text = seleccionado.Rol;
+            comboBox1.SelectedValue = seleccionado.IdPerfil;
+        }
+
+        private int ObtenerIdPerfilSeleccionado()
+        {
+            if (comboBox1.SelectedValue == null)
+            {
+                throw new Exception("Debe seleccionar un perfil.");
+            }
+
+            return Convert.ToInt32(comboBox1.SelectedValue);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -173,7 +192,7 @@ namespace Venta_Productos_Cosméticos.Vista
                     usuario.Email = textBox5.Text;
                     usuario.DNI = int.Parse(textBox1.Text);
                     usuario.nombreUsuario = textBox3.Text;
-                    usuario.Rol = comboBox1.Text;
+                    usuario.IdPerfil = ObtenerIdPerfilSeleccionado();
                     if (radioButton1.Checked)
                     {
                         usuario.Activo = true;
@@ -209,7 +228,7 @@ namespace Venta_Productos_Cosméticos.Vista
                     usuario.Email = textBox5.Text;
                     usuario.DNI = int.Parse(textBox1.Text);
                     usuario.nombreUsuario = textBox3.Text;
-                    usuario.Rol = comboBox1.Text;
+                    usuario.IdPerfil = ObtenerIdPerfilSeleccionado();
                     if (radioButton1.Checked)
                     {
                         usuario.Activo = true;
@@ -334,6 +353,9 @@ namespace Venta_Productos_Cosméticos.Vista
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (e.RowIndex < 0 || dataGridView1.Rows[e.RowIndex].DataBoundItem == null) return;
+            if (e.CellStyle == null) return;
+
             if (dataGridView1.Rows[e.RowIndex].DataBoundItem is ServicioUsuario usuario)
             {
                 if (!usuario.Activo)
@@ -366,8 +388,8 @@ namespace Venta_Productos_Cosméticos.Vista
 
             if (comboBox1.SelectedIndex != -1)
             {
-                string rolSeleccionado = comboBox1.Text;
-                listaFiltrada = listaFiltrada.Where(u => u.Rol == rolSeleccionado).ToList();
+                int idPerfilSeleccionado = ObtenerIdPerfilSeleccionado();
+                listaFiltrada = listaFiltrada.Where(u => u.IdPerfil == idPerfilSeleccionado).ToList();
             }
 
             MostrarGrilla(listaFiltrada);

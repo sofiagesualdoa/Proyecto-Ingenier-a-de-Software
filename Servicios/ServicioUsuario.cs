@@ -10,8 +10,6 @@ namespace Servicios
         public string Email { get; set; }
         private string contraseña;
         public string nombreUsuario { get; set; }
-        public string Rol { get; set; } //sacar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
         public int IdPerfil { get; set; }
         public ServicioPerfil PerfilUsuario { get; set; }
 
