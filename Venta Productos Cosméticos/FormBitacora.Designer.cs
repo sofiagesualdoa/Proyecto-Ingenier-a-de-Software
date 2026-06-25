@@ -79,6 +79,7 @@
             groupBox1.TabIndex = 26;
             groupBox1.TabStop = false;
             groupBox1.Text = ".";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // label9
             // 
@@ -290,6 +291,7 @@
             Controls.Add(label1);
             Name = "FormBitacora";
             Text = "FormBitacora";
+            FormClosing += FormBitacora_FormClosing;
             FormClosed += FormBitacora_FormClosed;
             Load += FormBitacora_Load;
             groupBox1.ResumeLayout(false);

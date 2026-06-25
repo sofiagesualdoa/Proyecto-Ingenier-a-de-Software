@@ -98,12 +98,13 @@
             // btnCambioIdioma
             // 
             btnCambioIdioma.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCambioIdioma.Location = new Point(309, 64);
+            btnCambioIdioma.Location = new Point(266, 63);
             btnCambioIdioma.Name = "btnCambioIdioma";
-            btnCambioIdioma.Size = new Size(184, 45);
+            btnCambioIdioma.Size = new Size(290, 45);
             btnCambioIdioma.TabIndex = 9;
             btnCambioIdioma.Text = "Cambiar Idioma";
             btnCambioIdioma.UseVisualStyleBackColor = true;
+            btnCambioIdioma.Click += btnCambioIdioma_Click;
             // 
             // FormInicioSesion
             // 
@@ -121,7 +122,9 @@
             Name = "FormInicioSesion";
             Text = "FormInicioSesion";
             TopMost = true;
+            FormClosing += FormInicioSesion_FormClosing;
             FormClosed += FormInicioSesion_FormClosed;
+            Load += FormInicioSesion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

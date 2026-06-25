@@ -16,6 +16,8 @@ namespace Servicios
         public int IntentosInicio { get; set; }
         public bool Activo { get; set; }
         public bool Bloqueado { get; set; }
+        public int IdIdioma { get; set; }
+        public ServicioIdioma Idioma { get; set; }
         public void SetPassword(string hash)
         {
             contraseña = hash.ToUpper().Trim();

@@ -78,8 +78,9 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(816, 489);
             panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
             // 
-            // Vista
+            // FormPantallaInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -87,8 +88,10 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             IsMdiContainer = true;
-            Name = "Vista";
+            Name = "FormPantallaInicio";
             Text = "FormBienvenida";
+            FormClosing += FormPantallaInicio_FormClosing;
+            Load += FormPantallaInicio_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

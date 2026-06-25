@@ -16,8 +16,11 @@ using DALs;
 
 namespace Venta_Productos_Cosméticos
 {
-    public partial class FormBitacora : Form
+    public partial class FormBitacora : Form, IObserver
     {
+
+        private BLLIdioma bllIdioma = new BLLIdioma();
+        private Dictionary<Control, string> textosOriginales = new Dictionary<Control, string>();
         public FormBitacora()
         {
             InitializeComponent();
@@ -37,13 +40,108 @@ namespace Venta_Productos_Cosméticos
             dataGridView1.MultiSelect = false;
             CargarComboBox();
             RestablecerFiltrosPorDefecto();
+
+            RegistrarTextos(this.Controls);
+
+            bllIdioma.AgregarSuscriptor(this);
+
+            var usuario = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuario != null && usuario.Idioma != null)
+            {
+                Actualizar(usuario.Idioma);
+            }
+
+        }
+        private void RegistrarTextos(Control.ControlCollection controles)
+        {
+            foreach (Control c in controles)
+            {
+                if (!string.IsNullOrEmpty(c.Text))
+                    textosOriginales[c] = c.Text;
+
+                if (c.Controls.Count > 0) RegistrarTextos(c.Controls);
+            }
+        }
+        public void Actualizar(ServicioIdioma idioma)
+        {
+
+            ActualizarIdioma(idioma);
+        }
+        private void ActualizarIdioma(ServicioIdioma idioma)
+        {
+            var leyendas = idioma.DiccionarioLeyendas;
+            foreach (var entry in textosOriginales)
+            {
+                Control ctrl = entry.Key;
+                string textoBase = entry.Value;
+
+                if (leyendas != null && leyendas.ContainsKey(textoBase))
+                    ctrl.Text = leyendas[textoBase];
+                else
+                    ctrl.Text = textoBase;
+            }
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is MenuStrip menuStrip)
+                {
+                    TraducirMenu(menuStrip.Items, leyendas);
+                }
+            }
+
+            TraducirCombo(cmbModulo, leyendas);
+            TraducirCombo(cmbEvento, leyendas);
+            TraducirCombo(cmbCriticidad, leyendas);
+            TraducirCombo(cmbLogin, leyendas);
+        }
+
+        private void TraducirMenu(ToolStripItemCollection menuItems, Dictionary<string, string> leyendas)
+        {
+            foreach (ToolStripItem item in menuItems)
+            {
+                if (leyendas != null && leyendas.ContainsKey(item.Text))
+                    item.Text = leyendas[item.Text];
+
+                if (item is ToolStripMenuItem menuItem && menuItem.DropDownItems.Count > 0)
+                    TraducirMenu(menuItem.DropDownItems, leyendas);
+            }
+        }
+
+        private void TraducirCombo(ComboBox combo, Dictionary<string, string> leyendas)
+        {
+
+            for (int i = 0; i < combo.Items.Count; i++)
+            {
+                string itemOriginal = combo.Items[i].ToString();
+                if (leyendas != null && leyendas.ContainsKey(itemOriginal))
+                    combo.Items[i] = leyendas[itemOriginal];
+                else
+                    combo.Items[i] = itemOriginal;
+            }
         }
 
         private void CargarComboBox()
         {
             cmbModulo.Items.AddRange(new string[] { "Todos", "Usuario", "Ventas", "Compras", "Maestro", "Perfil" });
 
-            cmbEvento.Items.AddRange(new string[] { "Todos", "Login", "Logout", "Crear Usuario", "Cambiar Clave", "Modificar Usuario", "Activar / Desactivar Usuario", "Desbloquear Usuario", "Bloquear Usuario" });
+            cmbEvento.Items.AddRange(new string[] {
+                                                        "Todos",
+                                                        "Login",
+                                                        "Logout",
+                                                        "Crear Usuario",
+                                                        "Modificar Usuario",
+                                                        "Activar / Desactivar Usuario",
+                                                        "Desbloquear Usuario",
+                                                        "Bloquear Usuario",
+                                                        "Cambiar Clave",
+                                                        "Cambio de Idioma",
+                                                        "Creación de nueva Familia",
+                                                        "Eliminación de Familia",
+                                                        "Modificación Familia",
+                                                        "Creación de nuevo Perfil",
+                                                        "Eliminación de Perfil",
+                                                        "Modificación Perfil"
+                                                    });
 
             cmbCriticidad.Items.AddRange(new string[] { "Todos", "1 (Alta)", "2 (Media)", "3 (Baja)" });
 
@@ -246,8 +344,20 @@ namespace Venta_Productos_Cosméticos
             }
         }
 
+
+
         private void FormBitacora_FormClosed(object sender, FormClosedEventArgs e)
         {
+        }
+
+        private void FormBitacora_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bllIdioma.BorrarSuscriptor(this);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,93 @@
+﻿using DAL;
+using Servicios;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL
+{
+    public class BLLIdioma : IObservable
+    {
+        private static readonly List<IObserver> Suscriptores = new List<IObserver>();
+        private readonly DALIdioma dalIdioma = new DALIdioma();
+
+        public void AgregarSuscriptor(IObserver suscriptor)
+        {
+            if (!Suscriptores.Contains(suscriptor))
+            {
+                Suscriptores.Add(suscriptor);
+            }
+        }
+
+        public void BorrarSuscriptor(IObserver suscriptor)
+        {
+            if (Suscriptores.Contains(suscriptor))
+            {
+                Suscriptores.Remove(suscriptor);
+            }
+        }
+
+        public void NotificarSuscriptores(ServicioIdioma idioma)
+        {
+            foreach (var suscriptor in Suscriptores)
+            {
+                suscriptor.Actualizar(idioma);
+            }
+        }
+
+        public List<ServicioIdioma> ListarIdiomas()
+        {
+            return dalIdioma.ListarIdiomas();
+        }
+
+        public void CambiarIdioma(ServicioIdioma idioma)
+        {
+            VerificarIdioma(idioma);
+        }
+
+        private void VerificarIdioma(ServicioIdioma idioma)
+        {
+            try
+            {
+                var usuarioLogueado = ServicioSessionManager.GetInstance().ObtenerUsuario();
+
+                if (usuarioLogueado != null && usuarioLogueado.IdIdioma == idioma.IdIdioma)
+                {
+                    return;
+                }
+
+                if (idioma.CodigoIdioma == "en")
+                {
+                    idioma.DiccionarioLeyendas = dalIdioma.ObtenerTraducciones();
+                }
+                else
+                {
+                    idioma.DiccionarioLeyendas = new Dictionary<string, string>();
+                }
+
+                if (usuarioLogueado != null)
+                {
+                    ServicioSessionManager.GetInstance().CambiarIdiomaSesion(idioma.CodigoIdioma);
+                    usuarioLogueado.IdIdioma = idioma.IdIdioma;
+                    usuarioLogueado.Idioma = idioma;
+                }
+
+                NotificarSuscriptores(idioma);
+
+                BLLEvento bllEvento = new BLLEvento();
+                bllEvento.GrabarBitacora("Cambio de Idioma", "Idioma cambiado con éxito", 1);
+            }
+            catch (Exception)
+            {
+                throw new InvalidOperationException("MensajeErrorDeCarga");
+            }
+        }
+
+        public Dictionary<string, string> ObtenerTraducciones()
+        {
+            return dalIdioma.ObtenerTraducciones();
+        }
+    }
+}

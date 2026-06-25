@@ -33,6 +33,8 @@
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             cambiarClaveToolStripMenuItem = new ToolStripMenuItem();
             cambiarIdiomaToolStripMenuItem = new ToolStripMenuItem();
+            españolToolStripMenuItem = new ToolStripMenuItem();
+            inglésToolStripMenuItem = new ToolStripMenuItem();
             reLoginToolStripMenuItem = new ToolStripMenuItem();
             administraciónToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
@@ -90,10 +92,26 @@
             // 
             // cambiarIdiomaToolStripMenuItem
             // 
+            cambiarIdiomaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { españolToolStripMenuItem, inglésToolStripMenuItem });
             cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
             cambiarIdiomaToolStripMenuItem.Size = new Size(225, 30);
             cambiarIdiomaToolStripMenuItem.Tag = "Cambiar Idioma";
             cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            cambiarIdiomaToolStripMenuItem.Click += cambiarIdiomaToolStripMenuItem_Click;
+            // 
+            // españolToolStripMenuItem
+            // 
+            españolToolStripMenuItem.Name = "españolToolStripMenuItem";
+            españolToolStripMenuItem.Size = new Size(153, 30);
+            españolToolStripMenuItem.Text = "Español";
+            españolToolStripMenuItem.Click += españolToolStripMenuItem_Click;
+            // 
+            // inglésToolStripMenuItem
+            // 
+            inglésToolStripMenuItem.Name = "inglésToolStripMenuItem";
+            inglésToolStripMenuItem.Size = new Size(153, 30);
+            inglésToolStripMenuItem.Text = "Inglés";
+            inglésToolStripMenuItem.Click += inglésToolStripMenuItem_Click;
             // 
             // reLoginToolStripMenuItem
             // 
@@ -203,6 +221,7 @@
             reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             reportesToolStripMenuItem.Size = new Size(104, 29);
             reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
             // 
             // productosMásVendidosToolStripMenuItem
             // 
@@ -287,6 +306,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FormSistema";
             Text = "Sistema de Venta de Productos Cosméticos";
+            FormClosing += FormSistema_FormClosing;
             Load += FormSistema_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -325,5 +345,7 @@
         private Label label1;
         private PictureBox pictureBox1;
         private ToolStripMenuItem reLoginToolStripMenuItem;
+        private ToolStripMenuItem españolToolStripMenuItem;
+        private ToolStripMenuItem inglésToolStripMenuItem;
     }
 }

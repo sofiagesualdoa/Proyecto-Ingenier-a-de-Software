@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Venta_Productos_Cosméticos
 {
-    public partial class FormPerfil : Form
+    public partial class FormPerfil : Form, IObserver
     {
         public FormPerfil()
         {
@@ -27,6 +27,8 @@ namespace Venta_Productos_Cosméticos
         private List<ServicioPermiso> todosLosPermisos = new List<ServicioPermiso>();
         private List<ServicioFamilia> todasLasFamilias = new List<ServicioFamilia>();
         private List<ServicioPerfil> todosLosPerfiles = new List<ServicioPerfil>();
+        private BLLIdioma bllIdioma = new BLLIdioma();
+        private Dictionary<Control, string> textosOriginales = new Dictionary<Control, string>();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -47,6 +49,47 @@ namespace Venta_Productos_Cosméticos
             dgvFamilia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPerfil.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPermiso.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            RegistrarTextos(this.Controls);
+
+            bllIdioma.AgregarSuscriptor(this);
+
+            var usuario = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuario != null && usuario.Idioma != null)
+            {
+                Actualizar(usuario.Idioma);
+            }
+
+        }
+
+        private void RegistrarTextos(Control.ControlCollection controles)
+        {
+            foreach (Control c in controles)
+            {
+                if (!string.IsNullOrEmpty(c.Text))
+                    textosOriginales[c] = c.Text;
+
+                if (c.Controls.Count > 0) RegistrarTextos(c.Controls);
+            }
+        }
+
+        public void Actualizar(ServicioIdioma idioma)
+        {
+            ActualizarIdioma(idioma);
+        }
+
+        private void ActualizarIdioma(ServicioIdioma idioma)
+        {
+            var leyendas = idioma.DiccionarioLeyendas;
+            foreach (var entry in textosOriginales)
+            {
+                Control ctrl = entry.Key;
+                string textoBase = entry.Value;
+
+                if (leyendas != null && leyendas.ContainsKey(textoBase))
+                    ctrl.Text = leyendas[textoBase];
+                else
+                    ctrl.Text = textoBase;
+            }
         }
 
         private void MostrarGrilla(DataGridView pGrilla, Object pVista)
@@ -448,5 +491,9 @@ namespace Venta_Productos_Cosméticos
             }
         }
 
+        private void FormPerfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bllIdioma.BorrarSuscriptor(this);
+        }
     }
 }

@@ -12,9 +12,11 @@ using BLL;
 
 namespace Venta_Productos_Cosméticos.Vista
 {
-    public partial class FormUsuario : Form
+    public partial class FormUsuario : Form, IObserver
     {
         private string modo = "Consulta";
+        private BLLIdioma bllIdioma = new BLLIdioma();
+        private Dictionary<Control, string> textosOriginales = new Dictionary<Control, string>();
         public FormUsuario()
         {
             InitializeComponent();
@@ -28,6 +30,47 @@ namespace Venta_Productos_Cosméticos.Vista
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
             RegresarAModoConsulta();
+
+            RegistrarTextos(this.Controls);
+
+            bllIdioma.AgregarSuscriptor(this);
+
+            var usuario = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuario != null && usuario.Idioma != null)
+            {
+                Actualizar(usuario.Idioma);
+            }
+        }
+
+        private void RegistrarTextos(Control.ControlCollection controles)
+        {
+            foreach (Control c in controles)
+            {
+                if (!string.IsNullOrEmpty(c.Text))
+                    textosOriginales[c] = c.Text;
+
+                if (c.Controls.Count > 0) RegistrarTextos(c.Controls);
+            }
+        }
+        public void Actualizar(ServicioIdioma idioma)
+        {
+
+            ActualizarIdioma(idioma);
+        }
+        private void ActualizarIdioma(ServicioIdioma idioma)
+        {
+            var leyendas = idioma.DiccionarioLeyendas;
+            foreach (var entry in textosOriginales)
+            {
+                Control ctrl = entry.Key;
+                string textoBase = entry.Value;
+
+                if (leyendas != null && leyendas.ContainsKey(textoBase))
+                    ctrl.Text = leyendas[textoBase];
+                else
+                    ctrl.Text = textoBase;
+            }
+
         }
 
         private void CargarComboPerfiles()
@@ -393,8 +436,13 @@ namespace Venta_Productos_Cosméticos.Vista
             }
 
             MostrarGrilla(listaFiltrada);
-            radioButton3.Checked = false; 
+            radioButton3.Checked = false;
             radioButton4.Checked = false;
+        }
+
+        private void FormUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bllIdioma.BorrarSuscriptor(this);
         }
     }
 }

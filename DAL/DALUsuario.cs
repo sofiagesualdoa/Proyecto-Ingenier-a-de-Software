@@ -11,9 +11,9 @@ namespace DALs
         public ServicioUsuario ObtenerUsuario(string nombreUsuario)
         {
             ServicioUsuario usuarioEncontrado = null;
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil 
-                                 FROM Usuario 
-                                 WHERE NombreUsuario = @NombreUsuario;";
+            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma 
+                     FROM Usuario 
+                     WHERE NombreUsuario = @NombreUsuario;";
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
                 using (SqlCommand comando = new SqlCommand(query, conexion))
@@ -36,13 +36,14 @@ namespace DALs
                                 usuarioEncontrado.Email = reader["Email"].ToString();
                                 usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
                                 usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
+                                usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
                                 usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
                             }
                         }
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error físico en la base de datos al intentar recuperar el usuario: " + ex.Message);
+                        throw new Exception("Error al recuperar usuario: " + ex.Message);
                     }
                 }
             }
@@ -53,44 +54,35 @@ namespace DALs
         {
             usuarios.Clear();
             string query = @"SELECT u.DNI, u.Nombre, u.Apellido, u.NombreUsuario, u.Bloqueado, u.Activo, u.Contraseña, 
-                                    u.IntentosInicio, u.Email, u.IdPerfil, p.Nombre AS NombrePerfil
-                             FROM Usuario u
-                             LEFT JOIN Perfil p ON u.IdPerfil = p.IdPerfil;";
+                            u.IntentosInicio, u.Email, u.IdPerfil, u.IdIdioma, p.Nombre AS NombrePerfil
+                     FROM Usuario u
+                     LEFT JOIN Perfil p ON u.IdPerfil = p.IdPerfil;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
-                    try
+                    conexion.Open();
+                    using (SqlDataReader reader = comando.ExecuteReader())
                     {
-                        conexion.Open();
-                        using (SqlDataReader reader = comando.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                ServicioUsuario usr = new ServicioUsuario();
-                                usr.DNI = Convert.ToInt32(reader["DNI"]);
-                                usr.Nombre = reader["Nombre"].ToString();
-                                usr.Apellido = reader["Apellido"].ToString();
-                                usr.nombreUsuario = reader["NombreUsuario"].ToString();
-                                usr.Bloqueado = Convert.ToBoolean(reader["Bloqueado"]);
-                                usr.Activo = Convert.ToBoolean(reader["Activo"]);
-                                usr.Email = reader["Email"].ToString();
-                                usr.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
-                                usr.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
-                                usr.PerfilUsuario = new ServicioFamilia(
-                                    usr.IdPerfil,
-                                    reader["NombrePerfil"].ToString()
-                                );
-                                usr.SetPassword(reader["Contraseña"].ToString());
+                            ServicioUsuario usr = new ServicioUsuario();
+                            usr.DNI = Convert.ToInt32(reader["DNI"]);
+                            usr.Nombre = reader["Nombre"].ToString();
+                            usr.Apellido = reader["Apellido"].ToString();
+                            usr.nombreUsuario = reader["NombreUsuario"].ToString();
+                            usr.Bloqueado = Convert.ToBoolean(reader["Bloqueado"]);
+                            usr.Activo = Convert.ToBoolean(reader["Activo"]);
+                            usr.Email = reader["Email"].ToString();
+                            usr.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
+                            usr.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
+                            usr.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
+                            usr.PerfilUsuario = new ServicioFamilia(usr.IdPerfil, reader["NombrePerfil"].ToString());
+                            usr.SetPassword(reader["Contraseña"].ToString());
 
-                                usuarios.Add(usr);
-                            }
+                            usuarios.Add(usr);
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error al recuperar la lista completa de usuarios: " + ex.Message);
                     }
                 }
             }
@@ -99,8 +91,10 @@ namespace DALs
 
         public void GuardarUsuario(ServicioUsuario usuario)
         {
-            string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil) 
-                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @IdPerfil);";
+            int idiomaAGuardar = (usuario.IdIdioma > 0) ? usuario.IdIdioma : 1;
+
+            string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma) 
+                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @IdPerfil, @IdIdioma);";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -116,6 +110,7 @@ namespace DALs
                     comando.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = usuario.Email;
                     comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuario.IdPerfil;
                     comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 65).Value = usuario.GetPassword();
+                    comando.Parameters.Add("@IdIdioma", SqlDbType.Int).Value = idiomaAGuardar;
 
                     try
                     {
@@ -128,49 +123,44 @@ namespace DALs
                     }
                 }
             }
+
+            usuario.IdIdioma = idiomaAGuardar;
             usuarios.Add(usuario);
         }
 
         public ServicioUsuario BuscarUsuarioPorDniOMail(int dni, string email)
         {
             ServicioUsuario usuarioEncontrado = null;
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil 
-                                 FROM Usuario 
-                                 WHERE DNI = @DNI OR Email = @Email;";
+            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma 
+                     FROM Usuario 
+                     WHERE DNI = @DNI OR Email = @Email;";
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
-                    comando.Parameters.Add("@DNI", SqlDbType.Int).Value = dni;
-                    comando.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = email;
-                    try
+                    comando.Parameters.AddWithValue("@DNI", dni);
+                    comando.Parameters.AddWithValue("@Email", email);
+                    conexion.Open();
+                    using (SqlDataReader reader = comando.ExecuteReader())
                     {
-                        conexion.Open();
-                        using (SqlDataReader reader = comando.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (reader.Read())
-                            {
-                                usuarioEncontrado = new ServicioUsuario();
-                                usuarioEncontrado.DNI = Convert.ToInt32(reader["DNI"]);
-                                usuarioEncontrado.Nombre = reader["Nombre"].ToString();
-                                usuarioEncontrado.Apellido = reader["Apellido"].ToString();
-                                usuarioEncontrado.nombreUsuario = reader["NombreUsuario"].ToString();
-                                usuarioEncontrado.Bloqueado = Convert.ToBoolean(reader["Bloqueado"]);
-                                usuarioEncontrado.Activo = Convert.ToBoolean(reader["Activo"]);
-                                usuarioEncontrado.Email = reader["Email"].ToString();
-                                usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
-                                usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
-                                usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
-                            }
+                            usuarioEncontrado = new ServicioUsuario();
+                            usuarioEncontrado.DNI = Convert.ToInt32(reader["DNI"]);
+                            usuarioEncontrado.Nombre = reader["Nombre"].ToString();
+                            usuarioEncontrado.Apellido = reader["Apellido"].ToString();
+                            usuarioEncontrado.nombreUsuario = reader["NombreUsuario"].ToString();
+                            usuarioEncontrado.Bloqueado = Convert.ToBoolean(reader["Bloqueado"]);
+                            usuarioEncontrado.Activo = Convert.ToBoolean(reader["Activo"]);
+                            usuarioEncontrado.Email = reader["Email"].ToString();
+                            usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
+                            usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
+                            usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
+                            usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error en la capa de datos al buscar duplicados de usuario: " + ex.Message);
                     }
                 }
             }
-
             return usuarioEncontrado;
         }
 
@@ -244,13 +234,14 @@ namespace DALs
         public void ModificarUsuario(ServicioUsuario usuarioModificado)
         {
             string query = @"UPDATE Usuario 
-                                 SET Nombre = @Nombre, 
-                                     Apellido = @Apellido, 
-                                     Email = @Email, 
-                                     NombreUsuario = @NombreUsuario, 
-                                     IdPerfil = @IdPerfil, 
-                                     Activo = @Activo
-                                 WHERE DNI = @DNI;";
+                     SET Nombre = @Nombre, 
+                         Apellido = @Apellido, 
+                         Email = @Email, 
+                         NombreUsuario = @NombreUsuario, 
+                         IdPerfil = @IdPerfil, 
+                         Activo = @Activo,
+                         IdIdioma = @IdIdioma
+                     WHERE DNI = @DNI;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -263,6 +254,7 @@ namespace DALs
                     comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = usuarioModificado.nombreUsuario;
                     comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuarioModificado.IdPerfil;
                     comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuarioModificado.Activo;
+                    comando.Parameters.Add("@IdIdioma", SqlDbType.Int).Value = usuarioModificado.IdIdioma;
 
                     try
                     {
@@ -280,7 +272,6 @@ namespace DALs
                 }
             }
             ServicioUsuario usuarioMemoria = usuarios.FirstOrDefault(u => u.DNI == usuarioModificado.DNI);
-
             if (usuarioMemoria != null)
             {
                 usuarioMemoria.Nombre = usuarioModificado.Nombre;
@@ -288,6 +279,7 @@ namespace DALs
                 usuarioMemoria.Email = usuarioModificado.Email;
                 usuarioMemoria.nombreUsuario = usuarioModificado.nombreUsuario;
                 usuarioMemoria.IdPerfil = usuarioModificado.IdPerfil;
+                usuarioMemoria.IdIdioma = usuarioModificado.IdIdioma;
                 usuarioMemoria.PerfilUsuario = usuarioModificado.PerfilUsuario;
                 usuarioMemoria.Activo = usuarioModificado.Activo;
             }
@@ -398,9 +390,19 @@ namespace DALs
             }
         }
 
-        public void CargarPermisos(ServicioUsuario usuario)
+        public void ActualizarIdiomaUsuario(int dni, int idIdioma)
         {
-            // todo: lógica ADO.NET para hacer un SELECT p.nombre FROM Permisos p JOIN UsuarioPermisos up ON p.id = up.idPermiso JOIN Usuarios u ON up.idUsuario = u.id WHERE u.nombreUsuario = @user
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                string query = "UPDATE Usuario SET IdIdioma = @IdIdioma WHERE DNI = @DNI";
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@IdIdioma", idIdioma);
+                    cmd.Parameters.AddWithValue("@DNI", dni);
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

@@ -110,9 +110,9 @@
             // 
             btnQuitarPerfil.BackColor = Color.RosyBrown;
             btnQuitarPerfil.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnQuitarPerfil.Location = new Point(584, 172);
+            btnQuitarPerfil.Location = new Point(584, 124);
             btnQuitarPerfil.Name = "btnQuitarPerfil";
-            btnQuitarPerfil.Size = new Size(155, 48);
+            btnQuitarPerfil.Size = new Size(155, 96);
             btnQuitarPerfil.TabIndex = 24;
             btnQuitarPerfil.Text = "Quitar Perfil";
             btnQuitarPerfil.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             // 
             btnQuitarFamilia.BackColor = Color.RosyBrown;
             btnQuitarFamilia.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnQuitarFamilia.Location = new Point(584, 397);
+            btnQuitarFamilia.Location = new Point(584, 349);
             btnQuitarFamilia.Name = "btnQuitarFamilia";
-            btnQuitarFamilia.Size = new Size(155, 48);
+            btnQuitarFamilia.Size = new Size(155, 96);
             btnQuitarFamilia.TabIndex = 26;
             btnQuitarFamilia.Text = "Quitar Familia";
             btnQuitarFamilia.UseVisualStyleBackColor = false;
@@ -283,6 +283,7 @@
             Controls.Add(label1);
             Name = "FormPerfil";
             Text = "FormPerfil";
+            FormClosing += FormPerfil_FormClosing;
             Load += FormPerfil_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPerfil).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvFamilia).EndInit();

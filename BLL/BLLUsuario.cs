@@ -83,6 +83,16 @@ namespace BLL
             BLLPerfil bllPerfil = new BLLPerfil();
             usuario.PerfilUsuario = bllPerfil.CargarPerfilUsuario(usuario.IdPerfil);
 
+            if (usuario.IdIdioma > 0)
+            {
+                BLLIdioma bllIdioma = new BLLIdioma();
+                usuario.Idioma = bllIdioma.ListarIdiomas().FirstOrDefault(i => i.IdIdioma == usuario.IdIdioma);
+                if (usuario.Idioma != null && usuario.Idioma.CodigoIdioma == "en")
+                {
+                    usuario.Idioma.DiccionarioLeyendas = bllIdioma.ObtenerTraducciones();
+                }
+            }
+
             ServicioSessionManager.GetInstance().IniciarSesion(usuario);
             bitacora.GrabarBitacora("Login", "Usuario", 1);
             return true;
@@ -192,6 +202,12 @@ namespace BLL
                 return true;
             }
             return false;
+        }
+
+        public void ActualizarIdiomaUsuario(int dni, int idIdioma)
+        {
+            DALUsuario dal = new DALUsuario();
+            dal.ActualizarIdiomaUsuario(dni, idIdioma);
         }
     }
 }

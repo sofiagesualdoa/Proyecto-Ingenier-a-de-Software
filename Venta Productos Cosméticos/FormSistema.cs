@@ -1,15 +1,20 @@
 using BLL;
+using DAL;
 using Servicios;
 using Venta_Productos_Cosméticos.Vista;
 
 namespace Venta_Productos_Cosméticos
 {
-    public partial class FormSistema : Form
+    public partial class FormSistema : Form, IObserver
     {
+        private Dictionary<Control, string> textosOriginales = new Dictionary<Control, string>();
+        private Dictionary<ToolStripItem, string> textosOriginalesMenu = new Dictionary<ToolStripItem, string>();
         public FormSistema()
         {
             InitializeComponent();
         }
+
+        BLLIdioma bllIdioma = new BLLIdioma();
 
         private void cambiarClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -30,11 +35,19 @@ namespace Venta_Productos_Cosméticos
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Está seguro que desea cerrar su sesión activa?",
-            "Confirmación de Cierre de Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+    "Confirmación de Cierre de Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
                 BLLUsuario bll = new BLLUsuario();
+
+                var usuarioActivo = ServicioSessionManager.GetInstance().ObtenerUsuario();
+                if (usuarioActivo != null)
+                {
+
+                    bll.ActualizarIdiomaUsuario(usuarioActivo.DNI, usuarioActivo.IdIdioma);
+                }
+
                 bll.CerrarSesion();
                 FormInicioSesion frmLogin = new FormInicioSesion();
                 frmLogin.Show();
@@ -74,7 +87,89 @@ namespace Venta_Productos_Cosméticos
                 MessageBox.Show("No se detectó una sesión activa. El sistema se cerrará.", "Error de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
+
+            RegistrarTextos(this.Controls);
+            RegistrarTextosMenu(menuStrip1.Items);
+
+            bllIdioma.AgregarSuscriptor(this);
+
+            var usuario = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuario != null && usuario.Idioma != null)
+            {
+                Actualizar(usuario.Idioma);
+            }
         }
+
+        private void RegistrarTextos(Control.ControlCollection controles)
+        {
+            foreach (Control c in controles)
+            {
+                if (!string.IsNullOrEmpty(c.Text))
+                    textosOriginales[c] = c.Text;
+
+                if (c.Controls.Count > 0) RegistrarTextos(c.Controls);
+            }
+        }
+
+        private void RegistrarTextosMenu(ToolStripItemCollection items)
+        {
+            foreach (ToolStripItem item in items)
+            {
+                if (!string.IsNullOrEmpty(item.Text))
+                {
+                    textosOriginalesMenu[item] = item.Text;
+                }
+
+                if (item is ToolStripMenuItem menuItem && menuItem.DropDownItems.Count > 0)
+                {
+                    RegistrarTextosMenu(menuItem.DropDownItems);
+                }
+            }
+        }
+
+        public void Actualizar(ServicioIdioma idioma)
+        {
+            ActualizarIdioma(idioma);
+        }
+
+        private void ActualizarIdioma(ServicioIdioma idioma)
+        {
+            var leyendas = idioma.DiccionarioLeyendas;
+
+            foreach (var entry in textosOriginales)
+            {
+                Control ctrl = entry.Key;
+                string textoBase = entry.Value;
+                ctrl.Text = (leyendas != null && leyendas.ContainsKey(textoBase)) ? leyendas[textoBase] : textoBase;
+            }
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is MenuStrip menuStrip)
+                {
+                    TraducirMenu(leyendas);
+                }
+            }
+        }
+
+        private void TraducirMenu(Dictionary<string, string> leyendas)
+        {
+            foreach (var entry in textosOriginalesMenu)
+            {
+                ToolStripItem item = entry.Key;
+                string textoOriginal = entry.Value;
+
+                if (leyendas != null && leyendas.ContainsKey(textoOriginal))
+                {
+                    item.Text = leyendas[textoOriginal];
+                }
+                else
+                {
+                    item.Text = textoOriginal;
+                }
+            }
+        }
+
 
         private void ConfigurarPermisosControl(Control.ControlCollection controles, BLLPerfil bllPerfil, ServicioUsuario usuario)
         {
@@ -130,6 +225,59 @@ namespace Venta_Productos_Cosméticos
             frmPerfil.MdiParent = this.MdiParent;
             frmPerfil.Show();
             this.Close();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void españolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ServicioIdioma idiomaEspanol = new ServicioIdioma
+                {
+                    IdIdioma = 1,
+                    CodigoIdioma = "es",
+                    Nombre = "Español"
+                };
+
+                bllIdioma.CambiarIdioma(idiomaEspanol);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cambiar el idioma: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void inglésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ServicioIdioma idiomaIngles = new ServicioIdioma
+                {
+                    IdIdioma = 2,
+                    CodigoIdioma = "en",
+                    Nombre = "English"
+                };
+
+                bllIdioma.CambiarIdioma(idiomaIngles);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cambiar el idioma: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FormSistema_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bllIdioma.BorrarSuscriptor(this);
         }
     }
 }
