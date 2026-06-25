@@ -297,21 +297,18 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                if (dgvPerfil.SelectedRows.Count == 0)
+                ServicioPerfil perfilPadre = ObtenerPerfilPadreDesdeTreeView();
+                List<ServicioPermiso> permisosElegidos = ObtenerPermisosSeleccionadosDeGrilla();
+
+                if (permisosElegidos.Count == 0)
+                    throw new Exception("Debe seleccionar al menos un permiso de la grilla de permisos para agregar.");
+
+                foreach (var permiso in permisosElegidos)
                 {
-                    throw new Exception("Debe seleccionar un Perfil en la grilla de perfiles (derecha) al cual desea agregar componentes.");
+                    bllPerfil.AgregarPermisoAPerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, permiso);
                 }
-                ServicioPerfil perfilPadre = (ServicioPerfil)dgvPerfil.SelectedRows[0].DataBoundItem;
-                List<ServicioPerfil> componentesElegidos = ObtenerComponentesSeleccionadosDeGrillas();
-                if (componentesElegidos.Count == 0)
-                {
-                    throw new Exception("Debe seleccionar al menos un Permiso de las grillas de la derecha para agregar.");
-                }
-                foreach (var comp in componentesElegidos)
-                {
-                    bllPerfil.AgregarPermisoAPerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, comp);
-                }
-                MessageBox.Show("Componente(s) agregado(s) con éxito al perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show("Permiso(s) agregado(s) con éxito al perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
@@ -325,29 +322,20 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                if (dgvPerfil.SelectedRows.Count == 0)
+                ServicioPerfil perfilPadre = ObtenerPerfilPadreDesdeTreeView();
+                List<ServicioPermiso> permisosAQuitar = ObtenerPermisosSeleccionadosDeGrilla();
+
+                if (permisosAQuitar.Count == 0)
+                    throw new Exception("Debe seleccionar al menos un permiso de la grilla de permisos para quitar.");
+
+                foreach (var permiso in permisosAQuitar)
                 {
-                    throw new Exception("Debe seleccionar un Perfil en la grilla de perfiles (derecha) al cual desea quitarle componentes.");
+                    bllPerfil.QuitarPermisoDePerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, permiso);
                 }
-                ServicioPerfil perfilPadre = (ServicioPerfil)dgvPerfil.SelectedRows[0].DataBoundItem;
-                List<ServicioPerfil> componentesAQuitar = ObtenerComponentesSeleccionadosDeGrillas();
-                if (componentesAQuitar.Count == 0)
-                {
-                    throw new Exception("Debe seleccionar al menos una Familia o un Permiso de las grillas de la derecha para quitar del perfil.");
-                }
-                string nombresComponentes = string.Join(", ", componentesAQuitar.Select(c => c.Nombre));
-                DialogResult result = MessageBox.Show($"¿Desea quitar los siguientes componentes: [{nombresComponentes}] del perfil '{perfilPadre.Nombre}'?",
-                    "Confirmar Quitar Componentes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    foreach (var comp in componentesAQuitar)
-                    {
-                        bllPerfil.QuitarPermisoDePerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, comp);
-                    }
-                    MessageBox.Show("Componente(s) removido(s) con éxito del perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarGrillas();
-                    CargarTreeView();
-                }
+
+                MessageBox.Show("Permiso(s) removido(s) con éxito del perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarGrillas();
+                CargarTreeView();
             }
             catch (Exception ex)
             {
@@ -359,26 +347,21 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                if (dgvFamilia.SelectedRows.Count == 0)
+                ServicioFamilia familiaPadre = ObtenerFamiliaPadreDesdeTreeView();
+                List<ServicioPerfil> componentesElegidos = ObtenerComponentesSeleccionadosParaFamilia();
+
+                if (componentesElegidos.Count == 0)
+                    throw new Exception("Debe seleccionar al menos una familia o un permiso para agregar.");
+
+                foreach (var componente in componentesElegidos)
                 {
-                    throw new Exception("Debe seleccionar una Familia en la grilla al cual desea agregar componentes.");
+                    if (componente is ServicioFamilia familiaHija && familiaHija.IdPerfil == familiaPadre.IdPerfil)
+                        throw new Exception("Una familia no puede agregarse a sí misma.");
+
+                    bllFamilia.AgregarPermisoAFamilia(familiaPadre.IdPerfil, familiaPadre.Nombre, componente);
                 }
 
-                ServicioFamilia familiaPadre = (ServicioFamilia)dgvFamilia.SelectedRows[0].DataBoundItem;
-                List<ServicioPermiso> permisosElegidos = ObtenerPermisosSeleccionadosDeGrilla();
-
-                if (permisosElegidos.Count == 0)
-                {
-                    throw new Exception("Debe seleccionar al menos un Permiso de la grilla de permisos para agregar.");
-                }
-
-                foreach (var perm in permisosElegidos)
-                {
-                    bllFamilia.AgregarPermisoAFamilia(familiaPadre.IdPerfil, familiaPadre.Nombre, perm);
-                }
-
-                MessageBox.Show("Permiso(s) agregado(s) con éxito a la familia.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Componente(s) agregado(s) con éxito a la familia.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
@@ -392,35 +375,20 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                if (dgvFamilia.SelectedRows.Count == 0)
+                ServicioFamilia familiaPadre = ObtenerFamiliaPadreDesdeTreeView();
+                List<ServicioPerfil> componentesAQuitar = ObtenerComponentesSeleccionadosParaFamilia();
+
+                if (componentesAQuitar.Count == 0)
+                    throw new Exception("Debe seleccionar al menos una familia o un permiso para quitar.");
+
+                foreach (var componente in componentesAQuitar)
                 {
-                    throw new Exception("Debe seleccionar una Familia en la grilla a la cual desea quitarle componentes.");
+                    bllFamilia.QuitarPermisoDeFamilia(familiaPadre.IdPerfil, familiaPadre.Nombre, componente);
                 }
 
-                ServicioFamilia familiaPadre = (ServicioFamilia)dgvFamilia.SelectedRows[0].DataBoundItem;
-                List<ServicioPermiso> permisosAQuitar = ObtenerPermisosSeleccionadosDeGrilla();
-
-                if (permisosAQuitar.Count == 0)
-                {
-                    throw new Exception("Debe seleccionar al menos un Permiso de la grilla de permisos para quitar.");
-                }
-
-                string nombresComponentes = string.Join(", ", permisosAQuitar.Select(p => p.Nombre));
-                DialogResult result = MessageBox.Show($"¿Desea quitar los siguientes permisos: [{nombresComponentes}] de la familia '{familiaPadre.Nombre}'?",
-                    "Confirmar Acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    foreach (var perm in permisosAQuitar)
-                    {
-                        bllFamilia.QuitarPermisoDeFamilia(familiaPadre.IdPerfil, familiaPadre.Nombre, perm);
-                    }
-
-                    MessageBox.Show("Permiso(s) removido(s) con éxito de la familia.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    CargarGrillas();
-                    CargarTreeView();
-                }
+                MessageBox.Show("Componente(s) removido(s) con éxito de la familia.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarGrillas();
+                CargarTreeView();
             }
             catch (Exception ex)
             {
@@ -433,21 +401,18 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                if (dgvPerfil.SelectedRows.Count == 0)
+                ServicioPerfil perfilPadre = ObtenerPerfilPadreDesdeTreeView();
+                List<ServicioFamilia> familiasElegidas = ObtenerFamiliasSeleccionadasDeGrilla();
+
+                if (familiasElegidas.Count == 0)
+                    throw new Exception("Debe seleccionar al menos una familia de la grilla.");
+
+                foreach (var familia in familiasElegidas)
                 {
-                    throw new Exception("Debe seleccionar un Perfil en la grilla al cual desea agregarle una familia.");
-                }
-                if (dgvFamilia.SelectedRows.Count == 0)
-                {
-                    throw new Exception("Debe seleccionar la Familia en la grilla que desea incorporar.");
+                    bllPerfil.AgregarFamiliaAPerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, familia);
                 }
 
-                ServicioPerfil perfilPadre = (ServicioPerfil)dgvPerfil.SelectedRows[0].DataBoundItem;
-                ServicioFamilia familiaHijo = (ServicioFamilia)dgvFamilia.SelectedRows[0].DataBoundItem;
-
-                bllPerfil.AgregarFamiliaAPerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, familiaHijo);
-
-                MessageBox.Show("Familia agregada con éxito al perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Familia(s) agregada(s) con éxito al perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
@@ -461,29 +426,20 @@ namespace Venta_Productos_Cosméticos
         {
             try
             {
-                if (dgvPerfil.SelectedRows.Count == 0)
+                ServicioPerfil perfilPadre = ObtenerPerfilPadreDesdeTreeView();
+                List<ServicioFamilia> familiasAQuitar = ObtenerFamiliasSeleccionadasDeGrilla();
+
+                if (familiasAQuitar.Count == 0)
+                    throw new Exception("Debe seleccionar al menos una familia de la grilla.");
+
+                foreach (var familia in familiasAQuitar)
                 {
-                    throw new Exception("Debe seleccionar un Perfil en la grilla al cual desea quitarle una familia.");
-                }
-                if (dgvFamilia.SelectedRows.Count == 0)
-                {
-                    throw new Exception("Debe seleccionar la Familia en la grilla que desea remover.");
+                    bllPerfil.QuitarFamiliaDePerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, familia);
                 }
 
-                ServicioPerfil perfilPadre = (ServicioPerfil)dgvPerfil.SelectedRows[0].DataBoundItem;
-                ServicioFamilia familiaHijo = (ServicioFamilia)dgvFamilia.SelectedRows[0].DataBoundItem;
-
-                DialogResult result = MessageBox.Show($"¿Desea desasignar la familia '{familiaHijo.Nombre}' del perfil '{perfilPadre.Nombre}'?",
-                    "Confirmar Acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    bllPerfil.QuitarFamiliaDePerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, familiaHijo);
-
-                    MessageBox.Show("Familia removida con éxito del perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarGrillas();
-                    CargarTreeView();
-                }
+                MessageBox.Show("Familia(s) removida(s) con éxito del perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarGrillas();
+                CargarTreeView();
             }
             catch (Exception ex)
             {
@@ -494,6 +450,68 @@ namespace Venta_Productos_Cosméticos
         private void FormPerfil_FormClosing(object sender, FormClosingEventArgs e)
         {
             bllIdioma.BorrarSuscriptor(this);
+        }
+
+        private ServicioPerfil ObtenerPadreDesdeTreeView()
+        {
+            if (treeView1.SelectedNode == null)
+                throw new Exception("Debe seleccionar en el árbol dónde desea agregar o quitar el componente.");
+
+            if (treeView1.SelectedNode.Tag is ServicioPermiso)
+                throw new Exception("No puede agregar componentes dentro de un permiso.");
+
+            if (treeView1.SelectedNode.Tag is not ServicioPerfil padre)
+                throw new Exception("El nodo seleccionado no es válido.");
+
+            return padre;
+        }
+
+        private ServicioPerfil ObtenerPerfilPadreDesdeTreeView()
+        {
+            ServicioPerfil padre = ObtenerPadreDesdeTreeView();
+
+            if (treeView1.SelectedNode.Level != 0)
+                throw new Exception("Debe seleccionar un perfil del árbol.");
+
+            return padre;
+        }
+
+        private ServicioFamilia ObtenerFamiliaPadreDesdeTreeView()
+        {
+            ServicioPerfil padre = ObtenerPadreDesdeTreeView();
+
+            if (treeView1.SelectedNode.Level == 0)
+                throw new Exception("Debe seleccionar una familia del árbol, no un perfil.");
+
+            if (padre is not ServicioFamilia familiaPadre)
+                throw new Exception("Debe seleccionar una familia válida del árbol.");
+
+            return familiaPadre;
+        }
+
+        private List<ServicioFamilia> ObtenerFamiliasSeleccionadasDeGrilla()
+        {
+            List<ServicioFamilia> lista = new List<ServicioFamilia>();
+
+            foreach (DataGridViewRow fila in dgvFamilia.SelectedRows)
+            {
+                if (fila.DataBoundItem is ServicioFamilia familia)
+                {
+                    lista.Add(familia);
+                }
+            }
+
+            return lista;
+        }
+
+        private List<ServicioPerfil> ObtenerComponentesSeleccionadosParaFamilia()
+        {
+            List<ServicioPerfil> componentes = new List<ServicioPerfil>();
+
+            componentes.AddRange(ObtenerFamiliasSeleccionadasDeGrilla());
+            componentes.AddRange(ObtenerPermisosSeleccionadosDeGrilla());
+
+            return componentes;
         }
     }
 }
