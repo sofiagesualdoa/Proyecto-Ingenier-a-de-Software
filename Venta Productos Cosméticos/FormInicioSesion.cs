@@ -17,6 +17,7 @@ namespace Venta_Productos_Cosméticos
         private BLLIdioma bllIdioma = new BLLIdioma();
         private Dictionary<Control, string> textosOriginales = new Dictionary<Control, string>();
         private ServicioIdioma idiomaSeleccionadoLogin = null;
+        private bool idiomaLoginCambiado = false;
         public FormInicioSesion()
         {
             InitializeComponent();
@@ -44,14 +45,15 @@ namespace Venta_Productos_Cosméticos
 
                 if (loginExitoso)
                 {
-                    if (idiomaSeleccionadoLogin != null)
+                    if (idiomaLoginCambiado)
                     {
-                        bllIdioma.CambiarIdioma(idiomaSeleccionadoLogin);
-
-                        var usuarioActivo = ServicioSessionManager.GetInstance().ObtenerUsuario();
-                        if (usuarioActivo != null)
+                        try
                         {
-                            bll.ActualizarIdiomaUsuario(usuarioActivo.DNI, usuarioActivo.IdIdioma);
+                            bllIdioma.CambiarIdioma(idiomaSeleccionadoLogin);
+                        }
+                        catch (InvalidOperationException ex) when (ex.Message == "El idioma seleccionado ya se encuentra activo.")
+                        {
+                            MessageBox.Show(ex.Message, "Cambio de Idioma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 
@@ -153,6 +155,7 @@ namespace Venta_Productos_Cosméticos
             }
 
             Actualizar(idiomaSeleccionadoLogin);
+            idiomaLoginCambiado = true;
         }
     }
 }

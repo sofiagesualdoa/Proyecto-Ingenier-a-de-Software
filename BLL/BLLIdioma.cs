@@ -53,9 +53,11 @@ namespace BLL
             {
                 var usuarioLogueado = ServicioSessionManager.GetInstance().ObtenerUsuario();
 
-                if (usuarioLogueado != null && usuarioLogueado.IdIdioma == idioma.IdIdioma)
+                if (usuarioLogueado != null &&
+                    (usuarioLogueado.IdIdioma == idioma.IdIdioma ||
+                     string.Equals(usuarioLogueado.Idioma?.CodigoIdioma, idioma.CodigoIdioma, StringComparison.OrdinalIgnoreCase)))
                 {
-                    return;
+                    throw new InvalidOperationException("El idioma seleccionado ya se encuentra activo.");
                 }
 
                 if (idioma.CodigoIdioma == "en")
@@ -78,6 +80,10 @@ namespace BLL
 
                 BLLEvento bllEvento = new BLLEvento();
                 bllEvento.GrabarBitacora("Cambio de Idioma", "Idioma cambiado con éxito", 1);
+            }
+            catch (InvalidOperationException)
+            {
+                throw;
             }
             catch (Exception)
             {

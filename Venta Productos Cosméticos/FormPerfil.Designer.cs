@@ -169,6 +169,7 @@
             // btnAgregarPermFamilia
             // 
             btnAgregarPermFamilia.BackColor = Color.RosyBrown;
+            btnAgregarPermFamilia.Enabled = false;
             btnAgregarPermFamilia.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarPermFamilia.Location = new Point(760, 309);
             btnAgregarPermFamilia.Name = "btnAgregarPermFamilia";
@@ -181,6 +182,7 @@
             // btnQuitarPermFamilia
             // 
             btnQuitarPermFamilia.BackColor = Color.RosyBrown;
+            btnQuitarPermFamilia.Enabled = false;
             btnQuitarPermFamilia.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnQuitarPermFamilia.Location = new Point(760, 431);
             btnQuitarPermFamilia.Name = "btnQuitarPermFamilia";

@@ -52,3 +52,4 @@ C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Soft
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.pdb
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\ref\DAL.dll
 C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\traducciones.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\traducciones.json
