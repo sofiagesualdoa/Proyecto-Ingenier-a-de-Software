@@ -23,11 +23,21 @@ namespace BLL
             if (componentesSeleccionados == null || componentesSeleccionados.Count == 0)
                 throw new Exception("No se puede crear una familia vacía. Debe seleccionar al menos un permiso o familia hijo.");
 
+            ValidarNombreFamiliaDisponible(nombreFamilia);
+
             ServicioFamilia nuevaFamilia = new ServicioFamilia(0, nombreFamilia.Trim());
             int idAsignado = dalFamilia.GuardarFamilia(nuevaFamilia);
             dalFamilia.GuardarRelacionesFamilia(idAsignado, componentesSeleccionados);
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Creación de nueva Familia", "Perfiles", 1);
+        }
+        private void ValidarNombreFamiliaDisponible(string nombreFamilia)
+        {
+            bool existe = ObtenerFamilias()
+                .Any(f => f.Nombre.Equals(nombreFamilia.Trim(), StringComparison.OrdinalIgnoreCase));
+
+            if (existe)
+                throw new Exception($"Ya existe una familia con el nombre '{nombreFamilia}'.");
         }
 
         public void EliminarFamilia(int idFamilia, string nombreFamilia)

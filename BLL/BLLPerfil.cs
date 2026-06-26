@@ -42,11 +42,22 @@ namespace BLL
             if (componentesSeleccionados == null || componentesSeleccionados.Count == 0)
                 throw new Exception("No se puede crear un perfil vacío. Debe seleccionar al menos un permiso o familia.");
 
+            ValidarNombrePerfilDisponible(nombrePerfil);
+
             ServicioFamilia nuevoPerfil = new ServicioFamilia(0, nombrePerfil.Trim());
             int idAsignado = dalPerfil.GuardarPerfil(nuevoPerfil);
             dalPerfil.GuardarRelacionesPerfil(idAsignado, componentesSeleccionados);
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Creación de nuevo Perfil", "Perfiles", 1);
+        }
+
+        private void ValidarNombrePerfilDisponible(string nombrePerfil)
+        {
+            bool existe = ObtenerPerfiles()
+                .Any(p => p.Nombre.Equals(nombrePerfil.Trim(), StringComparison.OrdinalIgnoreCase));
+
+            if (existe)
+                throw new Exception($"Ya existe un perfil con el nombre '{nombrePerfil}'.");
         }
 
         public void EliminarPerfil(int idPerfil, string nombrePerfil)
