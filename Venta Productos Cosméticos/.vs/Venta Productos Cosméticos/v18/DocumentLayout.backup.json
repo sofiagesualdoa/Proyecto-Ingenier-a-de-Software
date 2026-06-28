@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\sofig\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:forminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\sofig\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormInicioSesion.cs",
+              "DocumentMoniker": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
+              "RelativeDocumentMoniker": "FormInicioSesion.cs",
+              "ToolTip": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormInicioSesion.cs",
+              "RelativeToolTip": "FormInicioSesion.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T22:28:39.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormPerfil.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormPerfil.cs",
+              "RelativeDocumentMoniker": "FormPerfil.cs",
+              "ToolTip": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormPerfil.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormPerfil.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T21:10:24.248Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -37,6 +37,9 @@ namespace Venta_Productos_Cosméticos
 
                 if (servicioSessionManager.ObtenerUsuario() != null)
                 {
+                    FormSistema frmMenu = new FormSistema();
+                    frmMenu.Show();
+                    this.Close();
                     throw new Exception($"Ya existe una sesión activa: {servicioSessionManager.ObtenerUsuario().nombreUsuario}");
                 }
 
@@ -56,7 +59,6 @@ namespace Venta_Productos_Cosméticos
                             MessageBox.Show(ex.Message, "Cambio de Idioma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-
                     FormSistema frmMenu = new FormSistema();
                     frmMenu.Show();
                     this.Close();
