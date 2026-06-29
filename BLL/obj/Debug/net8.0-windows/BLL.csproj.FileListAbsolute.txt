@@ -59,3 +59,24 @@ C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Soft
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\ref\BLL.dll
 C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\BLL\bin\Debug\net8.0-windows\traducciones.json
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\traducciones.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.csproj.AssemblyReference.cache
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.AssemblyInfoInputs.cache
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.AssemblyInfo.cs
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.csproj.CoreCompileInputs.cache
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.sourcelink.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\refint\BLL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\traducciones.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\BLL.deps.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\BLL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\BLL.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\BE.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\DAL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\Servicios.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\BE.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\DAL.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\bin\Debug\net8.0-windows\Servicios.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\BLL.csproj.Up2Date
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\BLL\obj\Debug\net8.0-windows\ref\BLL.dll

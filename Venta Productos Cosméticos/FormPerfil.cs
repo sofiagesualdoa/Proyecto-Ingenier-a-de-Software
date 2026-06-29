@@ -1,4 +1,5 @@
 ﻿using BLL;
+using iTextSharp.text;
 using Microsoft.VisualBasic;
 using Servicios;
 using System;
@@ -96,7 +97,18 @@ namespace Venta_Productos_Cosméticos
         {
             pGrilla.DataSource = null;
             pGrilla.DataSource = pVista;
-            pGrilla.ClearSelection();
+            var usuarioActivo = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuarioActivo?.Idioma?.DiccionarioLeyendas != null)
+            {
+                var leyendas = usuarioActivo.Idioma.DiccionarioLeyendas;
+                foreach (DataGridViewColumn columna in pGrilla.Columns)
+                {
+                    if (leyendas.ContainsKey(columna.Name))
+                    {
+                        columna.HeaderText = leyendas[columna.Name];
+                    }
+                }
+            }
         }
 
         private void CargarGrillas()
@@ -112,7 +124,10 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar las grillas independientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al cargar las grillas independientes: ") + errorTraducido,
+                                ServicioSessionManager.GetInstance().Traducir("Error"),
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void CargarTreeView()
@@ -139,7 +154,11 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al armar el árbol de perfiles: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al armar el árbol de perfiles: ") + errorTraducido,
+                                ServicioSessionManager.GetInstance().Traducir("Error"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
@@ -164,18 +183,22 @@ namespace Venta_Productos_Cosméticos
             {
                 if (dgvFamilia.SelectedRows.Count == 0 && dgvPermiso.SelectedRows.Count == 0)
                 {
-                    throw new Exception("No se han seleccionado familias o permisos. Se debe seleccionar algo para crear un nuevo perfil o familia.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("No se han seleccionado familias o permisos. Se debe seleccionar algo para crear un nuevo perfil o familia."));
                 }
                 List<ServicioPerfil> seleccionados = ObtenerComponentesSeleccionadosDeGrillas();
                 string nombre = Interaction.InputBox("Ingrese el nombre del nuevo perfil:", "Crear Perfil", "NuevoPerfil");
                 bllPerfil.CrearPerfil(nombre, seleccionados);
-                MessageBox.Show("Perfil creado con éxito junto a sus componentes básicos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Perfil creado con éxito junto a sus componentes básicos."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -185,18 +208,22 @@ namespace Venta_Productos_Cosméticos
             {
                 if (dgvFamilia.SelectedRows.Count == 0 && dgvPermiso.SelectedRows.Count == 0)
                 {
-                    throw new Exception("No se han seleccionado familias o permisos. Se debe seleccionar algo para crear un nuevo perfil o familia.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("No se han seleccionado familias o permisos. Se debe seleccionar algo para crear un nuevo perfil o familia."));
                 }
                 List<ServicioPerfil> seleccionados = ObtenerComponentesSeleccionadosDeGrillas();
                 string nombre = Interaction.InputBox("Ingrese el nombre de la nueva familia:", "Crear Familia", "NuevaFamilia");
                 bllFamilia.CrearFamilia(nombre, seleccionados);
-                MessageBox.Show("Familia creada con éxito junto a sus componentes básicos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Familia creada con éxito junto a sus componentes básicos."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -206,22 +233,26 @@ namespace Venta_Productos_Cosméticos
             {
                 if (dgvPerfil.SelectedRows.Count == 0)
                 {
-                    throw new Exception("Debe seleccionar el perfil que desea eliminar en la grilla de perfiles.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar el perfil que desea eliminar en la grilla de perfiles."));
                 }
                 var perfilSeleccionado = (ServicioPerfil)dgvPerfil.SelectedRows[0].DataBoundItem;
-                DialogResult result = MessageBox.Show($"¿Está seguro de que desea eliminar el perfil '{perfilSeleccionado.Nombre}'? Esta acción no se puede deshacer.",
+                DialogResult result = MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("¿Está seguro de que desea eliminar el perfil") + perfilSeleccionado.Nombre + "?" + ServicioSessionManager.GetInstance().Traducir("Esta acción no se puede deshacer."),
                     "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     bllPerfil.EliminarPerfil(perfilSeleccionado.IdPerfil, perfilSeleccionado.Nombre);
-                    MessageBox.Show("Perfil eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Perfil eliminado con éxito."),
+                                    ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                     CargarGrillas();
                     CargarTreeView();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error al eliminar perfil", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error al eliminar perfil"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -274,22 +305,26 @@ namespace Venta_Productos_Cosméticos
             {
                 if (dgvFamilia.SelectedRows.Count == 0)
                 {
-                    throw new Exception("Debe seleccionar la familia que desea eliminar en la grilla de familias.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar la familia que desea eliminar en la grilla de familias."));
                 }
                 var familiaSeleccionada = (ServicioFamilia)dgvFamilia.SelectedRows[0].DataBoundItem;
-                DialogResult result = MessageBox.Show($"¿Está seguro de que desea eliminar la familia '{familiaSeleccionada.Nombre}'? Se desvinculará de todos los perfiles y subfamilias.",
+                DialogResult result = MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("¿Está seguro de que desea eliminar la familia") + familiaSeleccionada.Nombre + ServicioSessionManager.GetInstance().Traducir("Se desvinculará de todos los perfiles y subfamilias."),
                     "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     bllFamilia.EliminarFamilia(familiaSeleccionada.IdPerfil, familiaSeleccionada.Nombre);
-                    MessageBox.Show("Familia eliminada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Familia eliminada con éxito."),
+                                    ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                     CargarGrillas();
                     CargarTreeView();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error al eliminar familia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error al eliminar familia"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -301,20 +336,23 @@ namespace Venta_Productos_Cosméticos
                 List<ServicioPermiso> permisosElegidos = ObtenerPermisosSeleccionadosDeGrilla();
 
                 if (permisosElegidos.Count == 0)
-                    throw new Exception("Debe seleccionar al menos un permiso de la grilla de permisos para agregar.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar al menos un permiso de la grilla de permisos para agregar."));
 
                 foreach (var permiso in permisosElegidos)
                 {
                     bllPerfil.AgregarPermisoAPerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, permiso);
                 }
 
-                MessageBox.Show("Permiso(s) agregado(s) con éxito al perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Permiso(s) agregado(s) con éxito al perfil."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -326,20 +364,23 @@ namespace Venta_Productos_Cosméticos
                 List<ServicioPermiso> permisosAQuitar = ObtenerPermisosSeleccionadosDeGrilla();
 
                 if (permisosAQuitar.Count == 0)
-                    throw new Exception("Debe seleccionar al menos un permiso de la grilla de permisos para quitar.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar al menos un permiso de la grilla de permisos para quitar."));
 
                 foreach (var permiso in permisosAQuitar)
                 {
                     bllPerfil.QuitarPermisoDePerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, permiso);
                 }
 
-                MessageBox.Show("Permiso(s) removido(s) con éxito del perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Permiso(s) removido(s) con éxito del perfil."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación de Integridad / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -351,23 +392,27 @@ namespace Venta_Productos_Cosméticos
                 List<ServicioPerfil> componentesElegidos = ObtenerComponentesSeleccionadosParaFamilia();
 
                 if (componentesElegidos.Count == 0)
-                    throw new Exception("Debe seleccionar al menos una familia o un permiso para agregar.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar al menos una familia o un permiso para agregar."));
 
                 foreach (var componente in componentesElegidos)
                 {
                     if (componente is ServicioFamilia familiaHija && familiaHija.IdPerfil == familiaPadre.IdPerfil)
-                        throw new Exception("Una familia no puede agregarse a sí misma.");
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Una familia no puede agregarse a sí misma."));
 
                     bllFamilia.AgregarPermisoAFamilia(familiaPadre.IdPerfil, familiaPadre.Nombre, componente);
                 }
 
-                MessageBox.Show("Componente(s) agregado(s) con éxito a la familia.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Componente(s) agregado(s) con éxito a la familia."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -379,20 +424,24 @@ namespace Venta_Productos_Cosméticos
                 List<ServicioPerfil> componentesAQuitar = ObtenerComponentesSeleccionadosParaFamilia();
 
                 if (componentesAQuitar.Count == 0)
-                    throw new Exception("Debe seleccionar al menos una familia o un permiso para quitar.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar al menos una familia o un permiso para quitar."));
 
                 foreach (var componente in componentesAQuitar)
                 {
                     bllFamilia.QuitarPermisoDeFamilia(familiaPadre.IdPerfil, familiaPadre.Nombre, componente);
                 }
 
-                MessageBox.Show("Componente(s) removido(s) con éxito de la familia.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Componente(s) removido(s) con éxito de la familia."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación de Integridad / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -405,20 +454,24 @@ namespace Venta_Productos_Cosméticos
                 List<ServicioFamilia> familiasElegidas = ObtenerFamiliasSeleccionadasDeGrilla();
 
                 if (familiasElegidas.Count == 0)
-                    throw new Exception("Debe seleccionar al menos una familia de la grilla.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar al menos una familia de la grilla."));
 
                 foreach (var familia in familiasElegidas)
                 {
                     bllPerfil.AgregarFamiliaAPerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, familia);
                 }
 
-                MessageBox.Show("Familia(s) agregada(s) con éxito al perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Familia(s) agregada(s) con éxito al perfil."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -430,20 +483,24 @@ namespace Venta_Productos_Cosméticos
                 List<ServicioFamilia> familiasAQuitar = ObtenerFamiliasSeleccionadasDeGrilla();
 
                 if (familiasAQuitar.Count == 0)
-                    throw new Exception("Debe seleccionar al menos una familia de la grilla.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar al menos una familia de la grilla."));
 
                 foreach (var familia in familiasAQuitar)
                 {
                     bllPerfil.QuitarFamiliaDePerfil(perfilPadre.IdPerfil, perfilPadre.Nombre, familia);
                 }
 
-                MessageBox.Show("Familia(s) removida(s) con éxito del perfil.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Familia(s) removida(s) con éxito del perfil."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 CargarGrillas();
                 CargarTreeView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Validación de Integridad / Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -455,13 +512,13 @@ namespace Venta_Productos_Cosméticos
         private ServicioPerfil ObtenerPadreDesdeTreeView()
         {
             if (treeView1.SelectedNode == null)
-                throw new Exception("Debe seleccionar en el árbol dónde desea agregar o quitar el componente.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar en el árbol dónde desea agregar o quitar el componente."));
 
             if (treeView1.SelectedNode.Tag is ServicioPermiso)
-                throw new Exception("No puede agregar componentes dentro de un permiso.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("No puede agregar componentes dentro de un permiso."));
 
             if (treeView1.SelectedNode.Tag is not ServicioPerfil padre)
-                throw new Exception("El nodo seleccionado no es válido.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El nodo seleccionado no es válido."));
 
             return padre;
         }
@@ -471,7 +528,7 @@ namespace Venta_Productos_Cosméticos
             ServicioPerfil padre = ObtenerPadreDesdeTreeView();
 
             if (treeView1.SelectedNode.Level != 0)
-                throw new Exception("Debe seleccionar un perfil del árbol.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un perfil del árbol."));
 
             return padre;
         }
@@ -481,10 +538,10 @@ namespace Venta_Productos_Cosméticos
             ServicioPerfil padre = ObtenerPadreDesdeTreeView();
 
             if (treeView1.SelectedNode.Level == 0)
-                throw new Exception("Debe seleccionar una familia del árbol, no un perfil.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar una familia del árbol, no un perfil."));
 
             if (padre is not ServicioFamilia familiaPadre)
-                throw new Exception("Debe seleccionar una familia válida del árbol.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar una familia válida del árbol."));
 
             return familiaPadre;
         }

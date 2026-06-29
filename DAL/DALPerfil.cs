@@ -205,7 +205,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al guardar el perfil en la base de datos: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al guardar el perfil en la base de datos: ") + ex.Message);
                 }
             }
             return idGenerado;
@@ -256,7 +256,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al verificar asignación del perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al verificar asignación del perfil: ") + ex.Message);
                 }
             }
             return estaAsignado;
@@ -289,7 +289,7 @@ namespace DAL
                     catch (Exception ex)
                     {
                         tran.Rollback();
-                        throw new Exception("Error al eliminar físicamente el perfil: " + ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al eliminar físicamente el perfil: ") + ex.Message);
                     }
                 }
             }
@@ -324,7 +324,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al verificar la integridad de componentes del perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al verificar la integridad de componentes del perfil: ") + ex.Message);
                 }
             }
             return perfilesAfectados;
@@ -349,7 +349,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al asociar el componente al perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al asociar el componente al perfil: ") + ex.Message);
                 }
             }
         }
@@ -373,7 +373,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al quitar el componente del perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al quitar el componente del perfil: ") + ex.Message);
                 }
             }
         }
@@ -398,7 +398,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al contar los componentes del perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al contar los componentes del perfil: ") + ex.Message);
                 }
             }
             return totalHijos;
@@ -419,7 +419,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al asociar la familia al perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al asociar la familia al perfil: ") + ex.Message);
                 }
             }
         }
@@ -439,7 +439,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al quitar la familia del perfil: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al quitar la familia del perfil: ") + ex.Message);
                 }
             }
         }

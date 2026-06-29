@@ -66,7 +66,7 @@ namespace DAL
             }
             catch (JsonException ex)
             {
-                throw new Exception("Error al procesar el formato del JSON.", ex);
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al procesar el formato del JSON."), ex);
             }
 
             return diccionario;

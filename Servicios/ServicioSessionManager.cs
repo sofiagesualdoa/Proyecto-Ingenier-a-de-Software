@@ -55,5 +55,15 @@ namespace Servicios
                 CodigoIdiomaActual = nuevoCodigoIdioma;
             }
         }
+
+        public string Traducir(string textoBase)
+        {
+            if (_usuarioActivo?.Idioma?.DiccionarioLeyendas != null &&
+                _usuarioActivo.Idioma.DiccionarioLeyendas.TryGetValue(textoBase, out string textoTraducido))
+            {
+                return textoTraducido;
+            }
+            return textoBase;
+        }
     }
 }

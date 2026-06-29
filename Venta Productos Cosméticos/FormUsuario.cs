@@ -87,7 +87,7 @@ namespace Venta_Productos_Cosméticos.Vista
         private void RegresarAModoConsulta()
         {
             modo = "Consulta";
-            groupBox1.Text = "Modo Consulta";
+            groupBox1.Text = bllIdioma.TraducirTexto("Modo Consulta");
             button5.Enabled = false;
             button6.Enabled = false;
             button1.Enabled = true;
@@ -153,7 +153,7 @@ namespace Venta_Productos_Cosméticos.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             modo = "Añadir";
-            groupBox1.Text = "Modo Añadir";
+            groupBox1.Text = bllIdioma.TraducirTexto("Modo Añadir"); 
             LimpiarCampos();
             ActivarModoEdicion();
         }
@@ -162,11 +162,14 @@ namespace Venta_Productos_Cosméticos.Vista
         {
             if (dataGridView1.CurrentRow == null)
             {
-                MessageBox.Show("Por favor, seleccione un usuario de la grilla superior para desbloquear.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Por favor, seleccione un usuario de la grilla superior para desbloquear."),
+                                ServicioSessionManager.GetInstance().Traducir("Atención"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                 return;
             }
             modo = "Desbloquear";
-            groupBox1.Text = "Modo Desbloquear";
+            groupBox1.Text = bllIdioma.TraducirTexto("Modo Desbloquear");
             ServicioUsuario seleccionado = (ServicioUsuario)dataGridView1.CurrentRow.DataBoundItem;
             LlenarTextBox(seleccionado);
             ActivarModoEdicion();
@@ -187,7 +190,7 @@ namespace Venta_Productos_Cosméticos.Vista
         {
             if (comboBox1.SelectedValue == null)
             {
-                throw new Exception("Debe seleccionar un perfil.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un perfil."));
             }
 
             return Convert.ToInt32(comboBox1.SelectedValue);
@@ -197,11 +200,14 @@ namespace Venta_Productos_Cosméticos.Vista
         {
             if (dataGridView1.CurrentRow == null)
             {
-                MessageBox.Show("Por favor, seleccione un usuario de la grilla antes de presionar Modificar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Por favor, seleccione un usuario de la grilla antes de presionar Modificar."), 
+                                ServicioSessionManager.GetInstance().Traducir("Atención"), 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Warning);
                 return;
             }
             modo = "Modificar";
-            groupBox1.Text = "Modo Modificar";
+            groupBox1.Text = bllIdioma.TraducirTexto("Modo Modificar");
             try
             {
                 ServicioUsuario usuarioSeleccionado = (ServicioUsuario)dataGridView1.CurrentRow.DataBoundItem;
@@ -218,7 +224,11 @@ namespace Venta_Productos_Cosméticos.Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mapear datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show((ServicioSessionManager.GetInstance().Traducir("Error al mapear datos: ")) + errorTraducido,
+                                ServicioSessionManager.GetInstance().Traducir("Error"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
@@ -246,16 +256,16 @@ namespace Venta_Productos_Cosméticos.Vista
                     }
                     bll.CrearUsuario(usuario);
                     MostrarGrilla(bll.ObtenerUsuarios());
-                    MessageBox.Show(
-                        "Usuario creado correctamente.",
-                        "Éxito",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Usuario creado correctamente."),
+                                    ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
                     MessageBox.Show(
-                        ex.Message,
+                        errorTraducido,
                         "Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -283,16 +293,16 @@ namespace Venta_Productos_Cosméticos.Vista
                     bll.ModificarUsuario(usuario);
                     MostrarGrilla(bll.ObtenerUsuarios());
 
-                    MessageBox.Show(
-                        "Usuario modificado correctamente.",
-                        "Éxito",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Usuario modificado correctamente."),
+                                    ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
                     MessageBox.Show(
-                        ex.Message,
+                        errorTraducido,
                         "Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -304,23 +314,23 @@ namespace Venta_Productos_Cosméticos.Vista
                 {
                     if (dataGridView1.CurrentRow == null)
                     {
-                        MessageBox.Show("Seleccione un usuario.");
+                        MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Seleccione un usuario."));
                         return;
                     }
                     int dni = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DNI"].Value);
                     bll.DesbloquearUsuario(dni);
                     MostrarGrilla(bll.ObtenerUsuarios());
 
-                    MessageBox.Show(
-                        "Usuario desbloqueado correctamente.",
-                        "Éxito",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Usuario desbloqueado correctamente."),
+                                    ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
                     MessageBox.Show(
-                        ex.Message,
+                        errorTraducido,
                         "Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -336,17 +346,23 @@ namespace Venta_Productos_Cosméticos.Vista
                         if (bll.ModificarEstado(DNISeleccionado))
                         {
                             MostrarGrilla(bll.ObtenerUsuarios());
-                            MessageBox.Show("El estado del usuario se actualizó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("El estado del usuario se actualizó correctamente."),
+                                            ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error de Validación"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, seleccione un usuario de la lista.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Por favor, seleccione un usuario de la lista."), 
+                                    ServicioSessionManager.GetInstance().Traducir("Atención"), 
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             RegresarAModoConsulta();
@@ -368,7 +384,7 @@ namespace Venta_Productos_Cosméticos.Vista
         private void button4_Click(object sender, EventArgs e)
         {
             modo = "Activar / Desactivar";
-            groupBox1.Text = "Modo Activar / Desactivar";
+            groupBox1.Text = bllIdioma.TraducirTexto("Modo Activar / Desactivar");
             ServicioUsuario seleccionado = (ServicioUsuario)dataGridView1.CurrentRow.DataBoundItem;
             LlenarTextBox(seleccionado);
             ActivarModoEdicion();
@@ -379,6 +395,18 @@ namespace Venta_Productos_Cosméticos.Vista
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = lista;
+            var usuarioActivo = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuarioActivo?.Idioma?.DiccionarioLeyendas != null)
+            {
+                var leyendas = usuarioActivo.Idioma.DiccionarioLeyendas;
+                foreach (DataGridViewColumn columna in dataGridView1.Columns)
+                {
+                    if (leyendas.ContainsKey(columna.Name))
+                    {
+                        columna.HeaderText = leyendas[columna.Name];
+                    }
+                }
+            }
         }
 
         private void radioButton3_Click(object sender, EventArgs e)

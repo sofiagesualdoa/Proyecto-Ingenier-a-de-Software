@@ -95,5 +95,21 @@ namespace BLL
         {
             return dalIdioma.ObtenerTraducciones();
         }
+
+        public string TraducirTexto(string textoBase)
+        {
+            try
+            {
+                var usuarioLogueado = ServicioSessionManager.GetInstance().ObtenerUsuario();
+                if (usuarioLogueado?.Idioma?.DiccionarioLeyendas != null &&
+                    usuarioLogueado.Idioma.DiccionarioLeyendas.ContainsKey(textoBase))
+                {
+                    return usuarioLogueado.Idioma.DiccionarioLeyendas[textoBase];
+                }
+            }
+            catch { }
+
+            return textoBase;
+        }
     }
 }

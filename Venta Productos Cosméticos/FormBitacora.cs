@@ -198,6 +198,18 @@ namespace Venta_Productos_Cosméticos
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = lista;
+            var usuarioActivo = ServicioSessionManager.GetInstance().ObtenerUsuario();
+            if (usuarioActivo?.Idioma?.DiccionarioLeyendas != null)
+            {
+                var leyendas = usuarioActivo.Idioma.DiccionarioLeyendas;
+                foreach (DataGridViewColumn columna in dataGridView1.Columns)
+                {
+                    if (leyendas.ContainsKey(columna.Name))
+                    {
+                        columna.HeaderText = leyendas[columna.Name];
+                    }
+                }
+            }
         }
 
         private void ActualizarDatosUsuarioSeleccionado()
@@ -246,7 +258,8 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al aplicar filtros: " + ex.Message, "Error de Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al aplicar filtros: ") + errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error de Consulta"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -267,8 +280,8 @@ namespace Venta_Productos_Cosméticos
         {
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("No existen registros en la grilla actual para exportar a PDF.",
-                                "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("No existen registros en la grilla actual para exportar a PDF."),
+                                ServicioSessionManager.GetInstance().Traducir("Atención"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             SaveFileDialog selectorDestino = new SaveFileDialog();
@@ -333,13 +346,14 @@ namespace Venta_Productos_Cosméticos
                         documentoPdf.Close();
                     }
 
-                    MessageBox.Show("El reporte de auditoría en PDF ha sido generado y guardado correctamente.",
-                                    "Impresión Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("El reporte de auditoría en PDF ha sido generado y guardado correctamente."),
+                                    ServicioSessionManager.GetInstance().Traducir("Impresión Exitosa"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error físico al construir el documento PDF: {ex.Message}",
-                                    "Error de Exportación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error físico al construir el documento PDF: ") + errorTraducido ,
+                                    ServicioSessionManager.GetInstance().Traducir("Error de Exportación"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

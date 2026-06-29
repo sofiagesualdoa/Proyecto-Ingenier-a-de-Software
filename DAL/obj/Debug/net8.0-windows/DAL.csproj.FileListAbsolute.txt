@@ -53,3 +53,22 @@ C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Soft
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\ref\DAL.dll
 C:\Users\Vicky\Desktop\Facu\3er año 1 cuatri\ing de sw\Proyecto\Proyecto-Ingenier-a-de-Software\DAL\bin\Debug\net8.0-windows\traducciones.json
 C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\traducciones.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\traducciones.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\DAL.deps.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\DAL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\DAL.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\BE.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\Servicios.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\BE.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\bin\Debug\net8.0-windows\Servicios.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.csproj.AssemblyReference.cache
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.AssemblyInfoInputs.cache
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.AssemblyInfo.cs
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.csproj.CoreCompileInputs.cache
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.sourcelink.json
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.csproj.Up2Date
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\refint\DAL.dll
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\DAL.pdb
+C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\DAL\obj\Debug\net8.0-windows\ref\DAL.dll

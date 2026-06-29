@@ -27,7 +27,10 @@ namespace Venta_Productos_Cosméticos
         {
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
             {
-                MessageBox.Show("Por favor, complete todos los campos para continuar.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Por favor, complete todos los campos para continuar."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 return;
             }
 
@@ -40,7 +43,7 @@ namespace Venta_Productos_Cosméticos
                     FormSistema frmMenu = new FormSistema();
                     frmMenu.Show();
                     this.Close();
-                    throw new Exception($"Ya existe una sesión activa: {servicioSessionManager.ObtenerUsuario().nombreUsuario}");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Ya existe una sesión activa: ") + servicioSessionManager.ObtenerUsuario().nombreUsuario);
                 }
 
                 BLLUsuario bll = new BLLUsuario();
@@ -56,7 +59,8 @@ namespace Venta_Productos_Cosméticos
                         }
                         catch (InvalidOperationException ex) when (ex.Message == "El idioma seleccionado ya se encuentra activo.")
                         {
-                            MessageBox.Show(ex.Message, "Cambio de Idioma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                            MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Cambio de Idioma"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     FormSistema frmMenu = new FormSistema();
@@ -66,7 +70,8 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error de Autenticación"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtContraseña.Clear();
                 txtContraseña.Focus();
             }

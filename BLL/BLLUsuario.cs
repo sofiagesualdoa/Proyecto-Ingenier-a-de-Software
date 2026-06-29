@@ -21,13 +21,13 @@ namespace BLL
                 string hashClaveActual = encriptador.Encriptar(claveActual);
                 if (!usuarioActivo.ValidarPassword(hashClaveActual))
                 {
-                    throw new Exception("La contraseña actual ingresada es incorrecta.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("La contraseña actual ingresada es incorrecta."));
                 }
                 string hashClaveNueva = encriptador.Encriptar(claveNueva);
 
                 if (usuarioActivo.GetPassword().ToUpper().Trim() == hashClaveNueva.ToUpper().Trim())
                 {
-                    throw new Exception("La nueva contraseña no puede ser igual a la contraseña actual. Por favor, elija una diferente.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("La nueva contraseña no puede ser igual a la contraseña actual. Por favor, elija una diferente."));
                 }
                 DALUsuario dal = new DALUsuario();
                 dal.GuardarNuevaClave(usuarioActivo.nombreUsuario, hashClaveNueva);
@@ -36,7 +36,8 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al intentar cambiar la contraseña: " + ex.Message);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al intentar cambiar la contraseña: ") + errorTraducido);
             }
         }
 
@@ -50,15 +51,15 @@ namespace BLL
 
             if (usuario == null)
             {
-                throw new Exception("El nombre de usuario ingresado no existe.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El nombre de usuario ingresado no existe."));
             }
             if (usuario.Bloqueado)
             {
-                throw new Exception("La cuenta se encuentra bloqueada por seguridad. Contacte a un administrador.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("La cuenta se encuentra bloqueada por seguridad. Contacte a un administrador."));
             }
             if (!usuario.Activo)
             {
-                throw new Exception("El usuario se encuentra dado de baja en el sistema.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El usuario se encuentra dado de baja en el sistema."));
             }
             if (!usuario.ValidarPassword(hashIngresado))
             {
@@ -69,10 +70,10 @@ namespace BLL
                 {
                     dal.BloquearUsuario(usuario.DNI);
                     bitacora.GrabarBitacora($"Bloquear Usuario: {nombreUsuario}", "Usuario", 1);
-                    throw new Exception("La cuenta ha sido bloqueada de forma automática por superar los 3 intentos fallidos.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("La cuenta ha sido bloqueada de forma automática por superar los 3 intentos fallidos."));
                 }
 
-                throw new Exception("La contraseña ingresada es incorrecta.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("La contraseña ingresada es incorrecta."));
             }
 
             if (usuario.IntentosInicio > 0)
@@ -119,7 +120,7 @@ namespace BLL
                 string.IsNullOrWhiteSpace(usuario.nombreUsuario) ||
                 usuario.IdPerfil <= 0)
             {
-                throw new Exception("Debe completar todos los campos.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe completar todos los campos."));
             }
 
             DALUsuario dal = new DALUsuario();
@@ -130,7 +131,7 @@ namespace BLL
 
             if (existente != null)
             {
-                throw new Exception("Ya existe un usuario con ese DNI o email.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Ya existe un usuario con ese DNI o email."));
             }
 
             string clavePlana = usuario.DNI.ToString() + usuario.Apellido;
@@ -157,13 +158,13 @@ namespace BLL
 
             if (usuario == null)
             {
-                throw new Exception("El usuario no existe.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El usuario no existe."));
             }
 
             if (!usuario.Bloqueado)
             {
                 throw new Exception(
-                    "El usuario ya se encuentra desbloqueado.");
+                    ServicioSessionManager.GetInstance().Traducir("El usuario ya se encuentra desbloqueado."));
             }
 
             dal.DesbloquearUsuario(dni);
@@ -178,7 +179,7 @@ namespace BLL
 
             if (usuarioExistente == null)
             {
-                throw new Exception("El usuario no existe.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El usuario no existe."));
             }
 
             dal.ModificarUsuario(usuarioModificado);
@@ -190,7 +191,7 @@ namespace BLL
             ServicioUsuario logueado = ServicioSessionManager.GetInstance().ObtenerUsuario();
             if (logueado != null && logueado.DNI == DNIUsuarioSeleccionado)
             {
-                throw new Exception("Operación inválida. No es posible desactivar la cuenta con la que se encuentra logueado actualmente.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Operación inválida. No es posible desactivar la cuenta con la que se encuentra logueado actualmente."));
             }
             DALUsuario dal = new DALUsuario();
             bool exito = dal.ModificarEstado(DNIUsuarioSeleccionado);

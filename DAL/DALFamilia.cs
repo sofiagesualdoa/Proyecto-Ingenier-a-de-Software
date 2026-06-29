@@ -37,7 +37,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al leer la tabla Familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al leer la tabla Familia: ") + errorTraducido);
                 }
             }
 
@@ -90,7 +91,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al obtener permisos de la familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al obtener permisos de la familia: ") + errorTraducido);
                 }
             }
             return lista;
@@ -121,7 +123,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al obtener subfamilias: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al obtener subfamilias: ") + errorTraducido);
                 }
             }
             return lista;
@@ -143,7 +146,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al guardar la Familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al guardar la Familia: ") + errorTraducido);
                 }
             }
             return idGenerado;
@@ -178,7 +182,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al guardar las relaciones de la familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al guardar las relaciones de la familia: ") + errorTraducido);
                 }
             }
         }
@@ -232,7 +237,8 @@ namespace DAL
                     catch (Exception ex)
                     {
                         tran.Rollback();
-                        throw new Exception("Error al eliminar físicamente la familia: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al eliminar físicamente la familia: ") + errorTraducido);
                     }
                 }
             }
@@ -267,7 +273,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al verificar la integridad de componentes de las familias: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al verificar la integridad de componentes de las familias: ") + errorTraducido);
                 }
             }
             return familiasPadreAfectadas;
@@ -298,7 +305,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al asociar el componente a la familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al asociar el componente a la familia: ") + errorTraducido);
                 }
             }
         }
@@ -328,7 +336,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al quitar el componente de la familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al quitar el componente de la familia: ") + errorTraducido);
                 }
             }
         }
@@ -353,7 +362,8 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al contar los componentes de la familia: " + ex.Message);
+                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al contar los componentes de la familia: ") + errorTraducido);
                 }
             }
             return totalHijos;

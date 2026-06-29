@@ -75,15 +75,17 @@ namespace Venta_Productos_Cosméticos
                     string.IsNullOrEmpty(txtClaveNueva.Text) ||
                     string.IsNullOrEmpty(txtConfirmacion.Text))
                 {
-                    throw new Exception("Todos los campos son obligatorios.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Todos los campos son obligatorios."));
                 }
                 if (txtClaveNueva.Text != txtConfirmacion.Text)
                 {
-                    throw new Exception("La nueva contraseña y su confirmación no coinciden.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("La nueva contraseña y su confirmación no coinciden."));
                 }
                 BLLUsuario bll = new BLLUsuario();
                 bll.ModificarClave(txtClaveActual.Text, txtClaveNueva.Text);
-                MessageBox.Show("Contraseña modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Contraseña modificada exitosamente."), 
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"), 
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 var usuarioActivo = ServicioSessionManager.GetInstance().ObtenerUsuario();
                 if (usuarioActivo != null)
@@ -99,7 +101,8 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error de Seguridad"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

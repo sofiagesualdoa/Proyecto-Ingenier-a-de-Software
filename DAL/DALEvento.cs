@@ -37,7 +37,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error físico al escribir en la bitácora: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al escribir en la bitácora: ") + errorTraducido);
                     }
                 }
             }
@@ -80,7 +81,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error en la DAL al recuperar eventos: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error en la DAL al recuperar eventos: ") + errorTraducido);
                     }
                 }
             }

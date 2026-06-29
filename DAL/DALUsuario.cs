@@ -43,7 +43,7 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error al recuperar usuario: " + ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al recuperar usuario: ") + ex.Message);
                     }
                 }
             }
@@ -119,7 +119,7 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error físico al intentar insertar el nuevo usuario en la base de datos: " + ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al intentar insertar el nuevo usuario en la base de datos: ") + ex.Message);
                     }
                 }
             }
@@ -186,7 +186,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error físico al intentar desbloquear el usuario en SQL Server: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al intentar desbloquear el usuario en SQL Server: ") + errorTraducido);
                     }
                 }
             }
@@ -220,7 +221,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error físico al intentar bloquear el usuario en SQL Server: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al intentar bloquear el usuario en SQL Server: ") + errorTraducido);
                     }
                 }
             }
@@ -267,7 +269,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error en la capa de datos al modificar el usuario: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error en la capa de datos al modificar el usuario: ") + errorTraducido);
                     }
                 }
             }
@@ -309,7 +312,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error físico al intentar cambiar el estado del usuario en SQL Server: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al intentar cambiar el estado del usuario en SQL Server: ") + errorTraducido);
                     }
                 }
             }
@@ -345,7 +349,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error en la capa de datos al guardar la nueva contraseña: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error en la capa de datos al guardar la nueva contraseña: ") + errorTraducido);
                     }
                 }
             }
@@ -379,7 +384,8 @@ namespace DALs
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error en la capa de datos al incrementar el intento fallido: " + ex.Message);
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error en la capa de datos al incrementar el intento fallido: ") + errorTraducido);
                     }
                 }
             }

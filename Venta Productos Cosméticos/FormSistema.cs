@@ -34,8 +34,8 @@ namespace Venta_Productos_Cosméticos
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Está seguro que desea cerrar su sesión activa?",
-    "Confirmación de Cierre de Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("¿Está seguro que desea cerrar su sesión activa?"),
+    ServicioSessionManager.GetInstance().Traducir("Confirmación de Cierre de Sesión"), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -84,7 +84,7 @@ namespace Venta_Productos_Cosméticos
             }
             else
             {
-                MessageBox.Show("No se detectó una sesión activa. El sistema se cerrará.", "Error de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("No se detectó una sesión activa. El sistema se cerrará."), ServicioSessionManager.GetInstance().Traducir("Error de Seguridad"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
 
@@ -252,7 +252,8 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cambiar el idioma: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al cambiar el idioma: ") + errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -271,7 +272,8 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cambiar el idioma: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al cambiar el idioma: ") + errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

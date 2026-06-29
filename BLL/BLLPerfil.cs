@@ -37,10 +37,10 @@ namespace BLL
         public void CrearPerfil(string nombrePerfil, List<ServicioPerfil> componentesSeleccionados)
         {
             if (string.IsNullOrWhiteSpace(nombrePerfil))
-                throw new Exception("El nombre del perfil no puede estar vacío.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El nombre del perfil no puede estar vacío."));
 
             if (componentesSeleccionados == null || componentesSeleccionados.Count == 0)
-                throw new Exception("No se puede crear un perfil vacío. Debe seleccionar al menos un permiso o familia.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("No se puede crear un perfil vacío. Debe seleccionar al menos un permiso o familia."));
 
             ValidarNombrePerfilDisponible(nombrePerfil);
 
@@ -57,14 +57,14 @@ namespace BLL
                 .Any(p => p.Nombre.Equals(nombrePerfil.Trim(), StringComparison.OrdinalIgnoreCase));
 
             if (existe)
-                throw new Exception($"Ya existe un perfil con el nombre '{nombrePerfil}'.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Ya existe un perfil con el nombre ") + nombrePerfil);
         }
 
         public void EliminarPerfil(int idPerfil, string nombrePerfil)
         {
             if (dalPerfil.PerfilEstaAsignadoAUsuario(idPerfil))
             {
-                throw new Exception($"El perfil '{nombrePerfil}' no se puede eliminar porque está asignado actualmente a uno o más usuarios.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("no se puede eliminar porque está asignado actualmente a uno o más usuarios."));
             }
             dalPerfil.EliminarPerfil(idPerfil);
             BLLEvento bitacora = new BLLEvento();
@@ -73,7 +73,7 @@ namespace BLL
 
         public void AgregarPermisoAPerfil(int idPerfilPadre, string nombrePerfil, ServicioPerfil hijo)
         {
-            if (hijo == null) throw new Exception("Debe seleccionar un componente válido para agregar.");
+            if (hijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para agregar."));
 
             ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
             if (perfilCompleto != null)
@@ -81,7 +81,7 @@ namespace BLL
                 ServicioPerfil encontrado = perfilCompleto.Buscar(hijo.Nombre);
                 if (encontrado != null && encontrado is ServicioPermiso)
                 {
-                    throw new Exception($"El perfil '{nombrePerfil}' ya posee el componente '{hijo.Nombre}' de forma directa o heredada a través de una familia.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("ya posee el componente ") + hijo.Nombre + ServicioSessionManager.GetInstance().Traducir("de forma directa o heredada a través de una familia."));
                 }
             }
             dalPerfil.AgregarRelacionPerfilPermiso(idPerfilPadre, hijo);
@@ -91,12 +91,12 @@ namespace BLL
 
         public void QuitarPermisoDePerfil(int idPerfilPadre, string nombrePerfil, ServicioPerfil hijo)
         {
-            if (hijo == null) throw new Exception("Debe seleccionar un componente válido para quitar.");
+            if (hijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para quitar."));
 
             ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
             if (perfilCompleto == null || perfilCompleto.Hijos == null || !perfilCompleto.Hijos.Any(h => h.IdPerfil == hijo.IdPerfil && h.GetType() == hijo.GetType()))
             {
-                throw new Exception($"El perfil '{nombrePerfil}' no tiene asignado directamente el componente '{hijo.Nombre}', por lo que no puede ser removido.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("no tiene asignado directamente el componente ") + hijo.Nombre + ServicioSessionManager.GetInstance().Traducir(", por lo que no puede ser removido."));
             }
 
             ValidarQueNoQuedeVacio(idPerfilPadre, nombrePerfil);
@@ -110,20 +110,20 @@ namespace BLL
             int cantidadComponentes = dalPerfil.ObtenerCantidadHijosPerfil(idPerfil);
             if (cantidadComponentes <= 1)
             {
-                throw new Exception($"Operación denegada. El perfil '{nombrePerfil}' no puede quedarse vacío. Debe conservar al menos un permiso o familia asignado en su raíz.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Operación denegada. El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("no puede quedarse vacío. Debe conservar al menos un permiso o familia asignado en su raíz."));
             }
         }
 
         public void AgregarFamiliaAPerfil(int idPerfilPadre, string nombrePerfil, ServicioFamilia familiaHijo)
         {
-            if (familiaHijo == null) throw new Exception("Debe seleccionar una familia válida para agregar.");
+            if (familiaHijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar una familia válida para agregar."));
 
             ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
             if (perfilCompleto != null)
             {
                 if (perfilCompleto.Hijos != null && perfilCompleto.Hijos.Any(h => h.IdPerfil == familiaHijo.IdPerfil && h is ServicioFamilia))
                 {
-                    throw new Exception($"El perfil '{nombrePerfil}' ya posee la familia '{familiaHijo.Nombre}' asignada directamente.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("ya posee la familia ") + familiaHijo.Nombre + ServicioSessionManager.GetInstance().Traducir("asignada directamente."));
                 }
 
                 BLLFamilia bllFamilia = new BLLFamilia();
@@ -137,7 +137,7 @@ namespace BLL
                         ServicioPerfil componenteDuplicado = perfilCompleto.Buscar(componenteHijo.Nombre);
                         if (componenteDuplicado != null && componenteDuplicado is ServicioPermiso)
                         {
-                            throw new Exception($"No se puede agregar la familia '{familiaHijo.Nombre}' because contiene el permiso '{componenteHijo.Nombre}', el cual ya existe en el perfil '{nombrePerfil}'.");
+                            throw new Exception(ServicioSessionManager.GetInstance().Traducir("No se puede agregar la familia ") + familiaHijo.Nombre + ServicioSessionManager.GetInstance().Traducir("porque contiene el permiso ") + componenteHijo.Nombre + ServicioSessionManager.GetInstance().Traducir(", el cual ya existe en el perfil ") + nombrePerfil);
                         }
                     }
                 }
@@ -150,12 +150,12 @@ namespace BLL
 
         public void QuitarFamiliaDePerfil(int idPerfilPadre, string nombrePerfil, ServicioFamilia familiaHijo)
         {
-            if (familiaHijo == null) throw new Exception("Debe seleccionar una familia válida para quitar.");
+            if (familiaHijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar una familia válida para quitar."));
 
             ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
             if (perfilCompleto == null || perfilCompleto.Hijos == null || !perfilCompleto.Hijos.Any(h => h.IdPerfil == familiaHijo.IdPerfil && h is ServicioFamilia))
             {
-                throw new Exception($"El perfil '{nombrePerfil}' no tiene asignada directamente la familia '{familiaHijo.Nombre}', por lo que no puede ser removida.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil " + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("no tiene asignada directamente la familia ") + familiaHijo.Nombre + ServicioSessionManager.GetInstance().Traducir(", por lo que no puede ser removida.")));
             }
 
             ValidarQueNoQuedeVacio(idPerfilPadre, nombrePerfil);

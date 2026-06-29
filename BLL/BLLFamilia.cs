@@ -18,10 +18,10 @@ namespace BLL
         public void CrearFamilia(string nombreFamilia, List<ServicioPerfil> componentesSeleccionados)
         {
             if (string.IsNullOrWhiteSpace(nombreFamilia))
-                throw new Exception("El nombre de la familia no puede estar vacío.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("El nombre de la familia no puede estar vacío."));
 
             if (componentesSeleccionados == null || componentesSeleccionados.Count == 0)
-                throw new Exception("No se puede crear una familia vacía. Debe seleccionar al menos un permiso o familia hijo.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("No se puede crear una familia vacía. Debe seleccionar al menos un permiso o familia hijo."));
 
             ValidarNombreFamiliaDisponible(nombreFamilia);
 
@@ -37,7 +37,7 @@ namespace BLL
                 .Any(f => f.Nombre.Equals(nombreFamilia.Trim(), StringComparison.OrdinalIgnoreCase));
 
             if (existe)
-                throw new Exception($"Ya existe una familia con el nombre '{nombreFamilia}'.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Ya existe una familia con el nombre ") + nombreFamilia);
         }
 
         public void EliminarFamilia(int idFamilia, string nombreFamilia)
@@ -46,12 +46,12 @@ namespace BLL
             List<int> perfilesVacios = dalPerfil.ObtenerPerfilesQueQuedarianVaciosPorFamilia(idFamilia);
             if (perfilesVacios.Count > 0)
             {
-                throw new Exception($"Operación denegada. La familia '{nombreFamilia}' no se puede eliminar porque es el único componente asignado a uno o más Perfiles de Usuario. Modifique primero esos perfiles para que no queden vacíos.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Operación denegada. La familia " + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("no se puede eliminar porque es el único componente asignado a uno o más Perfiles de Usuario. Modifique primero esos perfiles para que no queden vacíos.")));
             }
             List<int> familiasVacias = dalFamilia.ObtenerFamiliasPadreQueQuedarianVacias(idFamilia);
             if (familiasVacias.Count > 0)
             {
-                throw new Exception($"Operación denegada. La familia '{nombreFamilia}' no se puede eliminar porque es el único componente de otra Familia del sistema. Modifique la familia contenedora primero.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Operación denegada. La familia ") + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("no se puede eliminar porque es el único componente de otra Familia del sistema. Modifique la familia contenedora primero."));
             }
             dalFamilia.EliminarFamilia(idFamilia);
             BLLEvento bitacora = new BLLEvento();
@@ -60,7 +60,7 @@ namespace BLL
 
         public void AgregarPermisoAFamilia(int idFamiliaPadre, string nombreFamilia, ServicioPerfil hijo)
         {
-            if (hijo == null) throw new Exception("Debe seleccionar un componente válido para agregar.");
+            if (hijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para agregar."));
 
             BLLFamilia bllFamilia = new BLLFamilia();
             List<ServicioFamilia> todasLasFamilias = bllFamilia.ObtenerFamilias();
@@ -71,7 +71,7 @@ namespace BLL
                 ServicioPerfil encontrado = familiaCompleta.Buscar(hijo.Nombre);
                 if (encontrado != null)
                 {
-                    throw new Exception($"La familia '{nombreFamilia}' ya posee el componente '{hijo.Nombre}' de forma directa o heredada.");
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("La familia ") + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("ya posee el componente ") + hijo.Nombre + ServicioSessionManager.GetInstance().Traducir("de forma directa o heredada."));
                 }
             }
 
@@ -82,7 +82,7 @@ namespace BLL
 
         public void QuitarPermisoDeFamilia(int idFamiliaPadre, string nombreFamilia, ServicioPerfil hijo)
         {
-            if (hijo == null) throw new Exception("Debe seleccionar un componente válido para quitar.");
+            if (hijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para quitar."));
 
             BLLFamilia bllFamilia = new BLLFamilia();
             List<ServicioFamilia> todasLasFamilias = bllFamilia.ObtenerFamilias();
@@ -90,7 +90,7 @@ namespace BLL
 
             if (familiaCompleta == null || familiaCompleta.Hijos == null || !familiaCompleta.Hijos.Any(h => h.IdPerfil == hijo.IdPerfil && h.GetType() == hijo.GetType()))
             {
-                throw new Exception($"La familia '{nombreFamilia}' no tiene asignado directamente el componente '{hijo.Nombre}', por lo que no puede ser removido.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("La familia ") + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("no tiene asignado directamente el componente ") + hijo.Nombre + ServicioSessionManager.GetInstance().Traducir(", por lo que no puede ser removido."));
             }
 
             ValidarQueFamiliaNoQuedeVacia(idFamiliaPadre, nombreFamilia);
@@ -104,7 +104,7 @@ namespace BLL
             int cantidadComponentes = dalFamilia.ObtenerCantidadHijosFamilia(idFamilia);
             if (cantidadComponentes <= 1)
             {
-                throw new Exception($"Operación denegada. La familia '{nombreFamilia}' no puede quedarse vacía. Debe conservar al menos un permiso o subfamilia asignado.");
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Operación denegada. La familia ") + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("no puede quedarse vacía. Debe conservar al menos un permiso o subfamilia asignado."));
             }
         }
     }

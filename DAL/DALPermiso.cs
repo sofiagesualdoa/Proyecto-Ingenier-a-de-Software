@@ -34,7 +34,7 @@ namespace DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error físico al leer los permisos base: " + ex.Message);
+                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al leer los permisos base: ") + ex.Message);
                 }
             }
             return lista;
