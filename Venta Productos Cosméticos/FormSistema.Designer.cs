@@ -158,6 +158,7 @@
             backUpToolStripMenuItem.Size = new Size(231, 30);
             backUpToolStripMenuItem.Tag = "Gestionar Backup";
             backUpToolStripMenuItem.Text = "BackUp";
+            backUpToolStripMenuItem.Click += backUpToolStripMenuItem_Click;
             // 
             // restoreToolStripMenuItem
             // 

@@ -281,5 +281,21 @@ namespace Venta_Productos_Cosméticos
         {
             bllIdioma.BorrarSuscriptor(this);
         }
+
+        private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLLBackUp bll = new BLLBackUp();
+                bll.RealizarBackup();
+
+                MessageBox.Show("Backup realizado exitosamente en la carpeta del sistema.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
     }
 }

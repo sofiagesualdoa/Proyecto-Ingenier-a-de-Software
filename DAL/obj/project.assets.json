@@ -1,7 +1,7 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
-    "net8.0-windows": {
+    "net8.0-windows7.0": {
       "Microsoft.Bcl.Cryptography/8.0.0": {
         "type": "package",
         "compile": {
@@ -1231,26 +1231,31 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0-windows": [
+    "net8.0-windows7.0": [
       "BE >= 1.0.0",
       "Microsoft.Data.SqlClient >= 7.0.1",
       "Servicios >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sofig\\.nuget\\packages\\": {}
+    "C:\\Users\\Vicky\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\sofig\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sofig\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1261,15 +1266,14 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows": {
-          "framework": "net8.0-windows7.0",
+        "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
-              "projectPath": "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
+            "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj": {
+              "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj"
             },
-            "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
-              "projectPath": "C:\\Users\\sofig\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
+            "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj": {
+              "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj"
             }
           }
         }
@@ -1284,11 +1288,10 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net8.0-windows": {
-        "framework": "net8.0-windows7.0",
+      "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
           "Microsoft.Data.SqlClient": {
@@ -1315,7 +1318,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
