@@ -135,7 +135,9 @@ namespace Venta_Productos_Cosméticos
             try
             {
                 treeView1.Nodes.Clear();
+                treeViewFamilias.Nodes.Clear();
                 List<ServicioPerfil> listaRaiz = bllPerfil.ObtenerPerfiles();
+                List<ServicioFamilia> listaFam = bllFamilia.ObtenerFamilias();
                 foreach (var perfilBase in listaRaiz)
                 {
                     ServicioPerfil perfilCompleto = bllPerfil.CargarPerfilUsuario(perfilBase.IdPerfil);
@@ -151,6 +153,17 @@ namespace Venta_Productos_Cosméticos
                     }
                 }
                 treeView1.ExpandAll();
+                foreach (var familia in listaFam)
+                {
+                    TreeNode nodoRaiz = new TreeNode(familia.Nombre);
+                    nodoRaiz.Tag = familia;
+                    if (familia.Hijos != null && familia.Hijos.Count > 0)
+                    {
+                        ArmarNodosTreeView(nodoRaiz, familia.Hijos);
+                    }
+                    treeViewFamilias.Nodes.Add(nodoRaiz);
+                }
+                treeViewFamilias.ExpandAll();
             }
             catch (Exception ex)
             {
@@ -252,7 +265,7 @@ namespace Venta_Productos_Cosméticos
             catch (Exception ex)
             {
                 string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
-                MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error al eliminar perfil"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -324,7 +337,7 @@ namespace Venta_Productos_Cosméticos
             catch (Exception ex)
             {
                 string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
-                MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error al eliminar familia"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorTraducido, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

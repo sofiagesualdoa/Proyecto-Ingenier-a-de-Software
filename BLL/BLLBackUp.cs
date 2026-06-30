@@ -14,15 +14,12 @@ namespace BLL
         private BLLEvento bitacora = new BLLEvento();
 
         string cadena = "Data Source=.;Initial Catalog=EverGlow;Integrated Security=True;Trust Server Certificate=True";
-        public void RealizarBackup()
+        public void RealizarBackup(string carpetaBackup)
         {
-            string carpetaBackup = @"C:\EverGlow\Backups";
-            string rutaBase = AppDomain.CurrentDomain.BaseDirectory;
-            //string carpetaBackup = Path.Combine(rutaBase, "Backups");
-
             if (!Directory.Exists(carpetaBackup))
-                Directory.CreateDirectory(carpetaBackup);
-
+            {
+                throw new DirectoryNotFoundException(ServicioSessionManager.GetInstance().Traducir("El directorio destino no existe o no es accesible."));
+            }
             ServicioBackUp backup = new ServicioBackUp();
             backup.PathDestino = carpetaBackup;
             backup.NombreArchivo = $"Backup_{DateTime.Now:yyyyMMdd_HHmmss}.bak";
@@ -30,13 +27,13 @@ namespace BLL
             bitacora.GrabarBitacora("Creación de backup", "Respaldos", 1);
         }
 
-        public void RealizarRestore(string rutaCompletaArchivo)
+        public void RealizarRestore(string carpetaBackup)
         {
-            if (!File.Exists(rutaCompletaArchivo) || Path.GetExtension(rutaCompletaArchivo).ToLower() != ".bak")
+            if (!File.Exists(carpetaBackup) || Path.GetExtension(carpetaBackup).ToLower() != ".bak")
             {
                 throw new ArgumentException(ServicioSessionManager.GetInstance().Traducir("El archivo seleccionado no es un backup válido o está corrupto."));
             }
-            dalBackUp.EjecutarRestore(rutaCompletaArchivo);
+            dalBackUp.EjecutarRestore(carpetaBackup);
             bitacora.GrabarBitacora("Realizar Restore", "Respaldos", 1);
         }
     }

@@ -47,6 +47,8 @@
             label4 = new Label();
             btnAgregarFamPerfil = new Button();
             btnQuitarFamPerfil = new Button();
+            label5 = new Label();
+            treeViewFamilias = new TreeView();
             ((System.ComponentModel.ISupportInitialize)dgvPerfil).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvFamilia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPermiso).BeginInit();
@@ -67,7 +69,7 @@
             // 
             treeView1.Location = new Point(12, 70);
             treeView1.Name = "treeView1";
-            treeView1.Size = new Size(238, 602);
+            treeView1.Size = new Size(238, 375);
             treeView1.TabIndex = 19;
             // 
             // dgvPerfil
@@ -75,7 +77,7 @@
             dgvPerfil.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPerfil.Location = new Point(285, 70);
             dgvPerfil.Name = "dgvPerfil";
-            dgvPerfil.Size = new Size(238, 150);
+            dgvPerfil.Size = new Size(280, 150);
             dgvPerfil.TabIndex = 20;
             // 
             // dgvFamilia
@@ -83,15 +85,15 @@
             dgvFamilia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFamilia.Location = new Point(285, 295);
             dgvFamilia.Name = "dgvFamilia";
-            dgvFamilia.Size = new Size(238, 150);
+            dgvFamilia.Size = new Size(280, 150);
             dgvFamilia.TabIndex = 21;
             // 
             // dgvPermiso
             // 
             dgvPermiso.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPermiso.Location = new Point(285, 521);
+            dgvPermiso.Location = new Point(285, 524);
             dgvPermiso.Name = "dgvPermiso";
-            dgvPermiso.Size = new Size(238, 150);
+            dgvPermiso.Size = new Size(280, 147);
             dgvPermiso.TabIndex = 22;
             // 
             // btnCrearPerfil
@@ -169,7 +171,6 @@
             // btnAgregarPermFamilia
             // 
             btnAgregarPermFamilia.BackColor = Color.RosyBrown;
-            btnAgregarPermFamilia.Enabled = false;
             btnAgregarPermFamilia.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarPermFamilia.Location = new Point(760, 309);
             btnAgregarPermFamilia.Name = "btnAgregarPermFamilia";
@@ -182,7 +183,6 @@
             // btnQuitarPermFamilia
             // 
             btnQuitarPermFamilia.BackColor = Color.RosyBrown;
-            btnQuitarPermFamilia.Enabled = false;
             btnQuitarPermFamilia.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnQuitarPermFamilia.Location = new Point(760, 431);
             btnQuitarPermFamilia.Name = "btnQuitarPermFamilia";
@@ -208,7 +208,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(367, 42);
+            label2.Location = new Point(394, 42);
             label2.Name = "label2";
             label2.Size = new Size(76, 25);
             label2.TabIndex = 34;
@@ -218,7 +218,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(365, 268);
+            label3.Location = new Point(391, 267);
             label3.Name = "label3";
             label3.Size = new Size(81, 25);
             label3.TabIndex = 35;
@@ -228,7 +228,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(359, 493);
+            label4.Location = new Point(381, 496);
             label4.Name = "label4";
             label4.Size = new Size(91, 25);
             label4.TabIndex = 36;
@@ -258,12 +258,31 @@
             btnQuitarFamPerfil.UseVisualStyleBackColor = false;
             btnQuitarFamPerfil.Click += btnQuitarFamPerfil_Click_1;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label5.Location = new Point(25, 461);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 32);
+            label5.TabIndex = 39;
+            label5.Text = "Familias";
+            // 
+            // treeViewFamilias
+            // 
+            treeViewFamilias.Location = new Point(12, 496);
+            treeViewFamilias.Name = "treeViewFamilias";
+            treeViewFamilias.Size = new Size(238, 213);
+            treeViewFamilias.TabIndex = 40;
+            // 
             // FormPerfil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(927, 684);
+            ClientSize = new Size(927, 749);
+            Controls.Add(treeViewFamilias);
+            Controls.Add(label5);
             Controls.Add(btnQuitarFamPerfil);
             Controls.Add(btnAgregarFamPerfil);
             Controls.Add(label4);
@@ -315,5 +334,7 @@
         private Label label4;
         private Button btnAgregarFamPerfil;
         private Button btnQuitarFamPerfil;
+        private Label label5;
+        private TreeView treeViewFamilias;
     }
 }
