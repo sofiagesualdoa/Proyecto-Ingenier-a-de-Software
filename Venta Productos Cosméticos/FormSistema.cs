@@ -267,13 +267,11 @@ namespace Venta_Productos_Cosméticos
                     CodigoIdioma = "en",
                     Nombre = "English"
                 };
-
                 bllIdioma.CambiarIdioma(idiomaIngles);
             }
             catch (Exception ex)
             {
-                string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
-                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al cambiar el idioma: ") + errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Error al cambiar el idioma: ") + ex.Message, ServicioSessionManager.GetInstance().Traducir("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -288,14 +286,75 @@ namespace Venta_Productos_Cosméticos
             {
                 BLLBackUp bll = new BLLBackUp();
                 bll.RealizarBackup();
-
-                MessageBox.Show("Backup realizado exitosamente en la carpeta del sistema.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServicioSessionManager.GetInstance().Traducir("Backup realizado exitosamente en la carpeta del sistema."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+
+        }
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string carpetaBackup = @"C:\EverGlow\Backups";
+            if (!System.IO.Directory.Exists(carpetaBackup))
+            {
+                MessageBox.Show(
+                    ServicioSessionManager.GetInstance().Traducir("No existen copias de seguridad disponibles porque la carpeta de backups no ha sido creada."),
+                    ServicioSessionManager.GetInstance().Traducir("Atención"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            using (OpenFileDialog dialogoArchivo = new OpenFileDialog())
+            {
+                dialogoArchivo.Filter = "Archivos de Respaldo SQL Server (*.bak)|*.bak";
+                dialogoArchivo.Title = ServicioSessionManager.GetInstance().Traducir("Seleccione el archivo de backup previo que desea restaurar.");
+                dialogoArchivo.InitialDirectory = carpetaBackup;
+                if (dialogoArchivo.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult confirmacionCritica = MessageBox.Show(
+                        ServicioSessionManager.GetInstance().Traducir("¡ADVERTENCIA! Esta acción sobrescribirá todos los datos actuales almacenados en la base de datos de manera irreversible. ¿Está completamente seguro de continuar?"),
+                        ServicioSessionManager.GetInstance().Traducir("Atención"),
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+                    if (confirmacionCritica == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            BLLBackUp bllBackUp = new BLLBackUp();
+                            bllBackUp.RealizarRestore(dialogoArchivo.FileName);
+                            MessageBox.Show(
+                                ServicioSessionManager.GetInstance().Traducir("La restauración se completó con éxito. El sistema se reiniciará por seguridad."),
+                                ServicioSessionManager.GetInstance().Traducir("Éxito"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                            );
+                            BLLUsuario bllUser = new BLLUsuario();
+                            bllUser.CerrarSesion();
+                            FormInicioSesion frmLogin = new FormInicioSesion();
+                            frmLogin.Show();
+                            this.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                                ServicioSessionManager.GetInstance().Traducir("La restauración fue cancelada."),
+                                ServicioSessionManager.GetInstance().Traducir("Cancelación"),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                            );
+                    }
+                }
+            }
         }
     }
 }

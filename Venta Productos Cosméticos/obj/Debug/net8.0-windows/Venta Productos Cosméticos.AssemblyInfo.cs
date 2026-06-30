@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Venta Productos Cosméticos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+457643404dc820949df84b9a762bc907522caeb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52d3bf9863f60f459ac2360971f19fee36b81265")]
 [assembly: System.Reflection.AssemblyProductAttribute("Venta Productos Cosméticos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Venta Productos Cosméticos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

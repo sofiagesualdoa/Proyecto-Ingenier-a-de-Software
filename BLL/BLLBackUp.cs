@@ -13,6 +13,7 @@ namespace BLL
         private DALBackUp dalBackUp = new DALBackUp();
         private BLLEvento bitacora = new BLLEvento();
 
+        string cadena = "Data Source=.;Initial Catalog=EverGlow;Integrated Security=True;Trust Server Certificate=True";
         public void RealizarBackup()
         {
             string carpetaBackup = @"C:\EverGlow\Backups";
@@ -25,10 +26,18 @@ namespace BLL
             ServicioBackUp backup = new ServicioBackUp();
             backup.PathDestino = carpetaBackup;
             backup.NombreArchivo = $"Backup_{DateTime.Now:yyyyMMdd_HHmmss}.bak";
+            dalBackUp.EjecutarBackup(cadena, backup);
+            bitacora.GrabarBitacora("Creación de backup", "Respaldos", 1);
+        }
 
-            dalBackUp.EjecutarBackup("Data Source=.;Initial Catalog=EverGlow;Integrated Security=True;Trust Server Certificate=True", backup);
-
-            bitacora.GrabarBitacora($"Creación de backup", "Respaldos", 1);
+        public void RealizarRestore(string rutaCompletaArchivo)
+        {
+            if (!File.Exists(rutaCompletaArchivo) || Path.GetExtension(rutaCompletaArchivo).ToLower() != ".bak")
+            {
+                throw new ArgumentException(ServicioSessionManager.GetInstance().Traducir("El archivo seleccionado no es un backup válido o está corrupto."));
+            }
+            dalBackUp.EjecutarRestore(rutaCompletaArchivo);
+            bitacora.GrabarBitacora("Realizar Restore", "Respaldos", 1);
         }
     }
 }

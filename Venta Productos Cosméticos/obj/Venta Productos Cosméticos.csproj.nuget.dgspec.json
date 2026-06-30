@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {}
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj",
         "projectName": "BE",
-        "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
@@ -20,20 +20,20 @@
         "net472": {}
       }
     },
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLL.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -48,14 +48,14 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
               },
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
               }
             }
           }
@@ -94,24 +94,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -126,11 +126,11 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
               },
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
               }
             }
           }
@@ -175,24 +175,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj",
         "projectName": "Servicios",
-        "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj",
-        "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -207,8 +207,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
               }
             }
           }
@@ -247,24 +247,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
         "projectName": "Venta Productos Cosméticos",
-        "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
-        "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Venta Productos Cosméticos\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -279,14 +279,14 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BE\\BE.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
               },
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\BLL\\BLL.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj": {
-                "projectPath": "C:\\Users\\Vicky\\Desktop\\Facu\\3er año 1 cuatri\\ing de sw\\Proyecto\\Proyecto-Ingenier-a-de-Software\\Servicios\\Servicios.csproj"
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
               }
             }
           }
@@ -335,7 +335,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

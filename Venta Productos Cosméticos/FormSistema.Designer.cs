@@ -166,6 +166,7 @@
             restoreToolStripMenuItem.Size = new Size(231, 30);
             restoreToolStripMenuItem.Tag = "Gestionar Restore";
             restoreToolStripMenuItem.Text = "Restore";
+            restoreToolStripMenuItem.Click += restoreToolStripMenuItem_Click;
             // 
             // ventasToolStripMenuItem
             // 
