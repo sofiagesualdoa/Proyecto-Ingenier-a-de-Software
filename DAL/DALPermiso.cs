@@ -16,7 +16,7 @@ namespace DAL
             List<ServicioPermiso> lista = new List<ServicioPermiso>();
             using (SqlConnection con = new SqlConnection(conexionString))
             {
-                string query = "SELECT IdPermiso, Nombre FROM Permiso ORDER BY Nombre";
+                string query = "SELECT IdPermiso, Nombre, DVH FROM Permiso ORDER BY Nombre";
                 SqlCommand cmd = new SqlCommand(query, con);
                 try
                 {
@@ -27,7 +27,8 @@ namespace DAL
                         {
                             lista.Add(new ServicioPermiso(
                                 Convert.ToInt32(reader["IdPermiso"]),
-                                reader["Nombre"].ToString()
+                                reader["Nombre"].ToString(),
+                                reader["DVH"].ToString()
                             ));
                         }
                     }
@@ -38,6 +39,20 @@ namespace DAL
                 }
             }
             return lista;
+        }
+
+        public void ActualizarDVHPermiso(int idPermiso, string dvh)
+        {
+            using (SqlConnection con = new SqlConnection(conexionString))
+            {
+                string query = "UPDATE Permiso SET DVH = @DVH WHERE IdPermiso = @IdPermiso";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@DVH", dvh);
+                cmd.Parameters.AddWithValue("@IdPermiso", idPermiso);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

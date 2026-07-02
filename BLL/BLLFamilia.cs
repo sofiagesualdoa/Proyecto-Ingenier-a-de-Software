@@ -11,6 +11,7 @@ namespace BLL
     public class BLLFamilia
     {
         private DALFamilia dalFamilia = new DALFamilia();
+        private readonly GeneradorDigVerificador generador = new GeneradorDigVerificador();
         public List<ServicioFamilia> ObtenerFamilias()
         {
             return dalFamilia.ObtenerFamilias();
@@ -25,9 +26,40 @@ namespace BLL
 
             ValidarNombreFamiliaDisponible(nombreFamilia);
 
-            ServicioFamilia nuevaFamilia = new ServicioFamilia(0, nombreFamilia.Trim());
+            ServicioFamilia nuevaFamilia = new ServicioFamilia(0, nombreFamilia.Trim(), "");
+            nuevaFamilia.DVH = generador.GenerarDVH(nuevaFamilia);
+
             int idAsignado = dalFamilia.GuardarFamilia(nuevaFamilia);
-            dalFamilia.GuardarRelacionesFamilia(idAsignado, componentesSeleccionados);
+            new BLLDVV().RecalcularDVVFamilia();
+            List<string> dvhsRelaciones = new List<string>();
+
+            foreach (ServicioPerfil hijo in componentesSeleccionados)
+            {
+                if (hijo is ServicioPermiso)
+                {
+                    ServicioPermisoFamilia relacion = new ServicioPermisoFamilia
+                    {
+                        IdFamilia = idAsignado,
+                        IdPermiso = hijo.IdPerfil
+                    };
+
+                    dvhsRelaciones.Add(generador.GenerarDVH(relacion));
+                }
+                else if (hijo is ServicioFamilia)
+                {
+                    ServicioFamiliaFamilia relacion = new ServicioFamiliaFamilia
+                    {
+                        IdFamiliaPadre = idAsignado,
+                        IdFamiliaHijo = hijo.IdPerfil
+                    };
+
+                    dvhsRelaciones.Add(generador.GenerarDVH(relacion));
+                }
+            }
+
+            dalFamilia.GuardarRelacionesFamilia(idAsignado, componentesSeleccionados, dvhsRelaciones);
+            new BLLDVV().RecalcularDVVPermisoFamilia();
+            new BLLDVV().RecalcularDVVFamiliaFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Creación de nueva Familia", "Perfiles", 1);
         }
@@ -54,28 +86,44 @@ namespace BLL
                 throw new Exception(ServicioSessionManager.GetInstance().Traducir("Operación denegada. La familia ") + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("no se puede eliminar porque es el único componente de otra Familia del sistema. Modifique la familia contenedora primero."));
             }
             dalFamilia.EliminarFamilia(idFamilia);
+            new BLLDVV().RecalcularDVVFamilia();
+            new BLLDVV().RecalcularDVVPermisoFamilia();
+            new BLLDVV().RecalcularDVVFamiliaFamilia();
+            new BLLDVV().RecalcularDVVPerfilFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Eliminación de Familia", "Perfiles", 1);
         }
 
         public void AgregarPermisoAFamilia(int idFamiliaPadre, string nombreFamilia, ServicioPerfil hijo)
         {
-            if (hijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para agregar."));
+            if (hijo == null)
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para agregar."));
 
-            BLLFamilia bllFamilia = new BLLFamilia();
-            List<ServicioFamilia> todasLasFamilias = bllFamilia.ObtenerFamilias();
-            ServicioFamilia familiaCompleta = todasLasFamilias.FirstOrDefault(f => f.IdPerfil == idFamiliaPadre);
-
-            if (familiaCompleta != null)
+            if (hijo is ServicioPermiso)
             {
-                ServicioPerfil encontrado = familiaCompleta.Buscar(hijo.Nombre);
-                if (encontrado != null)
+                ServicioPermisoFamilia relacion = new ServicioPermisoFamilia
                 {
-                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("La familia ") + nombreFamilia + ServicioSessionManager.GetInstance().Traducir("ya posee el componente ") + hijo.Nombre + ServicioSessionManager.GetInstance().Traducir("de forma directa o heredada."));
-                }
+                    IdFamilia = idFamiliaPadre,
+                    IdPermiso = hijo.IdPerfil
+                };
+
+                string dvhRelacion = generador.GenerarDVH(relacion);
+                dalFamilia.AgregarRelacionFamiliaPermiso(idFamiliaPadre, hijo, dvhRelacion);
+                new BLLDVV().RecalcularDVVPermisoFamilia();
+            }
+            else if (hijo is ServicioFamilia)
+            {
+                ServicioFamiliaFamilia relacion = new ServicioFamiliaFamilia
+                {
+                    IdFamiliaPadre = idFamiliaPadre,
+                    IdFamiliaHijo = hijo.IdPerfil
+                };
+
+                string dvhRelacion = generador.GenerarDVH(relacion);
+                dalFamilia.AgregarRelacionFamiliaPermiso(idFamiliaPadre, hijo, dvhRelacion);
+                new BLLDVV().RecalcularDVVFamiliaFamilia();
             }
 
-            dalFamilia.AgregarRelacionFamiliaPermiso(idFamiliaPadre, hijo);
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Modificación Familia", "Perfiles", 1);
         }
@@ -95,6 +143,8 @@ namespace BLL
 
             ValidarQueFamiliaNoQuedeVacia(idFamiliaPadre, nombreFamilia);
             dalFamilia.QuitarRelacionFamiliaPermiso(idFamiliaPadre, hijo);
+            new BLLDVV().RecalcularDVVFamiliaFamilia();
+            new BLLDVV().RecalcularDVVPermisoFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Modificación Familia", "Perfiles", 1);
         }

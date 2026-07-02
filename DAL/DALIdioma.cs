@@ -19,7 +19,7 @@ namespace DAL
 
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                string query = "SELECT IdIdioma, Nombre, Codigo FROM Idioma";
+                string query = "SELECT IdIdioma, Nombre, Codigo, DVH FROM Idioma";
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
                     conexion.Open();
@@ -31,7 +31,8 @@ namespace DAL
                             {
                                 IdIdioma = Convert.ToInt32(reader["IdIdioma"]),
                                 Nombre = reader["Nombre"].ToString(),
-                                CodigoIdioma = reader["Codigo"].ToString()
+                                CodigoIdioma = reader["Codigo"].ToString(),
+                                DVH = reader["DVH"].ToString()
                             };
                             lista.Add(idioma);
                         }
@@ -70,6 +71,20 @@ namespace DAL
             }
 
             return diccionario;
+        }
+
+        public void ActualizarDVHIdioma(int idIdioma, string dvh)
+        {
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string query = "UPDATE Idioma SET DVH = @DVH WHERE IdIdioma = @IdIdioma";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@DVH", dvh);
+                cmd.Parameters.AddWithValue("@IdIdioma", idIdioma);
+
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

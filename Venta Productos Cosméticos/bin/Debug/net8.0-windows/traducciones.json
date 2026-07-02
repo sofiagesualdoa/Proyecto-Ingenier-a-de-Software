@@ -174,5 +174,20 @@
   "Error al cambiar el idioma: ": "Error while changing language: ",
   "Seleccione la ruta de destino donde se guardará el archivo.": "Select the destination path where the file will be saved.",
   "Backup realizado exitosamente en la carpeta seleccionada.": "Backup successfully created in the selected folder.",
-  "El directorio destino no existe o no es accesible.": "The destination directory does not exist or is not accessible."
+  "El directorio destino no existe o no es accesible.": "The destination directory does not exist or is not accessible.",
+  "Se detectó un error de integridad en la base de datos. El acceso normal fue bloqueado.": "An integrity error was detected in the database. Normal access was blocked.",
+  "Error de Integridad": "Integrity Error",
+  "La integridad fue restablecida correctamente.": "Integrity was successfully restored.",
+  "La integridad no pudo ser restablecida. Revise los datos alterados.": "Integrity could not be restored. Please review the altered data.",
+  "Error al recalcular dígitos verificadores: ": "Error recalculating check digits: ",
+  "Error de Integridad en la Base de Datos": "Database Integrity Error",
+  "Recalcular Dígitos Verificadores": "Recalculate Check Digits",
+  "Se detectó un error de integridad. Sólo un administrador puede gestionar la reparación.": "An integrity error was detected. Only an administrator can manage the repair.",
+  "Integridad": "Integrity",
+  "Restaurar con BackUp": "Restore with Backup",
+  "Tabla": "Table",
+  "Registro": "Record",
+  "TipoError": "ErrorType",
+  "ValorEsperado": "ExpectedValue",
+  "ValorActual": "ActualValue"
 }

@@ -8,9 +8,13 @@ namespace Servicios
 {
     public class ServicioIdioma
     {
+        [NoVerificar]
         public int IdIdioma { get; set; }
         public string Nombre { get; set; } 
         public string CodigoIdioma { get; set; }
+        public string DVH { get; set; }
+
+        [NoVerificar]
         public Dictionary<string, string> DiccionarioLeyendas { get; set; }
 
         public ServicioIdioma()

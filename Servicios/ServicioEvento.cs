@@ -8,6 +8,7 @@ namespace Servicios
 {
     public class ServicioEvento
     {
+        [NoVerificar]
         public int IdEvento { get; set; }
         public string Login { get; set; }
         public int Criticidad { get; set; }
@@ -16,6 +17,7 @@ namespace Servicios
         public string NombreEvento { get; set; }
         public string Modulo { get; set; }
         public int DNI { get; set; }
-        
+        public string DVH { get; set; }
+
     }
 }

@@ -307,3 +307,4 @@ C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Softwa
 C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Pr.3D7A3C9A.Up2Date
 C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta Productos Cosméticos.genruntimeconfig.cache
 C:\Users\sofig\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\ref\Venta Productos Cosméticos.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Debug\net8.0-windows\Venta_Productos_Cosméticos.FormErrorIntegridad.resources

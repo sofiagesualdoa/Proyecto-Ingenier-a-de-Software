@@ -11,6 +11,7 @@ namespace BLL
     public class BLLEvento
     {
         private readonly DALEvento dalEvento = new DALEvento();
+        private readonly GeneradorDigVerificador generador = new GeneradorDigVerificador();
         public void GrabarBitacora(string accion, string modulo, int nivelCriticidad)
         {
             ServicioEvento registro = new ServicioEvento();
@@ -31,7 +32,9 @@ namespace BLL
                 registro.Login = "Desconocido";
                 registro.DNI = 0;
             }
+            registro.DVH = generador.GenerarDVH(registro);
             dalEvento.RegistrarEvento(registro);
+            new BLLDVV().RecalcularDVVEvento();
         }
 
         public List<ServicioEvento> ConsultarEventosPorDefecto()

@@ -15,8 +15,8 @@ namespace DALs
 
         public void RegistrarEvento(ServicioEvento registro)
         {
-            string query = @"INSERT INTO Evento (Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI) 
-                                 VALUES (@Login, @Criticidad, @Fecha, @Hora, @NombreEvento, @Modulo, @DNI);";
+            string query = @"INSERT INTO Evento (Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI, DVH) 
+                                 VALUES (@Login, @Criticidad, @Fecha, @Hora, @NombreEvento, @Modulo, @DNI, @DVH);";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -29,7 +29,7 @@ namespace DALs
                     comando.Parameters.Add("@NombreEvento", SqlDbType.VarChar, 50).Value = registro.NombreEvento;
                     comando.Parameters.Add("@Modulo", SqlDbType.VarChar, 50).Value = registro.Modulo;
                     comando.Parameters.Add("@DNI", SqlDbType.Int).Value = registro.DNI;
-
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = registro.DVH;
                     try
                     {
                         conexion.Open();
@@ -47,7 +47,7 @@ namespace DALs
         public List<ServicioEvento> ObtenerEventos(DateTime fechaDesde)
         {
             List<ServicioEvento> lista = new List<ServicioEvento>();
-            string query = @"SELECT IdEvento, Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI 
+            string query = @"SELECT IdEvento, Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI, DVH 
                                  FROM Evento 
                                  WHERE Fecha >= @FechaDesde 
                                  ORDER BY Fecha DESC, Hora DESC;";
@@ -74,7 +74,7 @@ namespace DALs
                                 evt.NombreEvento = reader["NombreEvento"].ToString();
                                 evt.Modulo = reader["Modulo"].ToString();
                                 evt.DNI = Convert.ToInt32(reader["DNI"]);
-
+                                evt.DVH = (reader["DVH"]).ToString();
                                 lista.Add(evt);
                             }
                         }
@@ -87,6 +87,54 @@ namespace DALs
                 }
             }
             return lista;
+        }
+
+        public List<ServicioEvento> ObtenerTodosLosEventos()
+        {
+            List<ServicioEvento> lista = new List<ServicioEvento>();
+            string query = @"SELECT IdEvento, Login, Criticidad, Fecha, Hora, NombreEvento, Modulo, DNI, DVH FROM Evento";
+
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            using (SqlCommand comando = new SqlCommand(query, conexion))
+            {
+                conexion.Open();
+
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new ServicioEvento
+                        {
+                            IdEvento = Convert.ToInt32(reader["IdEvento"]),
+                            Login = reader["Login"].ToString(),
+                            Criticidad = Convert.ToInt32(reader["Criticidad"]),
+                            Fecha = Convert.ToDateTime(reader["Fecha"]),
+                            Hora = (TimeSpan)reader["Hora"],
+                            NombreEvento = reader["NombreEvento"].ToString(),
+                            Modulo = reader["Modulo"].ToString(),
+                            DNI = Convert.ToInt32(reader["DNI"]),
+                            DVH = reader["DVH"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public void ActualizarDVHEvento(int idEvento, string dvh)
+        {
+            string query = "UPDATE Evento SET DVH = @DVH WHERE IdEvento = @IdEvento";
+
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            using (SqlCommand comando = new SqlCommand(query, conexion))
+            {
+                comando.Parameters.Add("@IdEvento", SqlDbType.Int).Value = idEvento;
+                comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
+
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
         }
     }
 }

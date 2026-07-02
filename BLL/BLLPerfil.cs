@@ -12,6 +12,7 @@ namespace BLL
     {
         private DALPerfil dalPerfil = new DALPerfil();
 
+        private readonly GeneradorDigVerificador generador = new GeneradorDigVerificador();
         public ServicioPerfil CargarPerfilUsuario(int idPerfilUsuario)
         {
             if (idPerfilUsuario <= 0) return null;
@@ -44,9 +45,41 @@ namespace BLL
 
             ValidarNombrePerfilDisponible(nombrePerfil);
 
-            ServicioFamilia nuevoPerfil = new ServicioFamilia(0, nombrePerfil.Trim());
+            ServicioFamilia nuevoPerfil = new ServicioFamilia(0, nombrePerfil.Trim(), "");
+            nuevoPerfil.DVH = generador.GenerarDVH(nuevoPerfil);
+
             int idAsignado = dalPerfil.GuardarPerfil(nuevoPerfil);
-            dalPerfil.GuardarRelacionesPerfil(idAsignado, componentesSeleccionados);
+            new BLLDVV().RecalcularDVVPerfil();
+
+            List<string> dvhsRelaciones = new List<string>();
+
+            foreach (ServicioPerfil hijo in componentesSeleccionados)
+            {
+                if (hijo is ServicioPermiso)
+                {
+                    ServicioPerfilPermiso relacion = new ServicioPerfilPermiso
+                    {
+                        IdPerfil = idAsignado,
+                        IdPermiso = hijo.IdPerfil
+                    };
+
+                    dvhsRelaciones.Add(generador.GenerarDVH(relacion));
+                }
+                else if (hijo is ServicioFamilia)
+                {
+                    ServicioPerfilFamilia relacion = new ServicioPerfilFamilia
+                    {
+                        IdPerfil = idAsignado,
+                        IdFamilia = hijo.IdPerfil
+                    };
+
+                    dvhsRelaciones.Add(generador.GenerarDVH(relacion));
+                }
+            }
+
+            dalPerfil.GuardarRelacionesPerfil(idAsignado, componentesSeleccionados, dvhsRelaciones);
+            new BLLDVV().RecalcularDVVPerfilPermiso();
+            new BLLDVV().RecalcularDVVPerfilFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Creación de nuevo Perfil", "Perfiles", 1);
         }
@@ -67,24 +100,40 @@ namespace BLL
                 throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("no se puede eliminar porque está asignado actualmente a uno o más usuarios."));
             }
             dalPerfil.EliminarPerfil(idPerfil);
+            new BLLDVV().RecalcularDVVPerfil();
+            new BLLDVV().RecalcularDVVPerfilPermiso();
+            new BLLDVV().RecalcularDVVPerfilFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Eliminación de Perfil", "Perfiles", 1);
         }
 
         public void AgregarPermisoAPerfil(int idPerfilPadre, string nombrePerfil, ServicioPerfil hijo)
         {
-            if (hijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para agregar."));
+            if (hijo == null)
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar un componente válido para agregar."));
 
             ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
+
             if (perfilCompleto != null)
             {
                 ServicioPerfil encontrado = perfilCompleto.Buscar(hijo.Nombre);
+
                 if (encontrado != null && encontrado is ServicioPermiso)
                 {
                     throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("ya posee el componente ") + hijo.Nombre + ServicioSessionManager.GetInstance().Traducir("de forma directa o heredada a través de una familia."));
                 }
             }
-            dalPerfil.AgregarRelacionPerfilPermiso(idPerfilPadre, hijo);
+
+            ServicioPerfilPermiso relacion = new ServicioPerfilPermiso
+            {
+                IdPerfil = idPerfilPadre,
+                IdPermiso = hijo.IdPerfil
+            };
+
+            string dvhRelacion = generador.GenerarDVH(relacion);
+
+            dalPerfil.AgregarRelacionPerfilPermiso(idPerfilPadre, hijo, dvhRelacion);
+            new BLLDVV().RecalcularDVVPerfilPermiso();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Modificación Perfil", "Perfiles", 1);
         }
@@ -101,6 +150,7 @@ namespace BLL
 
             ValidarQueNoQuedeVacio(idPerfilPadre, nombrePerfil);
             dalPerfil.QuitarRelacionPerfilPermiso(idPerfilPadre, hijo);
+            new BLLDVV().RecalcularDVVPerfilPermiso();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora($"Modificación Perfil", "Perfiles", 1);
         }
@@ -116,34 +166,19 @@ namespace BLL
 
         public void AgregarFamiliaAPerfil(int idPerfilPadre, string nombrePerfil, ServicioFamilia familiaHijo)
         {
-            if (familiaHijo == null) throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar una familia válida para agregar."));
+            if (familiaHijo == null)
+                throw new Exception(ServicioSessionManager.GetInstance().Traducir("Debe seleccionar una familia válida para agregar."));
 
-            ServicioPerfil perfilCompleto = dalPerfil.ObtenerPerfilUsuario(idPerfilPadre);
-            if (perfilCompleto != null)
+            ServicioPerfilFamilia relacion = new ServicioPerfilFamilia
             {
-                if (perfilCompleto.Hijos != null && perfilCompleto.Hijos.Any(h => h.IdPerfil == familiaHijo.IdPerfil && h is ServicioFamilia))
-                {
-                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("El perfil ") + nombrePerfil + ServicioSessionManager.GetInstance().Traducir("ya posee la familia ") + familiaHijo.Nombre + ServicioSessionManager.GetInstance().Traducir("asignada directamente."));
-                }
+                IdPerfil = idPerfilPadre,
+                IdFamilia = familiaHijo.IdPerfil
+            };
 
-                BLLFamilia bllFamilia = new BLLFamilia();
-                List<ServicioFamilia> todasLasFamilias = bllFamilia.ObtenerFamilias();
-                ServicioFamilia familiaHijoCompleta = todasLasFamilias.FirstOrDefault(f => f.IdPerfil == familiaHijo.IdPerfil);
+            string dvhRelacion = generador.GenerarDVH(relacion);
 
-                if (familiaHijoCompleta != null && familiaHijoCompleta.Hijos != null)
-                {
-                    foreach (var componenteHijo in familiaHijoCompleta.Hijos)
-                    {
-                        ServicioPerfil componenteDuplicado = perfilCompleto.Buscar(componenteHijo.Nombre);
-                        if (componenteDuplicado != null && componenteDuplicado is ServicioPermiso)
-                        {
-                            throw new Exception(ServicioSessionManager.GetInstance().Traducir("No se puede agregar la familia ") + familiaHijo.Nombre + ServicioSessionManager.GetInstance().Traducir("porque contiene el permiso ") + componenteHijo.Nombre + ServicioSessionManager.GetInstance().Traducir(", el cual ya existe en el perfil ") + nombrePerfil);
-                        }
-                    }
-                }
-            }
-
-            dalPerfil.AgregarRelacionPerfilFamilia(idPerfilPadre, familiaHijo);
+            dalPerfil.AgregarRelacionPerfilFamilia(idPerfilPadre, familiaHijo, dvhRelacion);
+            new BLLDVV().RecalcularDVVPerfilFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Modificación Perfil", "Perfiles", 1);
         }
@@ -160,6 +195,7 @@ namespace BLL
 
             ValidarQueNoQuedeVacio(idPerfilPadre, nombrePerfil);
             dalPerfil.QuitarRelacionPerfilFamilia(idPerfilPadre, familiaHijo);
+            new BLLDVV().RecalcularDVVPerfilFamilia();
             BLLEvento bitacora = new BLLEvento();
             bitacora.GrabarBitacora("Modificación Perfil", "Perfiles", 1);
         }

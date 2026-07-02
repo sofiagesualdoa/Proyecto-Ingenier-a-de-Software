@@ -70,6 +70,25 @@ namespace Venta_Productos_Cosméticos
             }
             catch (Exception ex)
             {
+                if (ex.Message == "ERROR_INTEGRIDAD_ADMIN")
+                {
+                    FormErrorIntegridad frm = new FormErrorIntegridad();
+                    frm.Show();
+                    this.Hide();
+                    return;
+                }
+
+                if (ex.Message == "ERROR_INTEGRIDAD_NO_ADMIN")
+                {
+                    MessageBox.Show(
+                        ServicioSessionManager.GetInstance().Traducir("Se detectó un error de integridad. Sólo un administrador puede gestionar la reparación."),
+                        ServicioSessionManager.GetInstance().Traducir("Error de Integridad"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                    return;
+                }
+
                 string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
                 MessageBox.Show(errorTraducido, ServicioSessionManager.GetInstance().Traducir("Error de Autenticación"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtContraseña.Clear();

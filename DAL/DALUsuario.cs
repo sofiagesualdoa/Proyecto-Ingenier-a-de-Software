@@ -11,7 +11,7 @@ namespace DALs
         public ServicioUsuario ObtenerUsuario(string nombreUsuario)
         {
             ServicioUsuario usuarioEncontrado = null;
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma 
+            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma, DVH 
                      FROM Usuario 
                      WHERE NombreUsuario = @NombreUsuario;";
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -38,6 +38,7 @@ namespace DALs
                                 usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
                                 usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
                                 usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
+                                usuarioEncontrado.DVH = reader["DVH"].ToString();
                             }
                         }
                     }
@@ -54,7 +55,7 @@ namespace DALs
         {
             usuarios.Clear();
             string query = @"SELECT u.DNI, u.Nombre, u.Apellido, u.NombreUsuario, u.Bloqueado, u.Activo, u.Contraseña, 
-                            u.IntentosInicio, u.Email, u.IdPerfil, u.IdIdioma, p.Nombre AS NombrePerfil
+                            u.IntentosInicio, u.Email, u.IdPerfil, u.IdIdioma, u.DVH, p.Nombre AS NombrePerfil, p.DVH AS DVHPerfil
                      FROM Usuario u
                      LEFT JOIN Perfil p ON u.IdPerfil = p.IdPerfil;";
 
@@ -77,8 +78,9 @@ namespace DALs
                             usr.Email = reader["Email"].ToString();
                             usr.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
                             usr.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
+                            usr.DVH = reader["DVH"].ToString();
                             usr.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
-                            usr.PerfilUsuario = new ServicioFamilia(usr.IdPerfil, reader["NombrePerfil"].ToString());
+                            usr.PerfilUsuario = new ServicioFamilia(usr.IdPerfil, reader["NombrePerfil"].ToString(), reader["DVHPerfil"].ToString());
                             usr.SetPassword(reader["Contraseña"].ToString());
 
                             usuarios.Add(usr);
@@ -93,8 +95,8 @@ namespace DALs
         {
             int idiomaAGuardar = (usuario.IdIdioma > 0) ? usuario.IdIdioma : 1;
 
-            string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma) 
-                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @IdPerfil, @IdIdioma);";
+            string query = @"INSERT INTO Usuario (DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma, DVH) 
+                     VALUES (@DNI, @Nombre, @Apellido, @NombreUsuario, @Bloqueado, @Activo, @Contraseña, @IntentosInicio, @Email, @IdPerfil, @IdIdioma, @DVH);";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -111,7 +113,7 @@ namespace DALs
                     comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuario.IdPerfil;
                     comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 65).Value = usuario.GetPassword();
                     comando.Parameters.Add("@IdIdioma", SqlDbType.Int).Value = idiomaAGuardar;
-
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = usuario.DVH;
                     try
                     {
                         conexion.Open();
@@ -131,7 +133,7 @@ namespace DALs
         public ServicioUsuario BuscarUsuarioPorDniOMail(int dni, string email)
         {
             ServicioUsuario usuarioEncontrado = null;
-            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma 
+            string query = @"SELECT DNI, Nombre, Apellido, NombreUsuario, Bloqueado, Activo, Contraseña, IntentosInicio, Email, IdPerfil, IdIdioma, DVH 
                      FROM Usuario 
                      WHERE DNI = @DNI OR Email = @Email;";
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -157,6 +159,7 @@ namespace DALs
                             usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
                             usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
                             usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
+                            usuarioEncontrado.DVH = reader["DVH"].ToString();
                         }
                     }
                 }
@@ -164,10 +167,10 @@ namespace DALs
             return usuarioEncontrado;
         }
 
-        public void DesbloquearUsuario(int dni)
+        public void DesbloquearUsuario(int dni, string dvh)
         {
             string query = @"UPDATE Usuario 
-                                 SET Bloqueado = 0, IntentosInicio = 0 
+                                 SET Bloqueado = 0, IntentosInicio = 0, DVH = @DVH
                                  WHERE DNI = @DNI;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -175,6 +178,7 @@ namespace DALs
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
                     comando.Parameters.Add("@DNI", SqlDbType.Int).Value = dni;
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
                     try
                     {
                         conexion.Open();
@@ -199,10 +203,10 @@ namespace DALs
             }
         }
 
-        public void BloquearUsuario(int dni)
+        public void BloquearUsuario(int dni,string dvh)
         {
             string query = @"UPDATE Usuario 
-                     SET Bloqueado = 1 
+                     SET Bloqueado = 1,  DVH = @DVH
                      WHERE DNI = @DNI;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -210,6 +214,7 @@ namespace DALs
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
                     comando.Parameters.Add("@DNI", SqlDbType.Int).Value = dni;
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
                     try
                     {
                         conexion.Open();
@@ -242,7 +247,8 @@ namespace DALs
                          NombreUsuario = @NombreUsuario, 
                          IdPerfil = @IdPerfil, 
                          Activo = @Activo,
-                         IdIdioma = @IdIdioma
+                         IdIdioma = @IdIdioma, 
+                         DVH = @DVH
                      WHERE DNI = @DNI;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -257,7 +263,7 @@ namespace DALs
                     comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuarioModificado.IdPerfil;
                     comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuarioModificado.Activo;
                     comando.Parameters.Add("@IdIdioma", SqlDbType.Int).Value = usuarioModificado.IdIdioma;
-
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = usuarioModificado.DVH;
                     try
                     {
                         conexion.Open();
@@ -285,10 +291,11 @@ namespace DALs
                 usuarioMemoria.IdIdioma = usuarioModificado.IdIdioma;
                 usuarioMemoria.PerfilUsuario = usuarioModificado.PerfilUsuario;
                 usuarioMemoria.Activo = usuarioModificado.Activo;
+                usuarioMemoria.DVH = usuarioModificado.DVH;
             }
         }
 
-        public bool ModificarEstado(int DNIUsuario)
+        public bool ModificarEstado(int DNIUsuario, string dvh)
         {
             ServicioUsuario u = BuscarUsuarioPorDniOMail(DNIUsuario, "x");
             if (u == null)
@@ -297,7 +304,7 @@ namespace DALs
             }
             bool nuevoEstado = !u.Activo;
             string query = @"UPDATE Usuario 
-                                 SET Activo = @Activo 
+                                 SET Activo = @Activo, DVH = @DVH 
                                  WHERE DNI = @DNI;";
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
@@ -305,6 +312,7 @@ namespace DALs
                 {
                     comando.Parameters.Add("@DNI", SqlDbType.Int).Value = DNIUsuario;
                     comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = nuevoEstado;
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
                     try
                     {
                         conexion.Open();
@@ -325,10 +333,10 @@ namespace DALs
             return true;
         }
 
-        public void GuardarNuevaClave(string nombreUsuario, string hashClaveNueva)
+        public void GuardarNuevaClave(string nombreUsuario, string hashClaveNueva, string dvh)
         {
             string query = @"UPDATE Usuario 
-                                 SET Contraseña = @Contraseña 
+                                 SET Contraseña = @Contraseña, DVH = @DVH 
                                  WHERE NombreUsuario = @NombreUsuario;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -337,6 +345,7 @@ namespace DALs
                 {
                     comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
                     comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 65).Value = hashClaveNueva;
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
                     try
                     {
                         conexion.Open();
@@ -360,10 +369,10 @@ namespace DALs
                 usuarioMemoria.SetPassword(hashClaveNueva);
             }
         }
-        public void SumarIntentoFallido(string nombreUsuario)
+        public void SumarIntentoFallido(string nombreUsuario, string dvh)
         {
             string query = @"UPDATE Usuario 
-                                 SET IntentosInicio = IntentosInicio + 1 
+                                 SET IntentosInicio = IntentosInicio + 1, DVH = @DVH 
                                  WHERE NombreUsuario = @NombreUsuario;";
 
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -371,7 +380,7 @@ namespace DALs
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
                     comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
-
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
                     try
                     {
                         conexion.Open();
@@ -396,17 +405,51 @@ namespace DALs
             }
         }
 
-        public void ActualizarIdiomaUsuario(int dni, int idIdioma)
+        public void ActualizarIdiomaUsuario(int dni, int idIdioma, string dvh)
         {
             using (SqlConnection conexion = new SqlConnection(cadena))
             {
-                string query = "UPDATE Usuario SET IdIdioma = @IdIdioma WHERE DNI = @DNI";
+                string query = "UPDATE Usuario SET IdIdioma = @IdIdioma, DVH = @DVH WHERE DNI = @DNI";
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
                     cmd.Parameters.AddWithValue("@IdIdioma", idIdioma);
                     cmd.Parameters.AddWithValue("@DNI", dni);
+                    cmd.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
                     conexion.Open();
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void ActualizarDVHUsuario(int dni, string dvh)
+        {
+            string query = @"UPDATE Usuario 
+                     SET DVH = @DVH 
+                     WHERE DNI = @DNI;";
+
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                using (SqlCommand comando = new SqlCommand(query, conexion))
+                {
+                    comando.Parameters.Add("@DNI", SqlDbType.Int).Value = dni;
+                    comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = dvh;
+
+                    try
+                    {
+                        conexion.Open();
+
+                        int filasAfectadas = comando.ExecuteNonQuery();
+
+                        if (filasAfectadas == 0)
+                        {
+                            throw new Exception("No se encontró ningún usuario con el DNI especificado para actualizar el DVH.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
+                        throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al actualizar el DVH del usuario: ") + errorTraducido);
+                    }
                 }
             }
         }

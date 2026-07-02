@@ -10,7 +10,7 @@ namespace Servicios
     {
         private List<ServicioPerfil> listaperfil;
 
-        public ServicioFamilia(int id, string nombre) : base(id, nombre)
+        public ServicioFamilia(int id, string nombre, string dvh) : base(id, nombre, dvh)
         {
             listaperfil = new List<ServicioPerfil>();
         }

@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|c:\\users\\sofig\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\venta productos cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F3B63EE9-592B-4F5F-8189-1E3638F73120}|Venta Productos Cosm\u00E9ticos.csproj|solutionrelative:formsistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -110,14 +110,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormSistema.cs [Dise\u00F1o]",
+              "Title": "FormSistema.cs [Design]",
               "DocumentMoniker": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
               "RelativeDocumentMoniker": "FormSistema.cs",
-              "ToolTip": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormSistema.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs [Design]",
+              "RelativeToolTip": "FormSistema.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T20:03:48.389Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -129,8 +129,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:44:31.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:44:31.633Z"
             },
             {
               "$type": "Document",
@@ -142,8 +141,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioPermiso.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:44:09.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:44:09.092Z"
             },
             {
               "$type": "Document",
@@ -155,8 +153,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioPerfil.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:43:59.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:43:59.773Z"
             },
             {
               "$type": "Document",
@@ -168,8 +165,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioIdioma.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:43:47.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:43:47.683Z"
             },
             {
               "$type": "Document",
@@ -181,8 +177,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioFamilia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:43:36.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:43:36.162Z"
             },
             {
               "$type": "Document",
@@ -194,8 +189,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioEvento.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:43:24.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:43:24.911Z"
             },
             {
               "$type": "Document",
@@ -207,8 +201,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioEncriptador.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:43:12.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:43:12.522Z"
             },
             {
               "$type": "Document",
@@ -220,8 +213,7 @@
               "RelativeToolTip": "..\\Servicios\\IObserver.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:43:03.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:43:03.829Z"
             },
             {
               "$type": "Document",
@@ -233,8 +225,7 @@
               "RelativeToolTip": "..\\BLL\\IObservable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:41:21.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:41:21.766Z"
             },
             {
               "$type": "Document",
@@ -246,8 +237,7 @@
               "RelativeToolTip": "..\\BLL\\BLLPermiso.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:40:56.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:40:56.041Z"
             },
             {
               "$type": "Document",
@@ -259,8 +249,7 @@
               "RelativeToolTip": "..\\BLL\\BLLPerfil.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAAAhwJ0AAAA5AQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:28:06.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:28:06.863Z"
             },
             {
               "$type": "Document",
@@ -272,8 +261,7 @@
               "RelativeToolTip": "..\\BLL\\BLLFamilia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:20:04.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:20:04.021Z"
             },
             {
               "$type": "Document",
@@ -285,8 +273,7 @@
               "RelativeToolTip": "..\\DAL\\DALUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:04:35.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:04:35.602Z"
             },
             {
               "$type": "Document",
@@ -298,8 +285,7 @@
               "RelativeToolTip": "..\\DAL\\DALPermiso.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:04:27.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:04:27.655Z"
             },
             {
               "$type": "Document",
@@ -311,8 +297,7 @@
               "RelativeToolTip": "..\\DAL\\DALPerfil.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:03:23.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:03:23.3Z"
             },
             {
               "$type": "Document",
@@ -324,8 +309,7 @@
               "RelativeToolTip": "..\\DAL\\DALIdioma.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T19:02:53.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T19:02:53.353Z"
             },
             {
               "$type": "Document",
@@ -337,8 +321,7 @@
               "RelativeToolTip": "..\\DAL\\DALFamilia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T18:59:26.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T18:59:26.152Z"
             },
             {
               "$type": "Document",
@@ -350,8 +333,7 @@
               "RelativeToolTip": "..\\DAL\\DALEvento.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T18:59:00.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T18:59:00.326Z"
             },
             {
               "$type": "Document",
@@ -363,8 +345,7 @@
               "RelativeToolTip": "..\\BLL\\BLLUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T18:56:40.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T18:56:40.39Z"
             },
             {
               "$type": "Document",
@@ -376,8 +357,7 @@
               "RelativeToolTip": "FormCambioClave.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T15:46:07.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T15:46:07.922Z"
             },
             {
               "$type": "Document",
@@ -389,8 +369,7 @@
               "RelativeToolTip": "..\\Servicios\\ServicioSessionManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:35:54.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:35:54.702Z"
             },
             {
               "$type": "Document",
@@ -402,8 +381,7 @@
               "RelativeToolTip": "FormBitacora.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:29:55.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:29:55.363Z"
             },
             {
               "$type": "Document",
@@ -415,8 +393,7 @@
               "RelativeToolTip": "..\\BLL\\BLLIdioma.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:25:42.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:25:42.828Z"
             },
             {
               "$type": "Document",
@@ -428,8 +405,7 @@
               "RelativeToolTip": "FormUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:20:53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:20:53Z"
             },
             {
               "$type": "Document",
@@ -439,7 +415,7 @@
               "RelativeDocumentMoniker": "FormSistema.cs",
               "ToolTip": "C:\\Users\\sofig\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\FormSistema.cs",
               "RelativeToolTip": "FormSistema.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAIA7wCQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAlwCQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T14:20:32.944Z",
               "EditorCaption": ""
@@ -454,8 +430,7 @@
               "RelativeToolTip": "FormPerfil.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:19:46.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:19:46.449Z"
             },
             {
               "$type": "Document",
@@ -467,8 +442,7 @@
               "RelativeToolTip": "FormPantallaInicio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:19:29.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:19:29.109Z"
             },
             {
               "$type": "Document",
@@ -480,8 +454,7 @@
               "RelativeToolTip": "FormInicioSesion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T14:19:11.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T14:19:11.057Z"
             }
           ]
         }

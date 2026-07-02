@@ -25,5 +25,17 @@ namespace Servicios
                 return sb.ToString();
             }
         }
+
+        public string EncriptarBase64(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return string.Empty;
+
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytesOriginales = Encoding.UTF8.GetBytes(texto);
+                byte[] bytesHasheados = sha256.ComputeHash(bytesOriginales);
+                return Convert.ToBase64String(bytesHasheados);
+            }
+        }
     }
 }

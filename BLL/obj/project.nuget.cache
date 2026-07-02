@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "JURbX6pjRBI=",
+  "dgSpecHash": "PNus+papcPE=",
   "success": true,
   "projectFilePath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.bcl.cryptography\\8.0.0\\microsoft.bcl.cryptography.8.0.0.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient\\7.0.1\\microsoft.data.sqlclient.7.0.1.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient.extensions.abstractions\\1.0.0\\microsoft.data.sqlclient.extensions.abstractions.1.0.0.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient.internal.logging\\1.0.0\\microsoft.data.sqlclient.internal.logging.1.0.0.nupkg.sha512",
+    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient\\7.0.2\\microsoft.data.sqlclient.7.0.2.nupkg.sha512",
+    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient.extensions.abstractions\\7.0.2\\microsoft.data.sqlclient.extensions.abstractions.7.0.2.nupkg.sha512",
+    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient.internal.logging\\7.0.2\\microsoft.data.sqlclient.internal.logging.7.0.2.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\6.0.2\\microsoft.data.sqlclient.sni.runtime.6.0.2.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.1\\microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",

@@ -11,14 +11,14 @@ namespace DAL
     public class DALFamilia
     {
         private string conexionString = "Data Source=.;Initial Catalog=EverGlow;Integrated Security=True;Trust Server Certificate=True";
-
+       
         public List<ServicioFamilia> ObtenerFamilias()
         {
             List<ServicioFamilia> lista = new List<ServicioFamilia>();
 
             using (SqlConnection con = new SqlConnection(conexionString))
             {
-                string query = "SELECT IdFamilia, Nombre FROM Familia ORDER BY Nombre";
+                string query = "SELECT IdFamilia, Nombre, DVH FROM Familia ORDER BY Nombre";
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 try
@@ -30,7 +30,8 @@ namespace DAL
                         {
                             lista.Add(new ServicioFamilia(
                                 Convert.ToInt32(reader["IdFamilia"]),
-                                reader["Nombre"].ToString()
+                                reader["Nombre"].ToString(),
+                                reader["DVH"].ToString()
                             ));
                         }
                     }
@@ -71,7 +72,7 @@ namespace DAL
             List<ServicioPermiso> lista = new List<ServicioPermiso>();
             using (SqlConnection con = new SqlConnection(conexionString))
             {
-                string query = @"SELECT p.IdPermiso, p.Nombre 
+                string query = @"SELECT p.IdPermiso, p.Nombre, p.DVH 
                                  FROM Permiso p 
                                  INNER JOIN Permiso_x_Familia pf ON p.IdPermiso = pf.IdPermiso 
                                  WHERE pf.IdFamilia = @idFamilia";
@@ -85,7 +86,7 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            lista.Add(new ServicioPermiso(Convert.ToInt32(reader["IdPermiso"]), reader["Nombre"].ToString()));
+                            lista.Add(new ServicioPermiso(Convert.ToInt32(reader["IdPermiso"]), reader["Nombre"].ToString(), reader["DVH"].ToString()));
                         }
                     }
                 }
@@ -103,7 +104,7 @@ namespace DAL
             List<ServicioFamilia> lista = new List<ServicioFamilia>();
             using (SqlConnection con = new SqlConnection(conexionString))
             {
-                string query = @"SELECT f.IdFamilia, f.Nombre 
+                string query = @"SELECT f.IdFamilia, f.Nombre, f.DVH 
                                  FROM Familia f 
                                  INNER JOIN Familia_x_Familia ff ON f.IdFamilia = ff.IdFamiliaHijo 
                                  WHERE ff.IdFamiliaPadre = @idPadre";
@@ -117,7 +118,7 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            lista.Add(new ServicioFamilia(Convert.ToInt32(reader["IdFamilia"]), reader["Nombre"].ToString()));
+                            lista.Add(new ServicioFamilia(Convert.ToInt32(reader["IdFamilia"]), reader["Nombre"].ToString(), reader["DVH"].ToString()));
                         }
                     }
                 }
@@ -133,57 +134,53 @@ namespace DAL
         public int GuardarFamilia(ServicioFamilia familia)
         {
             int idGenerado = 0;
+
             using (SqlConnection con = new SqlConnection(conexionString))
             {
-                string query = "INSERT INTO Familia (Nombre) VALUES (@Nombre); SELECT SCOPE_IDENTITY();";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@Nombre", familia.Nombre);
+                string query = "INSERT INTO Familia (Nombre, DVH) VALUES (@Nombre, @DVH); SELECT SCOPE_IDENTITY();";
 
-                try
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    cmd.Parameters.AddWithValue("@Nombre", familia.Nombre);
+                    cmd.Parameters.AddWithValue("@DVH", familia.DVH);
+
                     con.Open();
                     idGenerado = Convert.ToInt32(cmd.ExecuteScalar());
                 }
-                catch (Exception ex)
-                {
-                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
-                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al guardar la Familia: ") + errorTraducido);
-                }
             }
+
             return idGenerado;
         }
 
-        public void GuardarRelacionesFamilia(int idFamiliaPadre, List<ServicioPerfil> hijos)
+        public void GuardarRelacionesFamilia(int idFamiliaPadre, List<ServicioPerfil> hijos, List<string> dvhsRelaciones)
         {
             using (SqlConnection con = new SqlConnection(conexionString))
             {
-                try
-                {
-                    con.Open();
-                    foreach (var child in hijos)
-                    {
-                        string query = "";
-                        if (child is ServicioPermiso)
-                        {
-                            query = "INSERT INTO Permiso_x_Familia (IdPermiso, IdFamilia) VALUES (@idHijo, @idPadre)";
-                        }
-                        else if (child is ServicioFamilia)
-                        {
-                            query = "INSERT INTO Familia_x_Familia (IdFamiliaPadre, IdFamiliaHijo) VALUES (@idPadre, @idHijo)";
-                        }
+                con.Open();
 
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            cmd.Parameters.AddWithValue("@idHijo", child.IdPerfil);
-                            cmd.Parameters.AddWithValue("@idPadre", idFamiliaPadre);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
-                catch (Exception ex)
+                for (int i = 0; i < hijos.Count; i++)
                 {
-                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
-                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error al guardar las relaciones de la familia: ") + errorTraducido);
+                    ServicioPerfil hijo = hijos[i];
+                    string dvhRelacion = dvhsRelaciones[i];
+
+                    string query = "";
+
+                    if (hijo is ServicioPermiso)
+                    {
+                        query = "INSERT INTO Permiso_x_Familia (IdFamilia, IdPermiso, DVH) VALUES (@idPadre, @idHijo, @DVH)";
+                    }
+                    else if (hijo is ServicioFamilia)
+                    {
+                        query = "INSERT INTO Familia_x_Familia (IdFamiliaPadre, IdFamiliaHijo, DVH) VALUES (@idPadre, @idHijo, @DVH)";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@idPadre", idFamiliaPadre);
+                        cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
+                        cmd.Parameters.AddWithValue("@DVH", dvhRelacion);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
         }
@@ -250,7 +247,7 @@ namespace DAL
             using (SqlConnection con = new SqlConnection(conexionString))
             {
                 string query = @"
-                    SELECT fxf.IdFamiliaPadre 
+                    SELECT fxf.IdFamiliaPadre, fxf.DVH 
                     FROM Familia_x_Familia fxf
                     WHERE fxf.IdFamiliaHijo = @idHijo
                       AND (
@@ -280,33 +277,29 @@ namespace DAL
             return familiasPadreAfectadas;
         }
 
-        public void AgregarRelacionFamiliaPermiso(int idFamiliaPadre, ServicioPerfil hijo)
+        public void AgregarRelacionFamiliaPermiso(int idFamiliaPadre, ServicioPerfil hijo, string dvhRelacion)
         {
             using (SqlConnection con = new SqlConnection(conexionString))
             {
                 string query = "";
+
                 if (hijo is ServicioPermiso)
                 {
-                    query = "INSERT INTO Permiso_x_Familia (IdFamilia, IdPermiso) VALUES (@idPadre, @idHijo)";
+                    query = "INSERT INTO Permiso_x_Familia (IdFamilia, IdPermiso, DVH) VALUES (@idPadre, @idHijo, @DVH)";
                 }
                 else if (hijo is ServicioFamilia)
                 {
-                    query = "INSERT INTO Familia_x_Familia (IdFamiliaPadre, IdFamiliaHijo) VALUES (@idPadre, @idHijo)";
+                    query = "INSERT INTO Familia_x_Familia (IdFamiliaPadre, IdFamiliaHijo, DVH) VALUES (@idPadre, @idHijo, @DVH)";
                 }
 
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@idPadre", idFamiliaPadre);
-                cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
-
-                try
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    cmd.Parameters.AddWithValue("@idPadre", idFamiliaPadre);
+                    cmd.Parameters.AddWithValue("@idHijo", hijo.IdPerfil);
+                    cmd.Parameters.AddWithValue("@DVH", dvhRelacion);
+
                     con.Open();
                     cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    string errorTraducido = ServicioSessionManager.GetInstance().Traducir(ex.Message);
-                    throw new Exception(ServicioSessionManager.GetInstance().Traducir("Error físico al asociar el componente a la familia: ") + errorTraducido);
                 }
             }
         }
@@ -367,6 +360,110 @@ namespace DAL
                 }
             }
             return totalHijos;
+        }
+
+        public List<ServicioPermisoFamilia> ObtenerRelacionesPermisoFamilia()
+        {
+            List<ServicioPermisoFamilia> lista = new List<ServicioPermisoFamilia>();
+            string query = "SELECT IdPermiso, IdFamilia, DVH FROM Permiso_x_Familia";
+
+            using (SqlConnection con = new SqlConnection(conexionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new ServicioPermisoFamilia
+                        {
+                            IdPermiso = Convert.ToInt32(reader["IdPermiso"]),
+                            IdFamilia = Convert.ToInt32(reader["IdFamilia"]),
+                            DVH = reader["DVH"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public List<ServicioFamiliaFamilia> ObtenerRelacionesFamiliaFamilia()
+        {
+            List<ServicioFamiliaFamilia> lista = new List<ServicioFamiliaFamilia>();
+            string query = "SELECT IdFamiliaPadre, IdFamiliaHijo, DVH FROM Familia_x_Familia";
+
+            using (SqlConnection con = new SqlConnection(conexionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new ServicioFamiliaFamilia
+                        {
+                            IdFamiliaPadre = Convert.ToInt32(reader["IdFamiliaPadre"]),
+                            IdFamiliaHijo = Convert.ToInt32(reader["IdFamiliaHijo"]),
+                            DVH = reader["DVH"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public void ActualizarDVHFamilia(int idFamilia, string dvh)
+        {
+            string query = "UPDATE Familia SET DVH = @DVH WHERE IdFamilia = @IdFamilia";
+
+            using (SqlConnection con = new SqlConnection(conexionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@IdFamilia", idFamilia);
+                cmd.Parameters.AddWithValue("@DVH", dvh);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void ActualizarDVHPermisoFamilia(int idFamilia, int idPermiso, string dvh)
+        {
+            string query = @"UPDATE Permiso_x_Familia 
+                     SET DVH = @DVH 
+                     WHERE IdFamilia = @IdFamilia AND IdPermiso = @IdPermiso";
+
+            using (SqlConnection con = new SqlConnection(conexionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@IdFamilia", idFamilia);
+                cmd.Parameters.AddWithValue("@IdPermiso", idPermiso);
+                cmd.Parameters.AddWithValue("@DVH", dvh);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void ActualizarDVHFamiliaFamilia(int idFamiliaPadre, int idFamiliaHijo, string dvh)
+        {
+            string query = @"UPDATE Familia_x_Familia 
+                     SET DVH = @DVH 
+                     WHERE IdFamiliaPadre = @IdFamiliaPadre 
+                       AND IdFamiliaHijo = @IdFamiliaHijo";
+
+            using (SqlConnection con = new SqlConnection(conexionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@IdFamiliaPadre", idFamiliaPadre);
+                cmd.Parameters.AddWithValue("@IdFamiliaHijo", idFamiliaHijo);
+                cmd.Parameters.AddWithValue("@DVH", dvh);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

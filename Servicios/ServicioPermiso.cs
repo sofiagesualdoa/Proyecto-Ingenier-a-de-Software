@@ -8,7 +8,7 @@ namespace Servicios
 {
     public class ServicioPermiso : ServicioPerfil
     {
-        public ServicioPermiso(int id, string nombre) : base(id, nombre) { }
+        public ServicioPermiso(int id, string nombre, string dvh) : base(id, nombre, dvh) { }
 
         public override List<ServicioPerfil> Hijos => null;
 
