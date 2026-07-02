@@ -19,6 +19,7 @@ AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={autopf}\{#MyAppName}
+PrivilegesRequired=admin
 UninstallDisplayIcon={app}\{#MyAppExeName}
 ; "ArchitecturesAllowed=x64compatible" specifies that Setup cannot run
 ; on anything but x64 and Windows 11 on Arm.
@@ -44,15 +45,14 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\usuario\Desktop\Venta Productos Cosméticos.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\traducciones.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\wpfgfx_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\PenImc_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\PresentationNative_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\Microsoft.Data.SqlClient.SNI.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\D3DCompiler_47_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\vcruntime140_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\usuario\Desktop\instalar_bd.sql"; DestDir: "{tmp}"; Flags: deleteafterinstall
+Source: "C:\Users\usuario\Downloads\cosas instalador\Venta Productos Cosméticos.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\traducciones.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\wpfgfx_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\PenImc_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\PresentationNative_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\Microsoft.Data.SqlClient.SNI.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\D3DCompiler_47_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\usuario\Downloads\cosas instalador\vcruntime140_cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
@@ -66,6 +66,4 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "sqlcmd"; Parameters: "-S .\SQLEXPRESS -E -i ""{tmp}\instalar_bd.sql"""; StatusMsg: "Configurando y restaurando base de datos local..."; Flags: runhidden
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
