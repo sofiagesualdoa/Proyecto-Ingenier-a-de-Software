@@ -240,46 +240,6 @@ namespace BLL
         {
             return ObtenerErroresIntegridad().Count == 0;
         }
-
-        //private bool ValidarDVH(List<object> registros)
-        //{
-        //    foreach (object registro in registros)
-        //    {
-        //        var propiedadDVH = registro.GetType().GetProperty("DVH");
-        //        string dvhGuardado = propiedadDVH?.GetValue(registro)?.ToString();
-        //        string dvhCalculado = generador.GenerarDVH(registro);
-
-        //        if (dvhGuardado != dvhCalculado)
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //    return true;
-        //}
-
-        //private bool ValidarDVV()
-        //{
-        //    List<ServicioDVV> dvvsGuardados = dalDVV.ObtenerDVV();
-
-        //    return ValidarDVVTabla("Usuario", new DALUsuario().ObtenerUsuarios().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Perfil", new DALPerfil().ObtenerPerfiles().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Familia", new DALFamilia().ObtenerFamilias().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Evento", new DALEvento().ObtenerTodosLosEventos().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Perfil_x_Permiso", new DALPerfil().ObtenerRelacionesPerfilPermiso().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Perfil_x_Familia", new DALPerfil().ObtenerRelacionesPerfilFamilia().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Permiso_x_Familia", new DALFamilia().ObtenerRelacionesPermisoFamilia().Cast<object>().ToList(), dvvsGuardados)
-        //        && ValidarDVVTabla("Familia_x_Familia", new DALFamilia().ObtenerRelacionesFamiliaFamilia().Cast<object>().ToList(), dvvsGuardados);
-        //}
-
-        //private bool ValidarDVVTabla(string nombreTabla, List<object> registros, List<ServicioDVV> dvvsGuardados)
-        //{
-        //    string dvvCalculado = CalcularDVV(nombreTabla, registros);
-        //    string dvvGuardado = dvvsGuardados.FirstOrDefault(d => d.NombreTabla == nombreTabla)?.Digito;
-
-        //    return dvvGuardado == dvvCalculado;
-        //}
-
         public List<ServicioErrorIntegridad> ObtenerErroresIntegridad()
         {
             List<ServicioErrorIntegridad> errores = new List<ServicioErrorIntegridad>();

@@ -40,37 +40,6 @@ namespace Servicios
             return encriptador.EncriptarBase64(transformado);
         }
 
-        //public string GenerarDVV(object[] registros)
-        //{
-        //    if (registros == null || registros.Length == 0)
-        //    {
-        //        return "0";
-        //    }
-
-        //    StringBuilder cadena = new StringBuilder();
-
-        //    foreach (object registro in registros)
-        //    {
-        //        PropertyInfo propiedadDVH = registro.GetType().GetProperty("DVH");
-        //        string dvh = propiedadDVH?.GetValue(registro)?.ToString();
-
-        //        if (!string.IsNullOrEmpty(dvh))
-        //        {
-        //            cadena.Append(dvh);
-        //        }
-        //    }
-
-        //    cadena.Append(registros[0].GetType().Name);
-
-        //    int suma = 0;
-        //    foreach (char caracter in cadena.ToString())
-        //    {
-        //        suma += TransformarASCII(caracter);
-        //    }
-
-        //    return suma.ToString();
-        //}
-
         public string GenerarDVV(string nombreTabla, IEnumerable<object> registros)
         {
             StringBuilder cadena = new StringBuilder();
