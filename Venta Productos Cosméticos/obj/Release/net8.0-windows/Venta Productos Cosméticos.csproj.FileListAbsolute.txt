@@ -1,0 +1,80 @@
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\traducciones.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Venta Productos Cosméticos.exe
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Venta Productos Cosméticos.deps.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Venta Productos Cosméticos.runtimeconfig.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Venta Productos Cosméticos.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Venta Productos Cosméticos.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\itextsharp.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\BE.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\BLL.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\DAL.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Servicios.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\BE.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\BLL.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\Servicios.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\DAL.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormBitacora.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormCambioClave.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormErrorIntegridad.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormInicioSesion.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormPantallaInicio.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormPerfil.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.FormSistema.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.Vista.FormUsuario.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta_Productos_Cosméticos.Properties.Resources.resources
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.csproj.GenerateResource.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.AssemblyInfoInputs.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.AssemblyInfo.cs
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.sourcelink.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Pr.3D7A3C9A.Up2Date
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\refint\Venta Productos Cosméticos.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\Venta Productos Cosméticos.genruntimeconfig.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\obj\Release\net8.0-windows\ref\Venta Productos Cosméticos.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Venta Productos Cosméticos\bin\Release\net8.0-windows\README.md

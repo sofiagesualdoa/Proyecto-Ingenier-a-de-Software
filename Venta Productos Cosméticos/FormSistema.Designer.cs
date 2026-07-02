@@ -266,6 +266,7 @@
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Size = new Size(402, 30);
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Tag = "Ver Guia Instalacion";
             guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Text = "Guía de Instalación (Archivo Leéme)";
+            guíaDeInstalaciónArchivoLeémeToolStripMenuItem.Click += guíaDeInstalaciónArchivoLeémeToolStripMenuItem_Click;
             // 
             // cerrarSesiónToolStripMenuItem
             // 

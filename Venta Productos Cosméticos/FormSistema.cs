@@ -1,6 +1,7 @@
 using BLL;
 using DAL;
 using Servicios;
+using System.Diagnostics;
 using Venta_Productos_Cosméticos.Vista;
 
 namespace Venta_Productos_Cosméticos
@@ -357,6 +358,40 @@ namespace Venta_Productos_Cosméticos
                         );
                     }
                 }
+            }
+        }
+
+        private void guíaDeInstalaciónArchivoLeémeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string rutaReadme = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "README.md");
+
+                if (!File.Exists(rutaReadme))
+                {
+                    MessageBox.Show(
+                        ServicioSessionManager.GetInstance().Traducir("No se encontró el archivo README.md."),
+                        ServicioSessionManager.GetInstance().Traducir("Error"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                    return;
+                }
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = rutaReadme,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ServicioSessionManager.GetInstance().Traducir("No se pudo abrir el archivo README.md: ") + ex.Message,
+                    ServicioSessionManager.GetInstance().Traducir("Error"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
     }

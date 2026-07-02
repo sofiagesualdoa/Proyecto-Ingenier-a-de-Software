@@ -1,0 +1,16 @@
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\bin\Release\net8.0-windows\Servicios.deps.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\bin\Release\net8.0-windows\Servicios.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\bin\Release\net8.0-windows\Servicios.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\bin\Release\net8.0-windows\BE.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\bin\Release\net8.0-windows\BE.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.AssemblyInfoInputs.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.AssemblyInfo.cs
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.sourcelink.json
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.csproj.Up2Date
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\refint\Servicios.dll
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\Servicios.pdb
+C:\Users\usuario\OneDrive\Facultad\3° Año\1° Cuatrimestre\Ingeniería de Software\Proyecto Ing Software\Servicios\obj\Release\net8.0-windows\ref\Servicios.dll

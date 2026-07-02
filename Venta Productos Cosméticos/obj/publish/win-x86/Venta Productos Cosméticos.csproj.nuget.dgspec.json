@@ -1,0 +1,447 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj",
+        "projectName": "BE",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
+              },
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.27, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
+              },
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.27, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj",
+        "projectName": "Servicios",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.27, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
+        "projectName": "Venta Productos Cosméticos",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\Venta Productos Cosméticos.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Venta Productos Cosméticos\\obj\\publish\\win-x86\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BE\\BE.csproj"
+              },
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\BLL\\BLL.csproj"
+              },
+              "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3° Año\\1° Cuatrimestre\\Ingeniería de Software\\Proyecto Ing Software\\Servicios\\Servicios.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.27, )",
+              "autoReferenced": true
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[8.0.27, 8.0.27]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

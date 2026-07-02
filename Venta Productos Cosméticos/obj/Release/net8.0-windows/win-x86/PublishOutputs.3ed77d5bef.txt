@@ -1,0 +1,13 @@
+C:\Users\usuario\Desktop\Venta Productos Cosméticos.pdb
+C:\Users\usuario\Desktop\traducciones.json
+C:\Users\usuario\Desktop\D3DCompiler_47_cor3.dll
+C:\Users\usuario\Desktop\PenImc_cor3.dll
+C:\Users\usuario\Desktop\PresentationNative_cor3.dll
+C:\Users\usuario\Desktop\vcruntime140_cor3.dll
+C:\Users\usuario\Desktop\wpfgfx_cor3.dll
+C:\Users\usuario\Desktop\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\usuario\Desktop\BE.pdb
+C:\Users\usuario\Desktop\BLL.pdb
+C:\Users\usuario\Desktop\Servicios.pdb
+C:\Users\usuario\Desktop\DAL.pdb
+C:\Users\usuario\Desktop\Venta Productos Cosméticos.exe
