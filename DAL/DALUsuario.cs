@@ -36,7 +36,7 @@ namespace DALs
                                 usuarioEncontrado.Email = reader["Email"].ToString();
                                 usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
                                 usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
-                                usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
+                                usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 1;
                                 usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
                                 usuarioEncontrado.DVH = reader["DVH"].ToString();
                             }
@@ -79,7 +79,7 @@ namespace DALs
                             usr.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
                             usr.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
                             usr.DVH = reader["DVH"].ToString();
-                            usr.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
+                            usr.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 1;
                             usr.PerfilUsuario = new ServicioFamilia(usr.IdPerfil, reader["NombrePerfil"].ToString(), reader["DVHPerfil"].ToString());
                             usr.SetPassword(reader["Contraseña"].ToString());
 
@@ -157,7 +157,7 @@ namespace DALs
                             usuarioEncontrado.Email = reader["Email"].ToString();
                             usuarioEncontrado.IntentosInicio = Convert.ToInt32(reader["IntentosInicio"]);
                             usuarioEncontrado.IdPerfil = Convert.ToInt32(reader["IdPerfil"]);
-                            usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 0;
+                            usuarioEncontrado.IdIdioma = reader["IdIdioma"] != DBNull.Value ? Convert.ToInt32(reader["IdIdioma"]) : 1;
                             usuarioEncontrado.SetPassword(reader["Contraseña"].ToString());
                             usuarioEncontrado.DVH = reader["DVH"].ToString();
                         }
@@ -240,6 +240,7 @@ namespace DALs
 
         public void ModificarUsuario(ServicioUsuario usuarioModificado)
         {
+            int idiomaAGuardar = (usuarioModificado.IdIdioma > 0) ? usuarioModificado.IdIdioma : 1;
             string query = @"UPDATE Usuario 
                      SET Nombre = @Nombre, 
                          Apellido = @Apellido, 
@@ -262,7 +263,7 @@ namespace DALs
                     comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar, 50).Value = usuarioModificado.nombreUsuario;
                     comando.Parameters.Add("@IdPerfil", SqlDbType.Int).Value = usuarioModificado.IdPerfil;
                     comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuarioModificado.Activo;
-                    comando.Parameters.Add("@IdIdioma", SqlDbType.Int).Value = usuarioModificado.IdIdioma;
+                    comando.Parameters.Add("@IdIdioma", SqlDbType.Int).Value = idiomaAGuardar;
                     comando.Parameters.Add("@DVH", SqlDbType.VarChar, 64).Value = usuarioModificado.DVH;
                     try
                     {

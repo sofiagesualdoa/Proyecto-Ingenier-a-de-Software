@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Venta Productos Cosm\u00E9ticos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\dal\\dalusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C076BD35-A240-4FF9-92C9-803CF952EB17}|..\\Servicios\\Servicios.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\servicios\\serviciopermisofamilia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -37,9 +40,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\dal\\dalfamilia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\dal\\dalusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEB3DC7C-5059-F4AD-2883-65AE6414B1AF}|..\\DAL\\DAL.csproj|c:\\users\\usuario\\onedrive\\facultad\\3\u00B0 a\u00F1o\\1\u00B0 cuatrimestre\\ingenier\u00EDa de software\\proyecto ing software\\dal\\dalperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -110,11 +110,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ServicioPermisoFamilia.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioPermisoFamilia.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioPermisoFamilia.cs",
@@ -127,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ServicioPerfilPermiso.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioPerfilPermiso.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioPerfilPermiso.cs",
@@ -139,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ServicioPerfilFamilia.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioPerfilFamilia.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioPerfilFamilia.cs",
@@ -151,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ServicioFamiliaFamilia.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioFamiliaFamilia.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioFamiliaFamilia.cs",
@@ -163,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ServicioEncriptador.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioEncriptador.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioEncriptador.cs",
@@ -175,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ServicioDVV.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioDVV.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioDVV.cs",
@@ -187,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DALDVV.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\DAL\\DALDVV.cs",
               "RelativeDocumentMoniker": "..\\DAL\\DALDVV.cs",
@@ -211,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ServicioIdioma.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioIdioma.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioIdioma.cs",
@@ -247,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ServicioErrorIntegridad.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\ServicioErrorIntegridad.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\ServicioErrorIntegridad.cs",
@@ -295,15 +295,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "DALUsuario.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\DAL\\DALUsuario.cs",
               "RelativeDocumentMoniker": "..\\DAL\\DALUsuario.cs",
               "ToolTip": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\DAL\\DALUsuario.cs",
               "RelativeToolTip": "..\\DAL\\DALUsuario.cs",
-              "ViewState": "AgIAALgBAAAAAAAAAADwv8YBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAIwJ8AAACFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T22:46:19.84Z"
+              "WhenOpened": "2026-07-01T22:46:19.84Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -320,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "GeneradorDigVerificador.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\Servicios\\GeneradorDigVerificador.cs",
               "RelativeDocumentMoniker": "..\\Servicios\\GeneradorDigVerificador.cs",
@@ -427,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DALFamilia.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\DAL\\DALFamilia.cs",
               "RelativeDocumentMoniker": "..\\DAL\\DALFamilia.cs",
@@ -451,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BLLDVV.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\OneDrive\\Facultad\\3\u00B0 A\u00F1o\\1\u00B0 Cuatrimestre\\Ingenier\u00EDa de Software\\Proyecto Ing Software\\BLL\\BLLDVV.cs",
               "RelativeDocumentMoniker": "..\\BLL\\BLLDVV.cs",
